@@ -74,8 +74,8 @@ function js_main_slider(){
 		if(i_slaider < 100){
 			if(tmp_time%1 == 0){
 				i_slaider += 2;
-			/*	document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
-				document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;*/
+				document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
+				document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;
 				
 				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60);*/
 			}
