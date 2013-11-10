@@ -6,6 +6,9 @@ $color_blue_light_hover: #0285d8;
 $color_red: #c44231;
 $color_red_hover: #e04c38;
 $color_txt: #2e363d;
+$color_border: #1a4059;
+
+
 
 @font-face {
     font-family: 'helvetica_neue';
@@ -94,7 +97,7 @@ body{
 		position: absolute;
 		width: 455px;
 		top: 52px;
-		left: 8%;
+		left: 60px;
 		color: #fff;
 		font-weight: bold;
 	}
@@ -104,7 +107,7 @@ body{
 		width: 150px;
 		top: 52px;
 		padding-left: 25px;
-		right: 5%;
+		right: 40px;
 		font-family: 'helvetica_bold'; 
 		font-weight: bold;
 		color: $color_green;
@@ -272,11 +275,65 @@ body{
 	width: 273px;
 	height: 100%;
 	left: 0px;
-	background-color: $color_blue;
+	background-color: $color_blue_light;
 	font-size: 20pt;
 	color: #ff0;
 	z-index: 10;
-	/*opacity: 0.5;*/
+	overflow: hidden;
+	.left_column_name{
+		display: block;
+		position: relative;
+		width: 100%;
+		padding: 13px 15px 13px 20px;
+		background-color: $color_blue_light;
+		color: #fff;
+		font-family: 'helvetica_bold';
+		font-size: 18pt;
+		text-align: left;		
+	}
+	.left_column_name_img{
+		display: block;
+		position: absolute;
+		top: 22px;
+		left: 215px;
+		width: 42px;
+		height: 16px;
+		background: url(../img/main_sprite.png) no-repeat;
+		background-position: 0px -125px;
+		z-index: 120;
+	}
+	.select_tab{
+		display: block;
+		position: absolute;
+		width: 140px;
+		height: 40px;
+		background-color: $color_blue;
+		top: 115px;
+		left: 0px;
+	}
+	.menu_order{
+		display: block;
+		position: repative;
+		.menu_tab{
+			display: inline-block;
+			position: relative;
+			padding: 14px 14px 14px 14px;
+			color: $color_green;
+			font-family: 'helvetica_bold';
+			font-size: 8pt;
+		}
+		.menu_tab:last-child{
+			cursor: pointer;
+			/*color: $color_blue;*/
+		}
+		
+	} 
+	.order_tab1{
+		display: block;
+		position: relative;
+		
+		background-color: $color_blue;
+	}
 }
 
 .right_column{
@@ -289,6 +346,98 @@ body{
 	font-size: 20pt;
 	color: #ff0;
 	/*opacity: 0.5;*/
+	overflow: hidden;
+	.img_world{
+		display: block;
+		position: relative;
+		width: 43px;
+		height: 35px;
+		margin: 0 auto;
+		margin-top: 13px;
+		background: url(../img/world.png) no-repeat;
+		
+	}
+	ul{
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin-top: 16px;
+		border-top: 1px solid $color_border;
+		overflow: hidden;		
+		.right_slider{
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 61px;
+			padding-left: 12px;
+			padding-top: 10pt;
+			text-align: left;
+			color: #fff;
+			font-family: 'helvetica_bold';
+			
+			font-size: 9pt;
+			border-bottom: 1px solid $color_border;
+			
+		}
+		.right_slider_price{
+			display: block;
+			margin-top: 3px;
+			font-family: 'helvetica_neue';
+			color: $color_green;
+		}
+		.right_slider_temper{
+			display: block;
+			top: -2px;
+			font-family: 'helvetica_neue';
+			color: $color_blue_light;
+			font-size: 9pt;
+			font-weight: 900;
+		}
+		.right_slider_sun{
+			top: 4px;
+			width: 23px;
+			height: 18px;
+			background: url(../img/main_sprite.png) no-repeat;
+			background-position: 0px 0px;
+		}
+		.right_slider:nth-child(2){
+			.right_slider_sun{
+				background-position: 0px -24px;
+			}
+		}
+		.right_slider:nth-child(3){
+			.right_slider_sun{
+				background-position: 0px -48px;
+			}
+		}
+		.right_slider:nth-child(4){
+			.right_slider_sun{
+				background-position: 0px -73px;
+			}
+		}
+		.right_slider:nth-child(5){
+			.right_slider_sun{
+				background-position: 0px -100px;
+			}
+		}
+		.right_slider:nth-child(6){
+			.right_slider_sun{
+				background-position: 0px -48px;
+			}
+		}
+		.right_slider:nth-child(7){
+			.right_slider_sun{
+				background-position: 0px -73px;
+			}
+		}
+		.right_slider:nth-child(8){
+			.right_slider_sun{
+				background-position: 0px -100px;
+			}
+		}
+	}
+	
 }
 
 
@@ -336,6 +485,7 @@ body{
 		font-family: 'helvetica_neue';
 		color: $color_txt;
 		li{
+			display: inline-block;
 			margin-top: 11px;
 			padding: 4px 15px 4px 17px;
 			border-left: 1px solid #dbdbdb;
@@ -419,4 +569,22 @@ body{
 		}	
 		
 	}
+}
+
+@media only screen and (max-width: 1279px){
+	h1{
+		font-size: 24pt;
+	}
+	.main_fon{
+		.slogan{
+			width: 390px;
+			left: 30px;
+			
+			
+		}
+	}
+	#footer_tel{
+		display: none;
+	}
+	
 }
