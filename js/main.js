@@ -27,6 +27,8 @@ window.onload = function() {
 	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
 	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
 	
+	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
+	
 	number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
 	var slider_timer= setInterval(function() {js_main_slider()}, 15);
@@ -62,8 +64,8 @@ function js_set_size(){
 	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
-	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 154 + "px";
+	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 154 + "px";
 	
 }
 
