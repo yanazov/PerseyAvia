@@ -7,6 +7,7 @@ $color_red: #c44231;
 $color_red_hover: #e04c38;
 $color_txt: #2e363d;
 $color_border: #1a4059;
+$color_grey: #e4e8eb;
 
 
 
@@ -328,11 +329,579 @@ body{
 		}
 		
 	} 
+/*  ===============================================   BEGIN ORDER TAB1 ==================================== */	
 	.order_tab1{
 		display: block;
 		position: relative;
+		width: 273px;
 		
 		background-color: $color_blue;
+		text-align: left;
+		overflow-y: hidden;
+		/*overflow-y: scroll;
+		overflow-y: auto;*/
+		overflow-x: hidden;
+		padding-bottom: 10px;
+		.order_tab1_main{
+			display: block;
+			position: relative;	
+			width: 273px;
+			z-index: 1;
+			.order_tab1_city{
+				display: block;
+				position: relative;
+				text-align: left;
+			}
+			.tab1_from, .tab1_to{
+				display: inline-block;			
+				position: relative;
+				width: 110px;
+				margin-top: 2px;
+				margin-left: 20px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				text-align: left;
+			}
+			.tab1_from{
+				margin-top: 15px;
+			}
+			.tab1_from_info, .tab1_to_info{
+				display: inline-block;
+				position: relative;
+				width: 102px;
+				margin-top: 12px;
+				color: $color_green;
+				font-family: 'helvetica_neue';
+				font-size: 8.5pt;
+				text-align: right;
+			}
+			.tab1_from_clear, .tab1_to_clear{
+				dislpay: inline-block;
+				position: relative;
+				top: 1px;
+				width: 10px;
+				height: 10px;
+				
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -149px;
+				cursor: pointer;
+			}
+			.tab1_from_fild, .tab1_to_fild{
+				display: block;
+				position: relative;
+				width: 196px;
+				margin-left: 20px;
+				margin-top: 3px;
+				padding: 7px 10px 7px 30px;
+				font-family: 'helvetica_neue';
+				font-family: 'helvetica_bold';
+				font-weight: bold;
+				font-size: 14pt;
+				border: none;
+				background-color: $color_grey;
+			}
+			.tab1_from_o, .tab1_to_o{
+				display: block;
+				position: absolute;
+				width: 12px;
+				height: 19px;
+				top: 46px;
+				left: 30px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -175px;
+			}
+			.tab1_to_o{
+				top: 116px;
+			}
+	/* ====================== стилизаци чекбокса ============================================== */				
+			input[type="checkbox"] {
+				display: none;
+			}
+			input[type="checkbox"] + label span {
+				display:inline-block;
+				width: 17px;
+				height: 17px;
+				top: -1px;
+				margin-right: 10px;
+				vertical-align:middle;
+				background:url(../img/main_sprite.png) no-repeat;
+				cursor:pointer;
+				background-position: 0px -250px;
+				font-size: 8pt;
+				color: #fff;
+			}
+			input[type="checkbox"]:checked + label span {
+				background:url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -275px;
+			}
+			label{
+				display: block;
+				width: 250px;
+				margin-left: 20px;
+				margin-top: 11px;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				color: #fff;
+				text-align: left;
+			}
+	/* ==================================================================== */	
+			.tab1_time_from{
+				display: none;			
+				position: relative;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 23px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				.tab1_time_from_fild{
+					display: block;
+					position: relative;
+					width: 216px;
+					margin-top: 6px;
+					border: none;
+					padding: 7px 10px 7px 10px;
+					font-family: 'helvetica_neue';
+					font-size: 14pt;
+					background-color: $color_grey;
+				}
+				.calendar{
+					display: block;
+					position: absolute;
+					width: 17px;
+					height: 19px;
+					top: 30px;
+					left: 230px;
+					background: url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -200px;
+					cursor: pointer;
+					
+				}
+			
+			}
+			.tab1_time_back{
+				display: none;
+				position: relative;
+				left: 0px;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 10px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: 1;
+				.tab1_time_back_fild{
+					display: block;
+					position: relative;
+					width: 196px;
+					margin-top: 8px;
+					border: none;
+					padding: 7px 10px 7px 30px;
+					font-family: 'helvetica_neue';
+					font-size: 14pt;	
+					background-color: $color_grey;
+				}
+				.calendar{
+					display: block;
+					position: absolute;
+					width: 17px;
+					height: 19px;
+					top: 32px;
+					left: 230px;
+					background: url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -200px;
+					cursor: pointer;					
+				}	
+			}
+			.tab1_people{
+				display: none;
+				position: relative;
+				left: 0px;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 10px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: 1;
+				.tab1_adult{
+					display: inline-block;
+					position: relative;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_adult_fild{
+						display: block;
+						position: relative;
+						width: 95px;
+						margin-top: 8px;
+						padding: 7px 10px 7px 10px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_adult_up{
+						display: block;
+						position: absolute;						
+						top: 26px;
+						left: 94px;
+						width: 21px;						
+						height: 12px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -295px;
+						cursor: pointer;	
+						
+						
+					}
+					.tab1_adult_dwn{
+						display: block;
+						position: absolute;
+						top: 48px;
+						left: 94px;
+						width: 21px;						
+						height: 12px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -325px;
+						cursor: pointer;	
+					}
+				}
+				.tab1_child{
+					display: inline-block;
+					position: relative;
+					margin-left: 2px;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_child_fild{
+						display: block;
+						position: relative;
+						width: 95px;
+						margin-top: 8px;
+						padding: 7px 10px 7px 10px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_child_up{
+						display: block;
+						position: absolute;						
+						top: 31px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -300px;
+						cursor: pointer;	
+						
+						
+					}
+					.tab1_child_dwn{
+						display: block;
+						position: absolute;
+						top: 48px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -325px;
+						cursor: pointer;	
+					}
+				}
+			}
+		}
+		
+/* ============================================	 BEGIN	.order_tab1_back =================================== */
+		.order_tab1_back{
+			display: block;
+			position: absolute;			
+			top: 0px;
+			left: 0px;
+			.order_tab1_city{
+				display: block;
+				position: relative;
+				text-align: left;
+				opacity: 0;
+			}
+			.tab1_from, .tab1_to{
+				display: inline-block;			
+				position: relative;
+				width: 110px;
+				margin-top: 2px;
+				margin-left: 20px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				text-align: left;
+				opacity: 0;
+			}
+			.tab1_from{
+				margin-top: 15px;
+				opacity: 0;
+			}
+			.tab1_from_info, .tab1_to_info{
+				display: inline-block;
+				position: relative;
+				width: 102px;
+				margin-top: 12px;
+				color: $color_green;
+				font-family: 'helvetica_neue';
+				font-size: 8.5pt;
+				text-align: right;
+				opacity: 0;
+			}
+			.tab1_from_clear, .tab1_to_clear{
+				dislpay: inline-block;
+				position: relative;
+				top: 1px;
+				width: 10px;
+				height: 10px;
+				
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -149px;
+				cursor: pointer;
+				opacity: 0;
+			}
+			.tab1_from_fild, .tab1_to_fild{
+				display: block;
+				position: relative;
+				width: 196px;
+				margin-left: 20px;
+				margin-top: 3px;
+				padding: 7px 10px 7px 30px;
+				font-family: 'helvetica_neue';
+				font-family: 'helvetica_bold';
+				font-weight: bold;
+				font-size: 14pt;
+				border: none;
+				background-color: $color_grey;
+				opacity: 0;
+			}
+			.tab1_from_o, .tab1_to_o{
+				display: block;
+				position: absolute;
+				width: 12px;
+				height: 19px;
+				top: 46px;
+				left: 30px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -175px;
+				opacity: 0;
+			}
+			.tab1_to_o{
+				top: 116px;
+				opacity: 0;
+			}
+	/* ====================== стилизаци чекбокса ============================================== */				
+			input[type="checkbox"] {
+				display: none;
+			}
+			input[type="checkbox"] + label span {
+				display:inline-block;
+				width: 17px;
+				height: 17px;
+				top: -1px;
+				margin-right: 10px;
+				vertical-align:middle;
+				background:url(../img/main_sprite.png) no-repeat;
+				cursor:pointer;
+				background-position: 0px -250px;
+				font-size: 8pt;
+				color: #fff;
+				opacity: 0;
+			}
+			input[type="checkbox"]:checked + label span {
+				background:url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -275px;
+				opacity: 0;
+			}
+			label{
+				display: block;
+				width: 250px;
+				margin-left: 20px;
+				margin-top: 11px;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				color: #fff;
+				text-align: left;
+				opacity: 0;
+			}
+	/* ==================================================================== */	
+			.tab1_time_from{
+				display: block;			
+				position: relative;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 23px;
+				color: #fff;
+				
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: .2;
+				.tab1_time_from_fild{
+					display: block;
+					position: relative;
+					width: 196px;
+					margin-top: 6px;
+					border: none;
+					padding: 7px 10px 7px 30px;
+					font-family: 'helvetica_neue';
+					font-size: 14pt;					
+				}
+				.calendar{
+					display: block;
+					position: absolute;
+					width: 17px;
+					height: 19px;
+					top: 30px;
+					left: 230px;
+					background: url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -200px;
+					cursor: pointer;					
+				}			
+			}
+			.tab1_time_back{
+				display: block;
+				position: relative;
+				left: 0px;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 10px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: .2;
+				
+				.tab1_time_back_fild{
+					display: block;
+					position: relative;
+					width: 196px;
+					margin-top: 8px;
+					border: none;
+					padding: 7px 10px 7px 30px;
+					font-family: 'helvetica_neue';
+					font-size: 14pt;	
+					background-color: $color_grey;
+				}
+				.calendar{
+					display: block;
+					position: absolute;
+					width: 17px;
+					height: 19px;
+					top: 32px;
+					left: 230px;
+					background: url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -200px;
+					cursor: pointer;					
+				}
+			}	
+			.tab1_people{
+				display: block;
+				position: relative;
+				left: 0px;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 10px;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: .2;
+				.tab1_adult{
+					display: inline-block;
+					position: relative;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_adult_fild{
+						display: block;
+						position: relative;
+						width: 75px;
+						margin-top: 8px;
+						padding: 7px 10px 7px 30px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_adult_up{
+						display: block;
+						position: absolute;						
+						top: 31px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -300px;
+						cursor: pointer;	
+						
+						
+					}
+					.tab1_adult_dwn{
+						display: block;
+						position: absolute;
+						top: 48px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -325px;
+						cursor: pointer;	
+					}
+				}
+				.tab1_child{
+					display: inline-block;
+					position: relative;
+					margin-left: 2px;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_child_fild{
+						display: block;
+						position: relative;
+						width: 75px;
+						margin-top: 8px;
+						padding: 7px 10px 7px 30px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_child_up{
+						display: block;
+						position: absolute;						
+						top: 31px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -300px;
+						cursor: pointer;	
+						
+						
+					}
+					.tab1_child_dwn{
+						display: block;
+						position: absolute;
+						top: 48px;
+						left: 94px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -325px;
+						cursor: pointer;	
+					}
+				}
+			}
+			
+		}
+/* ============================================	 END	.order_tab1_back =================================== */		
+		
+	}
+/*  ===============================================   END ORDER TAB1 ==================================== */	
+	.order_tab2{
+		display: none;
 	}
 }
 

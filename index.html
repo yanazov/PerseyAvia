@@ -21,6 +21,7 @@
     <![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	
+
 </head>
 <body>
 	<div id="fon1" class="main_fon">
@@ -71,12 +72,97 @@
 				<li class="menu_tab" onclick="js_menu_tab(1)">В одну/две стороны
 				</li><li class="menu_tab" onclick="js_menu_tab(2)">Сложный маршрут</li>				
 			</ul>
-			<div class="order_tab1">
-			 bla bla BLA
-			</div>
-			<div class="order_tab2">
-			
-			</div>
+			<form>
+				<div class="order_tab1">
+					<div class="order_tab1_main">
+						<div class="order_tab1_city">	
+							<span class="tab1_from">Город вылета</span>
+							<span class="tab1_from_info">KBP</span>
+							<span class="tab1_from_clear" onclick="js_tab1_clear('tab1_from_fild')"></span>
+							<input type="text" class="tab1_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_from_o"></span>
+							<span class="tab1_to">Город прилета</span>
+							<span class="tab1_to_info">MOW</span>
+							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
+							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_to_o"></span>
+							<input id="one_side" type="checkbox" checked>
+							<label for="one_side"><span></span>В одну сторону</label>
+							
+						</div>
+						<div class="tab1_time_from">
+							Дата вылета
+							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar('tab1_time_from_fild')"></span>
+						</div>
+						<div class="tab1_time_back">
+							Обратно
+							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_people">
+							<div class="tab1_adult">
+								Взрослые
+								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_adult_up" onClick="js_number_up('tab1_adult_fild')"></span>
+								<span class="tab1_adult_dwn" onClick="js_number_dwn('tab1_adult_fild')"></span>								
+							</div>	
+							<div class="tab1_child">
+								Дети
+								<input type="text" class="tab1_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_child_up" onClick="js_number_up('tab1_child_fild')"></span>
+								<span class="tab1_child_dwn" onClick="js_number_dwn('tab1_child_fild')"></span>
+							</div>
+						</div>
+					</div>	
+					<div class="order_tab1_back">
+						<div class="order_tab1_city">	
+							<span class="tab1_from">Город вылета</span>
+							<span class="tab1_from_info">KBP</span>
+							<span class="tab1_from_clear" onclick="js_tab1_clear('tab1_from_fild')"></span>
+							<input type="text" class="tab1_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_from_o"></span>
+							<span class="tab1_to">Город прилета</span>
+							<span class="tab1_to_info">MOW</span>
+							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
+							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_to_o"></span>
+							<input id="one_side" type="checkbox" checked>
+							<label for="one_side"><span></span>В одну сторону</label>
+							
+						</div>
+						<div class="tab1_time_from">
+							Дата вылета
+							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_time_back">
+							Обратно
+							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_people">
+							<div class="tab1_adult">
+								Взрослые
+								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_adult_up"></span>
+								<span class="tab1_adult_dwn"></span>								
+							</div>	
+							<div class="tab1_child">
+								Дети
+								<input type="text" class="tab1_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_child_up"></span>
+								<span class="tab1_child_dwn"></span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="order_tab2">
+					bla bla BLA
+				</div>
+			</form>
 		</div>
 <!-- ===================================   END LEFT COLUMN ================================== -->		
 		<div class="center_block">

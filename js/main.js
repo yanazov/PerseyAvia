@@ -24,14 +24,16 @@ window.onload = function() {
 	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
-	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 65 + "px";
+	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 65 + "px";
 	
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
 	
 	number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
 	var slider_timer= setInterval(function() {js_main_slider()}, 15);
+	
+	/*jQuery('.order_tab1').jScrollPane();*/
 }
 
 window.onresize = function() {	
@@ -49,8 +51,8 @@ function js_set_size(){
 	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
-	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 65 + "px";
+	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 65 + "px";
 	
 	clearTimeout(set_size_timer);
 	
@@ -64,9 +66,11 @@ function js_set_size(){
 	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 154 + "px";
-	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 154 + "px";
-	
+	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("order_tab1_main")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
+	jQuery('.order_tab1_main').jScrollPane();
+	/*jQuery('.order_tab1').jScrollPane();*/
 }
 
 function js_main_slider(){
@@ -169,4 +173,51 @@ function js_menu_tab1(){
 			document.getElementsByClassName("select_tab")[0].style.left = 140 + "px";
 			clearInterval(menu_tab_timer);
 		}
+}
+
+function js_focus(elem){
+	elem.style.backgroundColor = "#fff";
+}
+
+function js_blur(elem){
+	elem.style.backgroundColor = "#e4e8eb";
+}
+
+function js_tab1_clear(block_class){
+	document.getElementsByClassName(block_class)[0].value = "";
+}
+
+function js_next_block(fild_1, fild_2){
+	if(document.getElementsByClassName(fild_1)[0].value != "" && document.getElementsByClassName(fild_2)[0].value != ""){
+		document.getElementsByClassName("tab1_time_from")[0].style.display = "block";
+		document.getElementsByClassName("tab1_time_from")[1].style.opacity = 0;
+		document.getElementsByClassName("tab1_time_back")[0].style.display = "block";
+		document.getElementsByClassName("tab1_time_back")[1].style.opacity = 0;
+		jQuery('.order_tab1_main').jScrollPane();
+	}
+		
+}
+
+function js_calendar(fild_name){
+	document.getElementsByClassName(fild_name)[0].value = "15.11.2013";
+	
+	document.getElementsByClassName("tab1_people")[0].style.display = "block";
+	document.getElementsByClassName("tab1_people")[1].style.opacity = 0;
+	
+	
+}
+
+function js_number_up(fild_name){
+	var tmp = parseInt(document.getElementsByClassName(fild_name)[0].value);
+	if(document.getElementsByClassName(fild_name)[0].value == "")
+		tmp = 0;
+	tmp += 1;
+	document.getElementsByClassName(fild_name)[0].value = tmp;
+}
+
+function js_number_dwn(fild_name){
+	var tmp = parseInt(document.getElementsByClassName(fild_name)[0].value);
+	tmp -= 1;
+	if (tmp > -1)
+		document.getElementsByClassName(fild_name)[0].value = tmp;
 }
