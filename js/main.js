@@ -13,6 +13,8 @@ var top_elem_right_slider = 0;
 var y_elem_right_slider = 0;
 var tab1_time = 0;
 var y_login_form = -145;
+var login_open = 0;
+var login_close = 0;
 var data_fild;
 var calendar_open = 0;
 var calendar_close = 0;
@@ -150,14 +152,26 @@ function js_main_slider(){
 		}
 	}	
 /* =============================================== END RIGNT SLIDER ================================================== */ 
-/* =============================================== BEGIN ANIMATE LOGIN FORM ============================================ */
-	if(y_login_form > -145 && y_login_form < 60){
+/* =============================================== BEGIN LOGIN FORM ============================================ */
+	if(login_open == 1 && y_login_form < 60){
 		y_login_form += 3;
+		if(y_login_form >= 60){
+			y_login_form = 60
+			login_open = 0;
+		}
 		document.getElementsByClassName("login_form")[0].style.top = y_login_form + "px";
 	
 	}
+	if(login_close == 1){
+		y_login_form -= 3;
+		document.getElementsByClassName("login_form")[0].style.top = y_login_form + "px";
+		if(y_login_form < -145){
+			login_close = 0;
+			document.getElementsByClassName("login_form_fon")[0].style.display = "none";
+		}
+	}
 
-/* =============================================== END ANIMATE LOGIN FORM ============================================ */
+/* =============================================== END LOGIN FORM ============================================ */
 /* =============================================== BEGIN VIEW LEFT BLOCKS ============================================ */	
 	if(tab1_time > 0 && tab1_time <1.1){
 		tab1_time += 0.02;		
@@ -272,15 +286,21 @@ function js_number_dwn(fild_name){
 }
 
 function js_login_open_fon() {
-	   document.getElementsByClassName("login_form_fon")[0].style.display = "block";
-	   y_login_form = -144;
+	  
+	document.getElementsByClassName("login_form_fon")[0].style.display = "block";
+	if(y_login_form < -143){
+		login_open = 1;
+		y_login_form = -144;
+	}
 }
 
 function js_login_close_fon(event) {
   // получить объект событие
   event = event || window.event
   var t = event.target || event.srcElement
-  /*alert(t.className) */
+  
   if(t.className == "login_form_fon")
-    document.getElementsByClassName("login_form_fon")[0].style.display = "none";
+	login_close = 1;
+    /*document.getElementsByClassName("login_form_fon")[0].style.display = "none";*/
+	
  }
