@@ -102,6 +102,7 @@ function select_data(current_td){
 		case "Декабрь":	{ Month_number = "12"; break;}  
 	}
 	document.getElementsByClassName(data_fild)[0].value = select_number+"."+Month_number+"."+select_year;
+	calendar_close = 1;
 }
 
 function bild_calendar(){

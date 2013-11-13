@@ -15,6 +15,7 @@ var tab1_time = 0;
 var y_login_form = -145;
 var data_fild;
 var calendar_open = 0;
+var calendar_close = 0;
 var calendar_left = -293;
 
 window.onload = function() {	
@@ -172,6 +173,15 @@ function js_main_slider(){
 		if(calendar_left > 0){
 			calendar_left = 0;
 			calendar_open = 0;
+		}
+		document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
+		
+	}
+	if(calendar_close == 1){
+		calendar_left -= 4;
+		if(calendar_left < -293){
+			calendar_left = -293;
+			calendar_open = -293;
 		}
 		document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
 		
