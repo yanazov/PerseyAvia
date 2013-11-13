@@ -25,11 +25,11 @@ $color_grey: #e4e8eb;
 
 @font-face {
     font-family: 'helvetica_bold';
-    src: url('../fonts/Helvetica_Bold.eot');
-    src: url('../fonts/Helvetica_Bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Helvetica_Bold.woff') format('woff'),
-         url('../fonts/Helvetica_Bold.ttf') format('truetype'),
-         url('../fonts/Helvetica_Bold.svg#helvetica_neueregular') format('svg');
+    src: url('../fonts/helvetica_bold.eot');
+    src: url('../fonts/helvetica_bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helvetica_bold.woff') format('woff'),
+         url('../fonts/helvetica_bold.ttf') format('truetype'),
+         url('../fonts/helvetica_bold.svg#helvetica_neueregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -49,7 +49,7 @@ ul, li, div, a, span{
 
 h1{
 	font-size: 29pt;
-	font-family: 'helvetica_bold';
+	font-family: 'helvetica_neue';
 }
 
 input:focus{outline:none}
@@ -100,7 +100,8 @@ body{
 		top: 52px;
 		left: 60px;
 		color: #fff;
-		font-weight: bold;
+		font-family: 'helvetica_bold';
+		font-weight: 100;
 	}
 	.price{
 		display: block;
@@ -110,7 +111,6 @@ body{
 		padding-left: 25px;
 		right: 40px;
 		font-family: 'helvetica_bold'; 
-		font-weight: bold;
 		color: $color_green;
 		border-left: 1px solid #4d7183;
 		line-height: 20px;
@@ -166,7 +166,7 @@ body{
 		margin-left: 8px;
 		color: $color_green;
 		font-size: 13.5pt;
-		font-family: 'helvetica_bold';
+		font-family: 'helvetica_neue';
 		border-left: 1px solid #dbdbdb;
 		.tel_txt{
 			display: block;
@@ -189,7 +189,7 @@ body{
 		margin-left: 13px;
 		padding: 9px 18px 9px 18px;
 		background-color: $color_red;
-		font-family: 'helvetica_bold';
+		font-family: 'helvetica_neue';
 		font-size: 11pt;
 		color: #fff;
 		text-decoration: none;
@@ -222,7 +222,7 @@ body{
 			width: 410px;
 			height: 100%;
 			color: $color_txt;
-			font-family: 'helvetica_bold';
+			font-family: 'helvetica_neue';
 			font-size: 9.5pt;
 			li{
 				display: inline-block;
@@ -251,9 +251,11 @@ body{
 				top: 20px;
 				left: 17px;
 				padding-left: 22px;
+				padding-top: 2px;
 				color: #fff;
-				font-family: 'helvetica_bold';
-				font-size: 11pt;
+				font-family: 'helvetica_neue';
+				font-weight: bold;
+				font-size: 10pt;
 				background: url(../img/img_login.png) no-repeat;
 				
 			}
@@ -299,7 +301,8 @@ body{
 		padding: 13px 15px 13px 20px;
 		background-color: $color_blue_light;
 		color: #fff;
-		font-family: 'helvetica_bold';
+		font-family: 'helvetica_neue';
+		font-weight: bold;
 		font-size: 18pt;
 		text-align: left;		
 	}
@@ -329,7 +332,7 @@ body{
 		.menu_tab{
 			display: inline-block;
 			position: relative;
-			padding: 14px 14px 14px 14px;
+			padding: 14px 12px 14px 12px;
 			color: $color_green;
 			font-family: 'helvetica_bold';
 			font-size: 8pt;
@@ -345,7 +348,7 @@ body{
 		display: block;
 		position: relative;
 		width: 273px;
-		top: -1px;
+		top: -2px;
 		background-color: $color_blue;
 		text-align: left;
 		overflow-y: hidden;
@@ -406,7 +409,7 @@ body{
 				margin-top: 3px;
 				padding: 7px 10px 7px 30px;
 				font-family: 'helvetica_neue';
-				font-family: 'helvetica_bold';
+				font-family: 'helvetica_neue';
 				font-weight: bold;
 				font-size: 14pt;
 				border: none;
@@ -684,7 +687,7 @@ body{
 				margin-top: 3px;
 				padding: 7px 10px 7px 30px;
 				font-family: 'helvetica_neue';
-				font-family: 'helvetica_bold';
+				font-family: 'helvetica_neue';
 				font-weight: bold;
 				font-size: 14pt;
 				border: none;
@@ -1073,7 +1076,7 @@ body{
 			padding-top: 10pt;
 			text-align: left;
 			color: #fff;
-			font-family: 'helvetica_bold';
+			font-family: 'helvetica_neue';
 			
 			font-size: 9pt;
 			border-bottom: 1px solid $color_border;
@@ -1186,7 +1189,7 @@ body{
 			height: 40px;
 			padding: 13px 0px 0px 20px;
 			background-color: $color_blue_light;
-			font-family: 'helvetica_bold';
+			font-family: 'helvetica_neue';
 			font-size: 18pt;
 			font-weight: bold;
 		}
@@ -1217,6 +1220,7 @@ body{
 		td:nth-child(6n) {
 			color: $color_red;
 		}
+		
 		table {
 			display: block;
 			position: relative;
@@ -1228,7 +1232,7 @@ body{
 		}
 		.mon1{
 			padding: 25px 0px 25px 20px;
-			font-family: 'helvetica_bold';
+			font-family: 'helvetica_neue';			
 			font-weight: bold;
 			font-size: 13.5pt;
 			color: $color_blue;
@@ -1385,7 +1389,7 @@ body{
 			height: 100%;
 			background-color: $color_blue_light;
 			border-left: 1px solid #005b95;
-			font-family: 'helvetica_bold';
+			font-family: 'helvetica_neue';
 			font-size: 11pt;
 			color: #fff;
 			text-decoration: none;
@@ -1469,6 +1473,9 @@ body{
 			text-decoration: none;
 			text-align: center;
 		}
+		.login_enter:hover{
+			background-color: #023f68;
+		}
 		.login_help{
 			display: inline-block;
 			position: relative;	
@@ -1495,6 +1502,9 @@ body{
 			font-weight: bold;
 			text-decoration: none;
 			text-align: center;
+		}
+		.login_registr:hover{
+			background-color: #d34735;
 		}
 	}
 }

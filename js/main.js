@@ -39,7 +39,7 @@ window.onload = function() {
 	
 	number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
-	var slider_timer= setInterval(function() {js_main_slider()}, 25);
+	var slider_timer= setInterval(function() {js_main_slider()}, 5);
 	
 	/*jQuery('.order_tab1').jScrollPane();*/
 }
@@ -93,7 +93,7 @@ function js_main_slider(){
 				document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
 				document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;
 				
-				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60);
+				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60); */
 			}
 			if(i_slaider >= 100){
 				current_fon = next_fon;
@@ -135,7 +135,7 @@ function js_main_slider(){
 	delay_slide_right -= 1;
 	if(delay_slide_right < 0){
 		var top_elem = Math.floor(-y_elem_right_slider/75);		
-		y_elem_right_slider -=1.3;
+		y_elem_right_slider -=0.3;
 		for(i = 0; i < number_elem_right_slider; i++){
 			if(i < top_elem){
 				document.getElementsByClassName("right_slider")[i].style.top = (number_elem_right_slider)*75 + y_elem_right_slider + i * 75 + "px";	
@@ -148,7 +148,7 @@ function js_main_slider(){
 			y_elem_right_slider = 0;
 		
 		if(top_elem < Math.floor(-y_elem_right_slider/75) || (Math.floor(-y_elem_right_slider/75 == 0 ))){
-			delay_slide_right = 100;
+			delay_slide_right = 300;
 		}
 	}	
 /* =============================================== END RIGNT SLIDER ================================================== */ 
@@ -210,7 +210,7 @@ function js_menu_tab(tab){
 	}
 	if(tab == 0){
 		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
-		select_tab_x -= 4;
+		select_tab_x -= 2;
 		var menu_tab_timer = setTimeout(function() {js_menu_tab(tab)}, 5);
 		if(select_tab_x < 0){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "default";
@@ -224,7 +224,7 @@ function js_menu_tab(tab){
 
 function js_menu_tab1(){
 	document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
-		select_tab_x += 4;		
+		select_tab_x += 2;		
 		if(select_tab_x > 140){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "pointer";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "default";

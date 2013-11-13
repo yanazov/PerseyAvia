@@ -49,9 +49,12 @@ function createCalendar(id, year, month) {
 	if(d.getDate() == nowDate && d.getMonth() == nowMonth && d.getFullYear() == nowYear){
 		table += '<td class="today" onclick = "select_data(this)">'+d.getDate()+'</td>';
 	}
-	else	
-		table += '<td onclick = "select_data(this)">'+d.getDate()+'</td>';
-
+	else
+		if(d.getDate() != "")
+			table += '<td onmouseout="this.style.backgroundColor='+"'#fff';"+'"'+' onmouseover="this.style.backgroundColor='+"'#e4e8eb';"+'"'+' onclick = "select_data(this)">'+d.getDate()+'</td>';
+		else
+			table += '<td onclick = "select_data(this)">'+d.getDate()+'</td>';
+     
     if (getDay(d) % 7 == 6) { // вс, последний день - перевод строки
       table += '</tr><tr>';
     }
@@ -80,8 +83,8 @@ function getDay(date) { // получить номер дня недели, от
 }
 
 function select_data(current_td){
-	/*current_td.style.color = "#ff0";
-	current_td.style.backgroundColor = "#7e0"; */
+	/*current_td.style.color = "#ff0"; */
+	current_td.style.backgroundColor = "#49b69c";
 	var select_number = current_td.innerHTML;
 	var month_id = current_td.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
 	var select_montth = current_td.parentNode.parentNode.parentNode.parentNode.getElementsByClassName("mon1")[0].innerHTML;
