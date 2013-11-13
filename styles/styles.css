@@ -1307,6 +1307,11 @@ body {
   border-collapse: collapse;
 }
 /* line 1225, ../sass/styles.scss */
+.center_block .calendar_block .today {
+  background-color: #c44231;
+  color: #fff;
+}
+/* line 1229, ../sass/styles.scss */
 .center_block .calendar_block .mon1 {
   padding: 25px 0px 25px 20px;
   font-family: 'helvetica_bold';
@@ -1314,7 +1319,7 @@ body {
   font-size: 13.5pt;
   color: #002a46;
 }
-/* line 1232, ../sass/styles.scss */
+/* line 1236, ../sass/styles.scss */
 .center_block .calendar_block .year1 {
   display: block;
   position: absolute;
@@ -1324,7 +1329,7 @@ body {
   font-size: 13.5pt;
   color: #b4bcc2;
 }
-/* line 1241, ../sass/styles.scss */
+/* line 1245, ../sass/styles.scss */
 .center_block .calendar_block .calendar_bottom {
   display: block;
   position: absolute;
@@ -1338,7 +1343,7 @@ body {
   border-top: 1px solid #e0e0e0;
   overflow: hidden;
 }
-/* line 1253, ../sass/styles.scss */
+/* line 1257, ../sass/styles.scss */
 .center_block .calendar_block .calendar_bottom .calendar_up, .center_block .calendar_block .calendar_bottom .calendar_dwn {
   display: inline-block;
   position: relative;
@@ -1349,7 +1354,7 @@ body {
   border-left: 1px solid #e0e0e0;
   background-color: #d3d8db;
 }
-/* line 1262, ../sass/styles.scss */
+/* line 1266, ../sass/styles.scss */
 .center_block .calendar_block .calendar_bottom .calendar_up .calendar_up_img, .center_block .calendar_block .calendar_bottom .calendar_up .calendar_dwn_img, .center_block .calendar_block .calendar_bottom .calendar_dwn .calendar_up_img, .center_block .calendar_block .calendar_bottom .calendar_dwn .calendar_dwn_img {
   display: block;
   position: relative;
@@ -1358,15 +1363,15 @@ body {
   background: url(../img/main_sprite.png) no-repeat;
   background-position: 0px -400px;
 }
-/* line 1270, ../sass/styles.scss */
+/* line 1274, ../sass/styles.scss */
 .center_block .calendar_block .calendar_bottom .calendar_up .calendar_dwn_img, .center_block .calendar_block .calendar_bottom .calendar_dwn .calendar_dwn_img {
   background-position: 0px -375px;
 }
-/* line 1275, ../sass/styles.scss */
+/* line 1279, ../sass/styles.scss */
 .center_block .calendar_block .calendar_bottom .calendar_dwn {
   background-color: #fff;
 }
-/* line 1279, ../sass/styles.scss */
+/* line 1283, ../sass/styles.scss */
 .center_block .calendar_block .calendar_shadow {
   display: block;
   position: absolute;
@@ -1378,7 +1383,7 @@ body {
   z-index: 22;
 }
 
-/* line 1293, ../sass/styles.scss */
+/* line 1297, ../sass/styles.scss */
 .footer {
   display: block;
   position: absolute;
@@ -1391,7 +1396,7 @@ body {
   overflow: hidden;
   /*opacity: 0.5;*/
 }
-/* line 1304, ../sass/styles.scss */
+/* line 1308, ../sass/styles.scss */
 .footer .footer_shadow {
   display: block;
   position: absolute;
@@ -1400,7 +1405,7 @@ body {
   top: -3px;
   background: url(../img/footer_shadow.png) repeat-x;
 }
-/* line 1312, ../sass/styles.scss */
+/* line 1316, ../sass/styles.scss */
 .footer .footer_contact {
   display: inline-block;
   position: relative;
@@ -1409,18 +1414,18 @@ body {
   font-family: 'helvetica_neue';
   color: #2e363d;
 }
-/* line 1319, ../sass/styles.scss */
+/* line 1323, ../sass/styles.scss */
 .footer .footer_contact li {
   display: inline-block;
   margin-top: 11px;
   padding: 4px 15px 4px 17px;
   border-left: 1px solid #dbdbdb;
 }
-/* line 1324, ../sass/styles.scss */
+/* line 1328, ../sass/styles.scss */
 .footer .footer_contact li a {
   color: #0072ba;
 }
-/* line 1329, ../sass/styles.scss */
+/* line 1333, ../sass/styles.scss */
 .footer .footer_right {
   display: block;
   position: absolute;
@@ -1430,7 +1435,7 @@ body {
   height: 100%;
   text-align: right;
 }
-/* line 1337, ../sass/styles.scss */
+/* line 1341, ../sass/styles.scss */
 .footer .footer_right .footer_iata {
   display: inline-block;
   position: relative;
@@ -1440,7 +1445,7 @@ body {
   height: 100%;
   /*background-color: #e4e8eb;*/
 }
-/* line 1345, ../sass/styles.scss */
+/* line 1349, ../sass/styles.scss */
 .footer .footer_right .footer_iata .img_iata {
   display: block;
   position: absolute;
@@ -1450,7 +1455,7 @@ body {
   height: 27px;
   background: url(../img/iata.png) no-repeat;
 }
-/* line 1356, ../sass/styles.scss */
+/* line 1360, ../sass/styles.scss */
 .footer .footer_right .footer_isic {
   display: inline-block;
   position: relative;
@@ -1460,7 +1465,7 @@ body {
   height: 100%;
   /*background-color: #e4e8eb;*/
 }
-/* line 1364, ../sass/styles.scss */
+/* line 1368, ../sass/styles.scss */
 .footer .footer_right .footer_isic .img_isic {
   display: block;
   position: absolute;
@@ -1470,7 +1475,7 @@ body {
   height: 27px;
   background: url(../img/isic.png) no-repeat;
 }
-/* line 1375, ../sass/styles.scss */
+/* line 1379, ../sass/styles.scss */
 .footer .footer_right .qwestion {
   display: inline-block;
   position: relative;
@@ -1485,7 +1490,7 @@ body {
   color: #fff;
   text-decoration: none;
 }
-/* line 1388, ../sass/styles.scss */
+/* line 1392, ../sass/styles.scss */
 .footer .footer_right .qwestion .qwestion_info {
   dispaly: inline-block;
   position: relative;
@@ -1496,12 +1501,12 @@ body {
   margin-left: 5px;
   background: url(../img/info.png) no-repeat;
 }
-/* line 1399, ../sass/styles.scss */
+/* line 1403, ../sass/styles.scss */
 .footer .footer_right .qwestion:hover {
   background-color: #0285d8;
 }
 
-/* line 1406, ../sass/styles.scss */
+/* line 1410, ../sass/styles.scss */
 .login_form_fon {
   display: none;
   position: absolute;
@@ -1509,10 +1514,10 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  /*background-color: #cc0;
-  /*z-index: 50;*/
+  /*background-color: #cc0; */
+  z-index: 500;
 }
-/* line 1415, ../sass/styles.scss */
+/* line 1419, ../sass/styles.scss */
 .login_form_fon .login_form {
   display: block;
   position: absolute;
@@ -1524,7 +1529,7 @@ body {
   background-color: #49b69c;
   text-align: left;
 }
-/* line 1424, ../sass/styles.scss */
+/* line 1428, ../sass/styles.scss */
 .login_form_fon .login_form .login_name_fild {
   display: block;
   position: relative;
@@ -1539,7 +1544,7 @@ body {
   font-weight: 600;
   color: #2e363d;
 }
-/* line 1438, ../sass/styles.scss */
+/* line 1442, ../sass/styles.scss */
 .login_form_fon .login_form .login_psw_fild {
   display: block;
   position: relative;
@@ -1554,7 +1559,7 @@ body {
   font-weight: 600;
   color: #2e363d;
 }
-/* line 1452, ../sass/styles.scss */
+/* line 1456, ../sass/styles.scss */
 .login_form_fon .login_form .login_enter {
   display: inline-block;
   position: relative;
@@ -1571,7 +1576,7 @@ body {
   text-decoration: none;
   text-align: center;
 }
-/* line 1468, ../sass/styles.scss */
+/* line 1472, ../sass/styles.scss */
 .login_form_fon .login_form .login_help {
   display: inline-block;
   position: relative;
@@ -1582,7 +1587,7 @@ body {
   color: #fff;
   font-family: 'helvetica_neue';
 }
-/* line 1479, ../sass/styles.scss */
+/* line 1483, ../sass/styles.scss */
 .login_form_fon .login_form .login_registr {
   display: block;
   position: relative;
@@ -1601,18 +1606,18 @@ body {
 }
 
 @media only screen and (max-width: 1279px) {
-  /* line 1499, ../sass/styles.scss */
+  /* line 1503, ../sass/styles.scss */
   h1 {
     font-size: 24pt;
   }
 
-  /* line 1503, ../sass/styles.scss */
+  /* line 1507, ../sass/styles.scss */
   .main_fon .slogan {
     width: 390px;
     left: 30px;
   }
 
-  /* line 1510, ../sass/styles.scss */
+  /* line 1514, ../sass/styles.scss */
   #footer_tel {
     display: none;
   }

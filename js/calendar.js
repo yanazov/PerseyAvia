@@ -10,6 +10,7 @@ function createCalendar(id, year, month) {
 	
 	
 	var today = new Date();
+	var nowDate = today.getDate();
 	var nowMonth = today.getMonth();
 	var nowYear = today.getFullYear();
 	var Month_txt;
@@ -20,7 +21,6 @@ function createCalendar(id, year, month) {
 	}
 	var mon = month;
 	var d = new Date(year, mon);
-	var nowMonth = d.getMonth();
 	switch(month) {
 		case 0:{ Month_txt = "Январь"; break;}
 		case 1:{ Month_txt = "Февраль"; break;}
@@ -46,7 +46,11 @@ function createCalendar(id, year, month) {
 
   // ячейки календаря с датами
   while(d.getMonth() == mon) {
-    table += '<td onclick = "select_data(this)">'+d.getDate()+'</td>';
+	if(d.getDate() == nowDate && d.getMonth() == nowMonth && d.getFullYear() == nowYear){
+		table += '<td class="today" onclick = "select_data(this)">'+d.getDate()+'</td>';
+	}
+	else	
+		table += '<td onclick = "select_data(this)">'+d.getDate()+'</td>';
 
     if (getDay(d) % 7 == 6) { // вс, последний день - перевод строки
       table += '</tr><tr>';
@@ -76,8 +80,8 @@ function getDay(date) { // получить номер дня недели, от
 }
 
 function select_data(current_td){
-	current_td.style.color = "#ff0";
-	current_td.style.backgroundColor = "#7e0";
+	/*current_td.style.color = "#ff0";
+	current_td.style.backgroundColor = "#7e0"; */
 	var select_number = current_td.innerHTML;
 	var month_id = current_td.parentNode.parentNode.parentNode.parentNode.getAttribute('id');
 	var select_montth = current_td.parentNode.parentNode.parentNode.parentNode.getElementsByClassName("mon1")[0].innerHTML;
