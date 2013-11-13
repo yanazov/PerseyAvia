@@ -11,6 +11,7 @@
 	
 	
 	<script type="text/javascript" src="js/main.js"></script>
+	
 
 	<link rel="stylesheet" type="text/css" href="styles/styles.css" > 	
 	<!--[if IE]>
@@ -58,7 +59,8 @@
 						<li><a href="">Программа лояльности</a></li>
 					</ul>
 				</nav>
-				<div class="btn_login"><span>Вход</span></div>
+				<div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>
+				
 			</div>   
 		</header>
 <!-- ===================================   BEGIN LEFT COLUMN ================================== -->	
@@ -155,6 +157,19 @@
 								<span class="tab1_child_dwn"></span>
 							</div>
 						</div>
+						<div class="tab1_detail">
+							<div class="tab1_class">Класс							
+								<input type="text" class="tab1_class_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+								<span class="tab1_class_arrow"></span>
+							</div>
+							<div class="tab1_company">Авиакомпания
+								<input type="text" class="tab1_company_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+								<span class="tab1_company_arrow"></span>
+							</div>
+							<input id="tab1_direct" type="checkbox" checked>
+							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
+							<input class="tab1_find" type="submit" value="Искать">
+						</div>
 					</div>
 					
 				</div>
@@ -163,10 +178,35 @@
 					bla bla BLA
 				</div>
 			</form>
+			<div class="left_column_gradient"></div>
 		</div>
 <!-- ===================================   END LEFT COLUMN ================================== -->		
 		<div class="center_block">
-
+			<div class="calendar_block">
+				<span class="calendar_header">
+					Календарь					
+				</span>
+				<div class="calendar_cont">
+					<div id="month0"></div>
+					<div id="month1"></div>
+					<div id="month2"></div>
+					<div id="month3"></div>
+					<div id="month4"></div>
+					<div id="month5"></div>
+					<div id="month6"></div>
+					<div id="month7"></div>
+					<div id="month8"></div>
+					<div id="month9"></div>
+					<div id="month10"></div>
+					<div id="month11"></div>
+				</div>	
+				<div class="calendar_bottom">
+					<div class="calendar_up" onClick="js_calendar_up()"><span class="calendar_up_img"></span>
+					</div><div class="calendar_dwn" onClick="js_calendar_dwn()"><span class="calendar_dwn_img"></span></div>
+				</div>
+				<div class="calendar_shadow"></div>
+			</div>
+			
 		</div>
 <!-- ===================================   BEGIN RIGHT COLUMN ================================== -->						
 		<div class="right_column">
@@ -284,9 +324,10 @@
 					<span class="right_slider_temper">13°
 						<span class="right_slider_sun"></span>
 					</span>
-				</li>
-			
+				</li>			
 			</ul>
+			<div class="right_column_shadow"></div>
+			<div class="right_column_gradient"></div>
 		</div>
 <!-- ===================================   END RIGHT COLUMN ================================== -->						
 		<footer class="footer">
@@ -310,7 +351,17 @@
 				
 			</div>   
 		</footer>
-	</div>
 	
+	</div>
+	<div class="login_form_fon" onClick="js_login_close_fon(event)">
+		<div class="login_form">
+			<input type="text" class="login_name_fild" placeholder="Имя"onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<input type="text" class="login_psw_fild" placeholder="Пароль"onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<a class="login_enter" href="">Войти</a>
+			<a class="login_help" href="">Забыли <br/>свой пароль?</a>
+			<a class="login_registr" href="">Регистрация!</a>    
+		</div>
+	</div>
+	<script type="text/javascript" src="js/calendar.js"></script>
 </body>
 </html>

@@ -96,7 +96,7 @@ body{
 	.slogan{
 		display: block;
 		position: absolute;
-		width: 455px;
+		width: 505px;
 		top: 52px;
 		left: 60px;
 		color: #fff;
@@ -146,7 +146,7 @@ body{
 	width: 100%;
 	height: 60px;
 	background-color: #fff;
-	z-index: 11;
+	z-index: 101;
 	text-align: left;
 	.logo{
 		display: inline-block;
@@ -240,10 +240,11 @@ body{
 			position: absolute;
 			top: 0px;
 			right: 0px;
-			width: 98px;
+			width: 97px;
 			height: 100%;
 			background-color: $color_green;
 			cursor: pointer;
+			border-left: 1px solid #429984;
 			span{
 				display: block;
 				position: absolute;
@@ -260,6 +261,7 @@ body{
 		.btn_login:hover{
 			background-color: $color_green_hover;
 		}
+		
 	}
 }
 
@@ -279,8 +281,17 @@ body{
 	background-color: $color_blue_light;
 	font-size: 20pt;
 	color: #ff0;
-	z-index: 10;
+	z-index: 100;
 	overflow: hidden;
+	.left_column_gradient{
+		display: block;
+		position: absolute;
+		width: 3px;
+		height: 100%;
+		right: 0px;
+		top: 0px;
+		background: url(../img/left_column_shadow.png) repeat-y;
+	}
 	.left_column_name{
 		display: block;
 		position: relative;
@@ -334,7 +345,7 @@ body{
 		display: block;
 		position: relative;
 		width: 273px;
-		
+		top: -1px;
 		background-color: $color_blue;
 		text-align: left;
 		overflow-y: hidden;
@@ -455,6 +466,7 @@ body{
 				color: #fff;
 				font-family: 'helvetica_neue';
 				font-size: 10.5pt;
+				opacity: .2;
 				.tab1_time_from_fild{
 					display: block;
 					position: relative;
@@ -490,7 +502,7 @@ body{
 				color: #fff;
 				font-family: 'helvetica_neue';
 				font-size: 10.5pt;
-				opacity: 1;
+				opacity: .2;
 				.tab1_time_back_fild{
 					display: block;
 					position: relative;
@@ -894,7 +906,125 @@ body{
 					}
 				}
 			}
-			
+			.tab1_detail{
+				display: block;
+				position: relative;
+				width: 253px;
+				padding-left: 20px;
+				margin-top: 13px;
+				color: #fff;
+				text-align: left;
+				font-family: 'helvetica_neue';
+				font-size: 10.5pt;
+				opacity: .2;
+				.tab1_class{
+					display: inline-block;
+					position: relative;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_class_fild{
+						display: block;
+						position: relative;
+						width: 75px;
+						margin-top: 8px;
+						padding: 7px 30px 7px 10px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_class_arrow{
+						display: block;
+						position: absolute;
+						top: 34px;
+						left: 91px;
+						width: 20px;
+						height: 16px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -346px;
+						cursor: pointer;
+					}
+				}
+				.tab1_company{
+					display: inline-block;
+					position: relative;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					margin-left: 2px;
+					.tab1_company_fild{
+						display: block;
+						position: relative;
+						width: 75px;
+						margin-top: 8px;
+						padding: 7px 10px 7px 30px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_company_arrow{
+						display: block;
+						position: absolute;
+						top: 34px;
+						left: 91px;
+						width: 20px;
+						height: 16px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -346px;
+						cursor: pointer;
+					}
+				}
+/* ====================== стилизаци чекбокса ============================================== */				
+				input[type="checkbox"] {
+					display: none;
+				}
+				input[type="checkbox"] + label span {
+					display:inline-block;
+					width: 17px;
+					height: 17px;
+					top: -1px;
+					margin-right: 10px;
+					vertical-align:middle;
+					background:url(../img/main_sprite.png) no-repeat;
+					cursor:pointer;
+					background-position: 0px -250px;
+					font-size: 8pt;
+					color: #fff;
+					opacity: 1;
+				}
+				input[type="checkbox"]:checked + label span {
+					background:url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -275px;
+					opacity: 1;
+				}
+				label{
+					display: block;
+					width: 250px;
+					margin-left: 0px;
+					margin-top: 11px;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					color: #fff;
+					text-align: left;
+					opacity: 1;
+				}
+			.tab1_find{
+				display: block;
+				position: relative;
+				width: 235px;
+				height: 45px;
+				margin-top: 10px;
+				border: none;
+				background-color: $color_green;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 13pt;
+				font-weight: bold;
+			}
+	/* ==================================================================== */	
+			}
 		}
 /* ============================================	 END	.order_tab1_back =================================== */		
 		
@@ -1006,24 +1136,157 @@ body{
 			}
 		}
 	}
-	
+	.right_column_gradient{
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 307px;
+		left: 0px;
+		bottom: 0px;
+		background: url(../img/right_column_gradient.png) repeat-x;
+	}
+	.right_column_shadow{
+		display: block;
+		position: absolute;
+		width: 3px;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		background: url(../img/right_column_shadow.png) repeat-y;
+	}
 }
 
 
 .center_block{
 	display: block;
 	position: absolute;
-	top: 50px;
-	left: 263px;	
+	top: 60px;
+	left: 273px;	
 	font-size: 30pt;
 	color: #fff;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	height: 100%;
 	text-align: left;
-	
+	.calendar_block{
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: -293px;
+		width: 287px;
+		height: 100%;
+		background-color: #fff;
+		z-index: 20;
+		/*overflow: hidden;*/
+		.calendar_header{
+			display: block;
+			position: relative;
+			height: 40px;
+			padding: 13px 0px 0px 20px;
+			background-color: $color_blue_light;
+			font-family: 'helvetica_bold';
+			font-size: 18pt;
+			font-weight: bold;
+		}
+		.calendar_cont{
+			display: block;
+			position: relative;
+			overflow: hidden;
+		}
+		#month1{
+			display: block;
+			position: relative;
+			left: -1px;
+			font-size: 12pt;
+			color: $color_blue;
+		}
+		td, th {
+			border: 1px solid #e0e0e0;
+			padding: 12px;
+			text-align: center;
+			font-size: 10.5pt;
+			color: #0072ba;
+			font-family: 'helvetica_neue';
+			font-weight: 400;
+		}
+		td:nth-child(7n) {
+			color: $color_red;
+		}
+		td:nth-child(6n) {
+			color: $color_red;
+		}
+		table {
+			display: block;
+			position: relative;
+			border-collapse: collapse;
+		}
+		.mon1{
+			padding: 25px 0px 25px 20px;
+			font-family: 'helvetica_bold';
+			font-weight: bold;
+			font-size: 13.5pt;
+			color: $color_blue;
+		}
+		.year1{
+			display: block;
+			position: absolute;
+			top: 25px;
+			right: 20px;
+			font-family: 'helvetica_neue';
+			font-size: 13.5pt;
+			color: #b4bcc2;
+		}
+		.calendar_bottom{
+			display: block;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			height: 44px;
+			background-color: $color_grey;
+			z-index: 21;
+			text-align: right;
+			border-top: 1px solid #e0e0e0;
+			overflow: hidden;
+			.calendar_up, .calendar_dwn{
+				display: inline-block;
+				position: relative;
+				padding: 18px 15px 15px 15px;
+				width: 12px;
+				height: 14px;
+				cursor: pointer;
+				border-left: 1px solid #e0e0e0;
+				background-color: #d3d8db;
+				.calendar_up_img, .calendar_dwn_img{
+					display: block;
+					position: relative;
+					width: 13px;
+					height: 9px;
+					background: url(../img/main_sprite.png) no-repeat;
+					background-position: 0px -400px;
+				}
+				.calendar_dwn_img{
+					background-position: 0px -375px;					
+				}
+				
+			}
+			.calendar_dwn{
+				background-color: #fff;
+			}	
+		}
+		.calendar_shadow{
+			display: block;
+			position: absolute;
+			top: 0px;
+			right: -3px;
+			width: 3px;
+			height: 100%;
+			background: url(../img/right_column_shadow.png) repeat-y;
+			z-index: 22;
+		}
+	}
 	
 }
 
@@ -1034,7 +1297,7 @@ body{
 	width: 100%;
 	height: 44px;
 	background-color: #fff;
-	z-index: 9;
+	 z-index: 9;
 	text-align: left;
 	overflow: hidden;
 	/*opacity: 0.5;*/
@@ -1078,7 +1341,7 @@ body{
 			/*top: -26px;*/
 			width: 72px;
 			height: 100%;
-			background-color: #e4e8eb;
+			/*background-color: #e4e8eb;*/
 			.img_iata{
 				display: block;
 				position: absolute;
@@ -1097,7 +1360,7 @@ body{
 			/*top: -26px;*/
 			width: 69px;
 			height: 100%;
-			background-color: #e4e8eb;
+			/*background-color: #e4e8eb;*/
 			.img_isic{
 				display: block;
 				position: absolute;
@@ -1140,6 +1403,98 @@ body{
 	}
 }
 
+.login_form_fon{
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	/*background-color: #cc0;
+	/*z-index: 50;*/
+	.login_form{
+		display: block;
+		position: absolute;
+		top: -144px;          /*   60  */
+		right: 0px;
+		width: 221px;
+		height: 205px;
+		background-color: $color_green;
+		text-align: left;
+		.login_name_fild{
+			display: block;
+			position: relative;
+			width: 181px;
+			margin-top: 12px;
+			margin-left: 10px;
+			padding: 7px 10px 7px 10px;
+			font-family: 'helvetica_neue';
+			font-size: 13pt;	
+			background-color: $color_grey;
+			border: none;
+			font-weight: 600;
+			color: $color_txt;
+		}
+		.login_psw_fild{
+			display: block;
+			position: relative;
+			width: 181px;
+			margin-top: 12px;
+			margin-left: 10px;
+			padding: 7px 10px 7px 10px;
+			font-family: 'helvetica_neue';
+			font-size: 15pt;	
+			background-color: $color_grey;
+			border: none;
+			font-weight: 600;
+			color: $color_txt;
+		}
+		.login_enter{
+			display: inline-block;
+			position: relative;
+			width: 87px;
+			height: 30px;
+			margin-left: 10px;
+			margin-top: 10px;
+			padding-top: 5px;
+			background-color: $color_blue;
+			color: #fff;
+			font-family: 'helvetica_neue';
+			font-size: 15pt;
+			font-weight: bold;
+			text-decoration: none;
+			text-align: center;
+		}
+		.login_help{
+			display: inline-block;
+			position: relative;	
+			top: 5px;
+			width: 90px;
+			margin-left: 15px;
+		
+			font-size: 10pt;
+			color: #fff;
+			font-family: 'helvetica_neue';
+		}
+		.login_registr{
+			display: block;
+			position: relative;
+			width: 201px;
+			height: 26px;
+			padding-top: 9px;
+			margin-left: 10px;
+			margin-top: 18px;
+			background-color: $color-red;
+			color: #fff;
+			font-family: 'helvetica_neue';
+			font-size: 10.5pt;
+			font-weight: bold;
+			text-decoration: none;
+			text-align: center;
+		}
+	}
+}
+
 @media only screen and (max-width: 1279px){
 	h1{
 		font-size: 24pt;
@@ -1157,3 +1512,4 @@ body{
 	}
 	
 }
+

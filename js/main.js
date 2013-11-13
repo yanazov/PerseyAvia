@@ -11,6 +11,11 @@ var menu_tab = 0;
 var number_elem_right_slider = 0;
 var top_elem_right_slider = 0;
 var y_elem_right_slider = 0;
+var tab1_time = 0;
+var y_login_form = -145;
+var data_fild;
+var calendar_open = 0;
+var calendar_left = -293;
 
 window.onload = function() {	
 	
@@ -31,7 +36,7 @@ window.onload = function() {
 	
 	number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
-	var slider_timer= setInterval(function() {js_main_slider()}, 15);
+	var slider_timer= setInterval(function() {js_main_slider()}, 25);
 	
 	/*jQuery('.order_tab1').jScrollPane();*/
 }
@@ -69,6 +74,8 @@ function js_set_size(){
 	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
 	document.getElementsByClassName("order_tab1_main")[0].style.height = document.body.clientHeight - 155 + "px";
 	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
+	document.getElementsByClassName("calendar_block")[0].style.height = document.body.clientHeight - 60 + "px";
+	document.getElementsByClassName("calendar_cont")[0].style.height = document.body.clientHeight - 130 + "px";
 	jQuery('.order_tab1_main').jScrollPane();
 	/*jQuery('.order_tab1').jScrollPane();*/
 }
@@ -83,7 +90,7 @@ function js_main_slider(){
 				document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
 				document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;
 				
-				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60);*/
+				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60);
 			}
 			if(i_slaider >= 100){
 				current_fon = next_fon;
@@ -92,7 +99,7 @@ function js_main_slider(){
 					next_fon = 1;
 				/*clearInterval(slider_timer);*/
 				i_slaider = 0;
-				delay_slide = 1000;
+				delay_slide = 2000;
 				/*var slider_timer=setTimeout(function() {js_main_slider()}, 3000);*/
 			}
 		}	
@@ -125,7 +132,7 @@ function js_main_slider(){
 	delay_slide_right -= 1;
 	if(delay_slide_right < 0){
 		var top_elem = Math.floor(-y_elem_right_slider/75);		
-		y_elem_right_slider -=3;
+		y_elem_right_slider -=1.3;
 		for(i = 0; i < number_elem_right_slider; i++){
 			if(i < top_elem){
 				document.getElementsByClassName("right_slider")[i].style.top = (number_elem_right_slider)*75 + y_elem_right_slider + i * 75 + "px";	
@@ -142,7 +149,34 @@ function js_main_slider(){
 		}
 	}	
 /* =============================================== END RIGNT SLIDER ================================================== */ 
+/* =============================================== BEGIN ANIMATE LOGIN FORM ============================================ */
+	if(y_login_form > -145 && y_login_form < 60){
+		y_login_form += 3;
+		document.getElementsByClassName("login_form")[0].style.top = y_login_form + "px";
 	
+	}
+
+/* =============================================== END ANIMATE LOGIN FORM ============================================ */
+/* =============================================== BEGIN VIEW LEFT BLOCKS ============================================ */	
+	if(tab1_time > 0 && tab1_time <1.1){
+		tab1_time += 0.02;		
+		document.getElementsByClassName("tab1_time_from")[0].style.opacity = tab1_time;		
+		document.getElementsByClassName("tab1_time_back")[0].style.opacity = tab1_time;
+		if(tab1_time == 1)
+			tab1_time = 0;
+	}
+/* =============================================== END VIEW LEFT BLOCKS ============================================ */		
+/* =============================================== BEGIN CALENDAR ================================================== */	
+	if(calendar_open == 1){
+		calendar_left += 4;
+		if(calendar_left > 0){
+			calendar_left = 0;
+			calendar_open = 0;
+		}
+		document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
+		
+	}
+/* =============================================== END CALENDAR ================================================== */	
 }
 
 function js_menu_tab(tab){
@@ -193,18 +227,23 @@ function js_next_block(fild_1, fild_2){
 		document.getElementsByClassName("tab1_time_from")[1].style.opacity = 0;
 		document.getElementsByClassName("tab1_time_back")[0].style.display = "block";
 		document.getElementsByClassName("tab1_time_back")[1].style.opacity = 0;
+		tab1_time = 0.2;
 		jQuery('.order_tab1_main').jScrollPane();
 	}
 		
 }
 
 function js_calendar(fild_name){
-	document.getElementsByClassName(fild_name)[0].value = "15.11.2013";
+	data_fild = fild_name;
+	document.getElementsByClassName("calendar_block")[0].style.display = "block";
+	createCalendar("month1", 2013, 2);
 	
-	document.getElementsByClassName("tab1_people")[0].style.display = "block";
-	document.getElementsByClassName("tab1_people")[1].style.opacity = 0;
 	
+/*	document.getElementsByClassName("tab1_people")[0].style.display = "block";
+	document.getElementsByClassName("tab1_people")[1].style.opacity = 0;   */
 	
+	bild_calendar();
+	calendar_open = 1;
 }
 
 function js_number_up(fild_name){
@@ -221,3 +260,17 @@ function js_number_dwn(fild_name){
 	if (tmp > -1)
 		document.getElementsByClassName(fild_name)[0].value = tmp;
 }
+
+function js_login_open_fon() {
+	   document.getElementsByClassName("login_form_fon")[0].style.display = "block";
+	   y_login_form = -144;
+}
+
+function js_login_close_fon(event) {
+  // получить объект событие
+  event = event || window.event
+  var t = event.target || event.srcElement
+  /*alert(t.className) */
+  if(t.className == "login_form_fon")
+    document.getElementsByClassName("login_form_fon")[0].style.display = "none";
+ }
