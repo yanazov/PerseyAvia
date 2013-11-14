@@ -30,18 +30,26 @@ function createCalendar(id, year, month) {
 		case 5:{ Month_txt = "Июнь"; break;}
 		case 6:{ Month_txt = "Июль"; break;}
 		case 7:{ Month_txt = "Август"; break;}
-		case 8:{ Month_txt = "Октябрь"; break;}
-		case 9:{ Month_txt = "Сентябрь"; break;}
+		case 8:{ Month_txt = "Сентябрь"; break;}
+		case 9:{ Month_txt = "Октябрь"; break;}
 		case 10:{ Month_txt = "Ноябрь"; break;}
 		case 11:{ Month_txt = "Декабрь"; break;}  
 	}
-	var table = '<span class="mon1">'+Month_txt+'</span><span class="year1">'+year+'</span><table>';
+	var table = '<span class="mon1">'+Month_txt+'</span><span class="year1">'+year+'</span>'+
+				'<p/><span class="day_txt">Пн</span>'+
+				'<span class="day_txt">Вт</span>'+
+				'<span class="day_txt">Ср</span>'+
+				'<span class="day_txt">Чт</span>'+
+				'<span class="day_txt">Пт</span>'+
+				'<span class="day_txt">Сб</span>'+
+				'<span class="day_txt">Вс</span>'+
+				'<table>';
 
 	// заполнить первый ряд от понедельника
 	// и до дня, с которого начинается месяц
 	// * * * | 1  2  3  4
 	for (var i=0; i<getDay(d); i++) {
-		table += '<td onclick = "select_data(this)"></td>';
+		table += '<td></td>';
 	}
 
   // ячейки календаря с датами
@@ -50,10 +58,15 @@ function createCalendar(id, year, month) {
 		table += '<td class="today" onclick = "select_data(this)">'+d.getDate()+'</td>';
 	}
 	else
+	if(d < today){
+		table += '<td class="last">'+d.getDate()+'</td>';
+	}
+	else
 		if(d.getDate() != "")
-			table += '<td onmouseout="this.style.backgroundColor='+"'#fff';"+'"'+' onmouseover="this.style.backgroundColor='+"'#e4e8eb';"+'"'+' onclick = "select_data(this)">'+d.getDate()+'</td>';
+			table += '<td class="td_active"  onmouseout="this.style.backgroundColor='+"'#fff';"+'"'+' onmouseover="this.style.backgroundColor='+
+						"'#e4e8eb';"+'"'+' onclick = "select_data(this)">'+d.getDate()+'</td>';
 		else
-			table += '<td onclick = "select_data(this)">'+d.getDate()+'</td>';
+			table += '<td>'+d.getDate()+'</td>';
      
     if (getDay(d) % 7 == 6) { // вс, последний день - перевод строки
       table += '</tr><tr>';
@@ -106,6 +119,12 @@ function select_data(current_td){
 	}
 	document.getElementsByClassName(data_fild)[0].value = select_number+"."+Month_number+"."+select_year;
 	calendar_close = 1;
+	if(document.getElementsByClassName("tab1_time_from_fild")[0].value != "" && document.getElementsByClassName("tab1_time_back_fild")[0].value != ""){
+		tab1_people_open = 0.2;
+		document.getElementsByClassName("tab1_people")[0].style.display = "block";
+		document.getElementsByClassName("tab1_people")[1].style.opacity = 0;
+		jQuery('.order_tab1_main').jScrollPane();
+	}
 }
 
 function bild_calendar(){
@@ -146,8 +165,10 @@ function js_calendar_up(){
 		month_height_all += month_top_height;
 	}
 	month_height_all = 0;
-	
-
+	if(number_top_month == 0){
+		document.getElementsByClassName("calendar_up")[0].style.backgroundColor = "#d3d8db";
+		document.getElementsByClassName("calendar_up")[0].style.cursor = "default";	
+	}
 }
 
 function js_calendar_dwn(){
@@ -161,4 +182,6 @@ function js_calendar_dwn(){
 	}
 	month_height_all = 0;
 	number_top_month +=1;
+	document.getElementsByClassName("calendar_up")[0].style.backgroundColor = "#fff";
+	document.getElementsByClassName("calendar_up")[0].style.cursor = "pointer";
 }

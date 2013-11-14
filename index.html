@@ -88,24 +88,56 @@
 							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
 							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 							<span class="tab1_to_o"></span>
-							<input id="one_side" type="checkbox" checked>
-							<label for="one_side"><span></span>В одну сторону</label>
+							<input id="one_side" type="checkbox" checked onchange="js_tab1_checkbox_status()">
+							<label for="one_side"><span></span onClick="js_tab1_checkbox_status()">В одну сторону</label>
 							
 						</div>
 						<div class="tab1_time_from">
 							Дата вылета
-							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab1_time_from_fild')" readonly>
 							<span class="calendar" onClick="js_calendar('tab1_time_from_fild')"></span>
+						</div>
+						<div class="tab1_timeline_from">
+							<span class="tab1_timeline_txt">Время:</span>
+							<span class="tab1_select_time">00:00</span> 
+							<span class="tab1_select_time">-</span> 
+							<span class="tab1_select_time">24:00</span> 
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>
+							<span class="tab1_timeline_all" >
+								<span class="tab1_timeline_select"></span>
+								<span class="tab1_timeline_bar1"></span>
+								<span class="tab1_timeline_bar2"></span>
+								
+							</span>
+							<span class="tab1_timeline_unit">24:00</span>
+							
 						</div>
 						<div class="tab1_time_back">
 							Обратно
-							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
-							<span class="calendar" onClick="js_calendar()"></span>
+							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab1_time_back_fild')" readonly>
+							<span class="calendar" onClick="js_calendar('tab1_time_back_fild')"></span>
+						</div>
+						<div class="tab1_timeline_back">
+							<span class="tab1_timeline_txt">Время:</span>
+							<span class="tab1_select_time">00:00</span> 
+							<span class="tab1_select_time">-</span> 
+							<span class="tab1_select_time">24:00</span> 
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>
+							<span class="tab1_timeline_all">
+								<span class="tab1_timeline_select"></span>
+								<span class="tab1_timeline_bar1"></span>
+								<span class="tab1_timeline_bar2"></span>
+								
+							</span>
+							<span class="tab1_timeline_unit">24:00</span>
+							
 						</div>
 						<div class="tab1_people">
 							<div class="tab1_adult">
 								Взрослые
-								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail('tab1_adult_fild')">
 								<span class="tab1_adult_up" onClick="js_number_up('tab1_adult_fild')"></span>
 								<span class="tab1_adult_dwn" onClick="js_number_dwn('tab1_adult_fild')"></span>								
 							</div>	
@@ -115,6 +147,19 @@
 								<span class="tab1_child_up" onClick="js_number_up('tab1_child_fild')"></span>
 								<span class="tab1_child_dwn" onClick="js_number_dwn('tab1_child_fild')"></span>
 							</div>
+						</div>
+						<div class="tab1_detail">
+							<div class="tab1_class">Класс							
+								<input type="text" class="tab1_class_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+								<span class="tab1_class_arrow"></span>
+							</div>
+							<div class="tab1_company">Авиакомпания
+								<input type="text" class="tab1_company_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+								<span class="tab1_company_arrow"></span>
+							</div>
+							<input id="tab1_direct" type="checkbox" checked>
+							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
+							<input class="tab1_find" type="submit" value="Искать">
 						</div>
 					</div>	
 					<div class="order_tab1_back">
@@ -138,10 +183,42 @@
 							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
 							<span class="calendar" onClick="js_calendar()"></span>
 						</div>
+						<div class="tab1_timeline_from">
+							<span class="tab1_timeline_txt">Время:</span>
+							<span class="tab1_select_time">00:00</span> 
+							<span class="tab1_select_time">-</span> 
+							<span class="tab1_select_time">24:00</span> 
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>
+							<span class="tab1_timeline_all">
+								<span class="tab1_timeline_select"></span>
+								<span class="tab1_timeline_bar1"></span>
+								<span class="tab1_timeline_bar2"></span>
+								
+							</span>
+							<span class="tab1_timeline_unit">24:00</span>
+							
+						</div>
 						<div class="tab1_time_back">
 							Обратно
 							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
 							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_timeline_back">
+							<span class="tab1_timeline_txt">Время:</span>
+							<span class="tab1_select_time">00:00</span> 
+							<span class="tab1_select_time">-</span> 
+							<span class="tab1_select_time">24:00</span> 
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>
+							<span class="tab1_timeline_all">
+								<span class="tab1_timeline_select"></span>
+								<span class="tab1_timeline_bar1"></span>
+								<span class="tab1_timeline_bar2"></span>
+								
+							</span>
+							<span class="tab1_timeline_unit">24:00</span>
+							
 						</div>
 						<div class="tab1_people">
 							<div class="tab1_adult">
@@ -338,12 +415,12 @@
 				<li>E-mail: <a href="">avia@persey.travel</a></li>
 			</ul>
 			<div class="footer_right">
-				<div class="footer_iata">
-					<a class="img_iata" href=""></a>
-				</div>
-				<div class="footer_isic">
-					<a class="img_isic" href=""></a>
-				</div>
+				<a class="footer_iata" href="">
+					<span class="img_iata"></span>
+				</a>
+				<a class="footer_isic" href="">
+					<span class="img_isic"></span>
+				</a>
 				<a href="" class="qwestion">
 					Есть вопросы?
 					<span class="qwestion_info"></span>

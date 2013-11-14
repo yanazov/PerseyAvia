@@ -19,6 +19,11 @@ var data_fild;
 var calendar_open = 0;
 var calendar_close = 0;
 var calendar_left = -293;
+var tab1_check_status = 0;
+var tab1_people_open = 0;
+var tab1_detail_open = 0;
+var start_bar_x = -1;
+var select_bar = -1;
 
 window.onload = function() {	
 	
@@ -177,8 +182,16 @@ function js_main_slider(){
 		tab1_time += 0.02;		
 		document.getElementsByClassName("tab1_time_from")[0].style.opacity = tab1_time;		
 		document.getElementsByClassName("tab1_time_back")[0].style.opacity = tab1_time;
+		document.getElementsByClassName("tab1_timeline_from")[0].style.opacity = tab1_time;
+		document.getElementsByClassName("tab1_timeline_back")[0].style.opacity = tab1_time;
 		if(tab1_time == 1)
-			tab1_time = 0;
+			tab1_time = 10;
+	}
+	if(tab1_people_open > 0 && tab1_people_open < 1.1){
+		tab1_people_open += 0.02
+		document.getElementsByClassName("tab1_people")[0].style.opacity = tab1_people_open;
+		if(tab1_people_open == 1)
+			tab1_people_open = 10;
 	}
 /* =============================================== END VIEW LEFT BLOCKS ============================================ */		
 /* =============================================== BEGIN CALENDAR ================================================== */	
@@ -233,6 +246,37 @@ function js_menu_tab1(){
 		}
 }
 
+function js_tab1_checkbox_status(){
+	if(tab1_check_status == 0){
+		tab1_check_status = 1;
+		if(document.getElementsByClassName("tab1_time_back")[0].style.opacity > 0.9){
+			document.getElementsByClassName("tab1_time_back")[0].style.display = "none";
+			document.getElementsByClassName("tab1_timeline_back")[0].style.display = "none"; 
+			document.getElementsByClassName("tab1_time_back")[1].style.display = "none";
+			document.getElementsByClassName("tab1_timeline_back")[1].style.display = "none";
+		}
+		else{
+			document.getElementsByClassName("tab1_time_back")[1].style.display = "none";
+			document.getElementsByClassName("tab1_timeline_back")[1].style.display = "none";
+		}
+		return 0;
+	}
+	if(tab1_check_status == 1){
+		tab1_check_status = 0;
+		if(document.getElementsByClassName("tab1_time_back")[0].style.opacity > 0.9){
+			document.getElementsByClassName("tab1_time_back")[0].style.display = "block";
+			document.getElementsByClassName("tab1_timeline_back")[0].style.display = "block"; 
+			document.getElementsByClassName("tab1_time_back")[1].style.display = "block";
+			document.getElementsByClassName("tab1_timeline_back")[1].style.display = "block";
+		}
+		else{
+			document.getElementsByClassName("tab1_time_back")[1].style.display = "block";
+			document.getElementsByClassName("tab1_timeline_back")[1].style.display = "block";
+		}
+		return 0;
+	}
+}
+
 function js_focus(elem){
 	elem.style.backgroundColor = "#fff";
 }
@@ -247,12 +291,24 @@ function js_tab1_clear(block_class){
 
 function js_next_block(fild_1, fild_2){
 	if(document.getElementsByClassName(fild_1)[0].value != "" && document.getElementsByClassName(fild_2)[0].value != ""){
-		document.getElementsByClassName("tab1_time_from")[0].style.display = "block";
-		document.getElementsByClassName("tab1_time_from")[1].style.opacity = 0;
-		document.getElementsByClassName("tab1_time_back")[0].style.display = "block";
-		document.getElementsByClassName("tab1_time_back")[1].style.opacity = 0;
-		tab1_time = 0.2;
-		jQuery('.order_tab1_main').jScrollPane();
+		if(tab1_time == 0){
+			document.getElementsByClassName("tab1_time_from")[0].style.display = "block";
+			document.getElementsByClassName("tab1_time_from")[1].style.opacity = 0;
+			document.getElementsByClassName("tab1_time_back")[1].style.opacity = 0;
+			document.getElementsByClassName("tab1_timeline_from")[0].style.display = "block";
+			document.getElementsByClassName("tab1_timeline_from")[1].style.opacity = 0;
+			if(tab1_check_status == 0){
+				document.getElementsByClassName("tab1_timeline_back")[0].style.display = "block";
+				document.getElementsByClassName("tab1_time_back")[0].style.display = "block";				
+			}
+			else{
+				document.getElementsByClassName("tab1_timeline_back")[0].style.display = "none";
+				document.getElementsByClassName("tab1_time_back")[0].style.display = "none";	
+			}
+			document.getElementsByClassName("tab1_timeline_back")[1].style.opacity = 0;
+			tab1_time = 0.2;
+			jQuery('.order_tab1_main').jScrollPane();
+		}
 	}
 		
 }
@@ -268,6 +324,7 @@ function js_calendar(fild_name){
 	
 	bild_calendar();
 	calendar_open = 1;
+	calendar_close = 0;
 }
 
 function js_number_up(fild_name){
@@ -276,6 +333,7 @@ function js_number_up(fild_name){
 		tmp = 0;
 	tmp += 1;
 	document.getElementsByClassName(fild_name)[0].value = tmp;
+	js_next_detail(fild_name)
 }
 
 function js_number_dwn(fild_name){
@@ -283,6 +341,17 @@ function js_number_dwn(fild_name){
 	tmp -= 1;
 	if (tmp > -1)
 		document.getElementsByClassName(fild_name)[0].value = tmp;
+	js_next_detail(fild_name)
+}
+
+function js_next_detail(fild_name){
+	if(document.getElementsByClassName(fild_name)[0].value != ""){
+		tab1_detail_open = 0.2;
+		document.getElementsByClassName("tab1_detail")[0].style.display = "block";
+		document.getElementsByClassName("tab1_detail")[1].style.opacity = 0;
+		
+		jQuery('.order_tab1_main').jScrollPane();
+	}
 }
 
 function js_login_open_fon() {
@@ -304,3 +373,5 @@ function js_login_close_fon(event) {
     /*document.getElementsByClassName("login_form_fon")[0].style.display = "none";*/
 	
  }
+ 
+ 
