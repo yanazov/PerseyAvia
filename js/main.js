@@ -414,14 +414,16 @@ function js_login_close_fon(event) {
  }
  
 function js_select_form(t, number){
+	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"
 	if(number == 1){	
 		var br = t.getBoundingClientRect();
 		document.getElementsByClassName("tab1_class_select_ul")[number].style.top = br.top -137 + "px";
 		document.getElementsByClassName("tab1_class_select_ul")[number].style.left = 22 + "px";
+		
 		document.getElementsByClassName("select_form")[0].style.display = "block"
 		jQuery('.tab1_class_select_ul').jScrollPane();
 	}
-	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"
+	/*document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"*/
 	
 }
 
