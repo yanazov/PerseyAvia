@@ -2380,6 +2380,7 @@ body{
 					/*	left: 0px;
 					/*	top: 60px;*/
 						background-color: #d4eeff;
+						background-color: $color_grey;
 						z-index: 720;
 						text-align: left;
 						/*overflow-y: scroll;*/
@@ -2390,11 +2391,12 @@ body{
 							height: 20px;
 							font-family: 'helvetica_neue';
 							font-size: 14pt;
-							padding: 2px 0px 2px 10px;
+							padding: 0px 0px 4px 10px;
 							cursor: pointer;
 						}
 						li:hover{
-							background-color: $color_grey;
+							background-color: $color_blue;
+							color: #fff;
 						}
 					
 					}

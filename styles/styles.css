@@ -2586,11 +2586,12 @@ body {
   /*	left: 0px;
   /*	top: 60px;*/
   background-color: #d4eeff;
+  background-color: #e4e8eb;
   z-index: 720;
   text-align: left;
   /*overflow-y: scroll;*/
 }
-/* line 2386, ../sass/styles.scss */
+/* line 2387, ../sass/styles.scss */
 .select_form .tab1_class_select_ul li {
   display: block;
   position: relative;
@@ -2598,27 +2599,28 @@ body {
   height: 20px;
   font-family: 'helvetica_neue';
   font-size: 14pt;
-  padding: 2px 0px 2px 10px;
+  padding: 0px 0px 4px 10px;
   cursor: pointer;
 }
-/* line 2396, ../sass/styles.scss */
+/* line 2397, ../sass/styles.scss */
 .select_form .tab1_class_select_ul li:hover {
-  background-color: #e4e8eb;
+  background-color: #002a46;
+  color: #fff;
 }
 
 @media only screen and (max-width: 1279px) {
-  /* line 2408, ../sass/styles.scss */
+  /* line 2410, ../sass/styles.scss */
   h1 {
     font-size: 24pt;
   }
 
-  /* line 2412, ../sass/styles.scss */
+  /* line 2414, ../sass/styles.scss */
   .main_fon .slogan {
     width: 390px;
     left: 30px;
   }
 
-  /* line 2419, ../sass/styles.scss */
+  /* line 2421, ../sass/styles.scss */
   #footer_tel {
     display: none;
   }
