@@ -24,6 +24,7 @@ var tab1_people_open = 0;
 var tab1_detail_open = 0;
 var start_bar_x = -1;
 var select_bar = -1;
+var calendar_move = 0;
 
 window.onload = function() {	
 	
@@ -213,6 +214,44 @@ function js_main_slider(){
 		document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
 		
 	}
+	if(calendar_y_tmp > calendar_y_end){
+		calendar_y_tmp -= 7;
+		if(calendar_y_tmp < calendar_y_end){
+			calendar_y_tmp = calendar_y_end;
+		}
+		for(i = 0; i< 13; i++){
+			month_top_height = document.getElementById("month"+i).offsetHeight;
+			var next_elem = i + 1;
+			document.getElementById("month"+i).style.position = "absolute";
+			document.getElementById("month"+i).style.top = month_height_all + calendar_y_tmp + "px";
+			month_height_all += month_top_height;
+		}		
+		month_height_all = 0;
+		if(calendar_y_tmp == calendar_y_end){
+			calendar_move = 0;
+		}
+	}
+	if(calendar_y_tmp < calendar_y_end){
+		calendar_y_tmp += 7;
+		if(calendar_y_tmp > calendar_y_end){
+			calendar_y_tmp = calendar_y_end;
+		}
+		for(i = 0; i< 13; i++){
+			month_top_height = document.getElementById("month"+i).offsetHeight;
+			var next_elem = i + 1;
+			document.getElementById("month"+i).style.position = "absolute";
+			document.getElementById("month"+i).style.top = month_height_all + calendar_y_tmp + "px";
+			month_height_all += month_top_height;
+		}
+		month_height_all = 0;
+		if(calendar_y_tmp == calendar_y_end){
+			calendar_move = 0;
+		}
+	}
+	
+	
+	
+	
 /* =============================================== END CALENDAR ================================================== */	
 }
 
@@ -374,4 +413,23 @@ function js_login_close_fon(event) {
 	
  }
  
+function js_select_form(t, number){
+	if(number == 1){	
+		var br = t.getBoundingClientRect();
+		document.getElementsByClassName("tab1_class_select_ul")[number].style.top = br.top -137 + "px";
+		document.getElementsByClassName("tab1_class_select_ul")[number].style.left = 22 + "px";
+		document.getElementsByClassName("select_form")[0].style.display = "block"
+		jQuery('.tab1_class_select_ul').jScrollPane();
+	}
+	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"
+	
+}
+
+function js_select_form_li(t, number){
+	document.getElementsByClassName("tab1_class_select_fild")[number].value = t.innerHTML;
+	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "none"
+	if(number == 1){
+		document.getElementsByClassName("select_form")[0].style.display = "none"
+	}
+}
  

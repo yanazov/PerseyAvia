@@ -2,7 +2,7 @@ var month_top_height;
 var calendar_y_tmp = 0;
 var month_height_all = 0;
 var number_top_month = 0;
-
+var calendar_y_end = 0;
 
 function createCalendar(id, year, month) {
 	var elem = document.getElementById(id);
@@ -147,41 +147,50 @@ function bild_calendar(){
 	createCalendar("month9", nowYear, nowMonth+9);
 	createCalendar("month10", nowYear, nowMonth+10);
 	createCalendar("month11", nowYear, nowMonth+11);
+	createCalendar("month12", nowYear, nowMonth+12);
 
 }
 
 function js_calendar_up(){
+	if(calendar_move == 1){
+		return;
+	}
 	number_top_month -=1;
 	if(number_top_month < 0){
 		number_top_month = 0;
 		return;
 	}
-	calendar_y_tmp += document.getElementById("month"+number_top_month).offsetHeight;
-	for(i = 0; i< 12; i++){
-		month_top_height = document.getElementById("month"+i).offsetHeight;
-		var next_elem = i + 1;
-		document.getElementById("month"+i).style.position = "absolute";
-		document.getElementById("month"+i).style.top = month_height_all + calendar_y_tmp + "px";
-		month_height_all += month_top_height;
-	}
+	
+	calendar_y_end = calendar_y_tmp + document.getElementById("month"+number_top_month).offsetHeight;
 	month_height_all = 0;
 	if(number_top_month == 0){
 		document.getElementsByClassName("calendar_up")[0].style.backgroundColor = "#d3d8db";
 		document.getElementsByClassName("calendar_up")[0].style.cursor = "default";	
 	}
+	document.getElementsByClassName("calendar_dwn")[0].style.backgroundColor = "#fff";
+	document.getElementsByClassName("calendar_dwn")[0].style.cursor = "pointer";
+	calendar_move = 1;
 }
 
 function js_calendar_dwn(){
-	calendar_y_tmp -= document.getElementById("month"+number_top_month).offsetHeight;
-	for(i = 0; i< 12; i++){
-		month_top_height = document.getElementById("month"+i).offsetHeight;
-		var next_elem = i + 1;
-		document.getElementById("month"+i).style.position = "absolute";
-		document.getElementById("month"+i).style.top = month_height_all + calendar_y_tmp + "px";
-		month_height_all += month_top_height;
+	if(calendar_move == 1){
+		return;
 	}
+	if(number_top_month == 10){
+		return 0;	
+	}
+	calendar_y_end = calendar_y_tmp - document.getElementById("month"+number_top_month).offsetHeight;
 	month_height_all = 0;
 	number_top_month +=1;
+	if(number_top_month == 10){
+		document.getElementsByClassName("calendar_dwn")[0].style.backgroundColor = "#d3d8db";
+		document.getElementsByClassName("calendar_dwn")[0].style.cursor = "default";
+	}
 	document.getElementsByClassName("calendar_up")[0].style.backgroundColor = "#fff";
 	document.getElementsByClassName("calendar_up")[0].style.cursor = "pointer";
+	calendar_move = 1;
+}
+
+function js_calendar_close(){
+	calendar_close = 1;
 }

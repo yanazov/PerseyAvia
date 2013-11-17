@@ -5,9 +5,11 @@
 	<title>PerseyAvia</title>
 	
 	<link type="text/css" rel="stylesheet" href="styles/jquery.jscrollpane.css"/>
-	<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>  
+
 	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>   
+	<script type="text/javascript" src="js/jquery.ui-slider.js"></script>
 	
 	
 	<script type="text/javascript" src="js/main.js"></script>
@@ -22,7 +24,8 @@
     <![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	
-
+	
+	
 </head>
 <body>
 	<div id="fon1" class="main_fon">
@@ -98,20 +101,15 @@
 							<span class="calendar" onClick="js_calendar('tab1_time_from_fild')"></span>
 						</div>
 						<div class="tab1_timeline_from">
-							<span class="tab1_timeline_txt">Время:</span>
-							<span class="tab1_select_time">00:00</span> 
-							<span class="tab1_select_time">-</span> 
-							<span class="tab1_select_time">24:00</span> 
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
 							<br/>
-							<span class="tab1_timeline_unit">00:00</span>
-							<span class="tab1_timeline_all" >
-								<span class="tab1_timeline_select"></span>
-								<span class="tab1_timeline_bar1"></span>
-								<span class="tab1_timeline_bar2"></span>
-								
-							</span>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
 							<span class="tab1_timeline_unit">24:00</span>
-							
 						</div>
 						<div class="tab1_time_back">
 							Обратно
@@ -119,18 +117,14 @@
 							<span class="calendar" onClick="js_calendar('tab1_time_back_fild')"></span>
 						</div>
 						<div class="tab1_timeline_back">
-							<span class="tab1_timeline_txt">Время:</span>
-							<span class="tab1_select_time">00:00</span> 
-							<span class="tab1_select_time">-</span> 
-							<span class="tab1_select_time">24:00</span> 
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost2" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost2" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
 							<br/>
-							<span class="tab1_timeline_unit">00:00</span>
-							<span class="tab1_timeline_all">
-								<span class="tab1_timeline_select"></span>
-								<span class="tab1_timeline_bar1"></span>
-								<span class="tab1_timeline_bar2"></span>
-								
-							</span>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all2"></div>
 							<span class="tab1_timeline_unit">24:00</span>
 							
 						</div>
@@ -150,18 +144,29 @@
 						</div>
 						<div class="tab1_detail">
 							<div class="tab1_class">Класс							
-								<input type="text" class="tab1_class_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-								<span class="tab1_class_arrow"></span>
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>
+								<ul class="tab1_class_select_ul">
+									<li onClick="js_select_form_li(this, '0')">Любым классом</li>
+									<li onClick="js_select_form_li(this, '0')">Эконом-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Бизнес-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Первый-класс</li>
+								</ul>
+								
 							</div>
 							<div class="tab1_company">Авиакомпания
-								<input type="text" class="tab1_company_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-								<span class="tab1_company_arrow"></span>
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
 							</div>
 							<input id="tab1_direct" type="checkbox" checked>
 							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
 							<input class="tab1_find" type="submit" value="Искать">
 						</div>
 					</div>	
+<!-- **************************************************************************************** -->
 					<div class="order_tab1_back">
 						<div class="order_tab1_city">	
 							<span class="tab1_from">Город вылета</span>
@@ -184,18 +189,14 @@
 							<span class="calendar" onClick="js_calendar()"></span>
 						</div>
 						<div class="tab1_timeline_from">
-							<span class="tab1_timeline_txt">Время:</span>
-							<span class="tab1_select_time">00:00</span> 
-							<span class="tab1_select_time">-</span> 
-							<span class="tab1_select_time">24:00</span> 
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
 							<br/>
-							<span class="tab1_timeline_unit">00:00</span>
-							<span class="tab1_timeline_all">
-								<span class="tab1_timeline_select"></span>
-								<span class="tab1_timeline_bar1"></span>
-								<span class="tab1_timeline_bar2"></span>
-								
-							</span>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
 							<span class="tab1_timeline_unit">24:00</span>
 							
 						</div>
@@ -205,18 +206,14 @@
 							<span class="calendar" onClick="js_calendar()"></span>
 						</div>
 						<div class="tab1_timeline_back">
-							<span class="tab1_timeline_txt">Время:</span>
-							<span class="tab1_select_time">00:00</span> 
-							<span class="tab1_select_time">-</span> 
-							<span class="tab1_select_time">24:00</span> 
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost2" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost2" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
 							<br/>
-							<span class="tab1_timeline_unit">00:00</span>
-							<span class="tab1_timeline_all">
-								<span class="tab1_timeline_select"></span>
-								<span class="tab1_timeline_bar1"></span>
-								<span class="tab1_timeline_bar2"></span>
-								
-							</span>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
 							<span class="tab1_timeline_unit">24:00</span>
 							
 						</div>
@@ -261,7 +258,10 @@
 		<div class="center_block">
 			<div class="calendar_block">
 				<span class="calendar_header">
-					Календарь					
+					Календарь		
+					<span class="calendar_icon"></span>
+					<span class="calendar_close" onClick="js_calendar_close()"></span>
+					
 				</span>
 				<div class="calendar_cont">
 					<div id="month0"></div>
@@ -276,6 +276,7 @@
 					<div id="month9"></div>
 					<div id="month10"></div>
 					<div id="month11"></div>
+					<div id="month12"></div>
 				</div>	
 				<div class="calendar_bottom">
 					<div class="calendar_up" onClick="js_calendar_up()"><span class="calendar_up_img"></span>
@@ -439,6 +440,58 @@
 			<a class="login_registr" href="">Регистрация!</a>    
 		</div>
 	</div>
+	<div class="select_form">
+		<ul class="tab1_class_select_ul">
+			<li onClick="js_select_form_li(this, '1')">Любая авиакомпания</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+		</ul>
+	</div>
+	
+	
 	<script type="text/javascript" src="js/calendar.js"></script>
+	
+	<script type="text/javascript">
+		jQuery(".tab1_timeline_all").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost").val(jQuery(".tab1_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab1_timeline_all").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost").val(jQuery(".tab1_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab1_timeline_all").slider("values",1));
+			}
+			
+		});
+		jQuery(".tab1_timeline_all2").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost2").val(jQuery(".tab1_timeline_all2").slider("values",0));
+				jQuery("input.maxCost2").val(jQuery(".tab1_timeline_all2").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost2").val(jQuery(".tab1_timeline_all2").slider("values",0));
+				jQuery("input.maxCost2").val(jQuery(".tab1_timeline_all2").slider("values",1));
+			}
+			
+		});
+		
+				
+	</script>
+	
+	
 </body>
 </html>
