@@ -93,7 +93,7 @@ function js_set_size(){
 }
 
 function js_main_slider(){
-	delay_slide -= 3;
+	/*delay_slide -= 3;*/
 	if(delay_slide <= 0){
 		tmp_time += 1;
 		if(i_slaider < 100){
@@ -159,7 +159,7 @@ function js_main_slider(){
 	delay_slide_right -= 1;
 	if(delay_slide_right < 0){
 		var top_elem = Math.floor(-y_elem_right_slider/75);		
-		y_elem_right_slider -=0.3;
+		y_elem_right_slider -=0.7;
 		for(i = 0; i < number_elem_right_slider; i++){
 			if(i < top_elem){
 				document.getElementsByClassName("right_slider")[i].style.top = (number_elem_right_slider)*75 + y_elem_right_slider + i * 75 + "px";	
@@ -172,7 +172,7 @@ function js_main_slider(){
 			y_elem_right_slider = 0;
 		
 		if(top_elem < Math.floor(-y_elem_right_slider/75) || (Math.floor(-y_elem_right_slider/75 == 0 ))){
-			delay_slide_right = 300;
+			delay_slide_right = 600;
 		}
 	}	
 /* =============================================== END RIGNT SLIDER ================================================== */ 
@@ -222,7 +222,7 @@ function js_main_slider(){
 /* =============================================== END VIEW LEFT BLOCKS ============================================ */		
 /* =============================================== BEGIN CALENDAR ================================================== */	
 	if(calendar_open == 1){
-		calendar_left += 4;
+		calendar_left += 8;
 		if(calendar_left > 0){
 			calendar_left = 0;
 			calendar_open = 0;
@@ -231,7 +231,7 @@ function js_main_slider(){
 		
 	}
 	if(calendar_close == 1){
-		calendar_left -= 4;
+		calendar_left -= 8;
 		if(calendar_left < -293){
 			calendar_left = -293;
 			calendar_open = -293;
