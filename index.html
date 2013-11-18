@@ -233,12 +233,16 @@
 						</div>
 						<div class="tab1_detail">
 							<div class="tab1_class">Класс							
-								<input type="text" class="tab1_class_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-								<span class="tab1_class_arrow"></span>
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>				
+								
 							</div>
 							<div class="tab1_company">Авиакомпания
-								<input type="text" class="tab1_company_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-								<span class="tab1_company_arrow"></span>
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
 							</div>
 							<input id="tab1_direct" type="checkbox" checked>
 							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
@@ -248,9 +252,164 @@
 					
 				</div>
 				
-				<div class="order_tab2">
-					bla bla BLA
+				<div class="order_tab2">					
+					<div class="order_tab2_main">
+						<div class="tab2_route">
+							<span class="tab2_route_caption">Маршрут:</span>
+					<!--		<span class="tab2_route_city">Киев
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+								<span class="arrow_next"></span>
+							</span>
+							
+							<span class="tab2_route_city">Киев3
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+							</span>
+							<span class="tab2_route_city">Киев2
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+							</span>          -->        
+						</div>
+						<div class="order_tab2_city">	
+							<span class="tab2_from">Город вылета</span>
+							<span class="tab2_from_info">KBP</span>
+							<span class="tab2_from_clear" onclick="js_tab1_clear('tab2_from_fild')"></span>
+							<input type="text" class="tab2_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_from_o"></span>
+							<span class="tab2_to">Город прилета</span>
+							<span class="tab2_to_info">MOW</span>
+							<span class="tab2_to_clear" onclick="js_tab1_clear('tab2_to_fild')"></span>
+							<input type="text" class="tab2_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_to_o"></span>
+				
+						</div>
+						<div class="tab2_time_from">
+							Дата вылета
+							<input type="text" class="tab2_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab2_time_from_fild')" readonly>
+							<span class="calendar" onClick="js_calendar('tab2_time_from_fild')"></span>
+						</div>
+						<div class="tab2_timeline_from">
+							<span class="tab2_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab2_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab2_select_time">:00</span> 							
+							<br/>
+							<span class="tab2_timeline_unit">00:00</span>			
+							<div class="tab2_timeline_all"></div>
+							<span class="tab2_timeline_unit">24:00</span>
+						</div><div class="tab2_continue" onClick="js_tab2_continue()">Продолжить маршрут</div>
+						<div class="tab2_validate">
+							<span class="tab2_validate_img"></span>
+						</div>
+						<div class="tab2_people">
+							<div class="tab2_adult">
+								Взрослые
+								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail('tab2_adult_fild')">
+								<span class="tab2_adult_up" onClick="js_number_up('tab2_adult_fild')"></span>
+								<span class="tab2_adult_dwn" onClick="js_number_dwn('tab2_adult_fild')"></span>								
+							</div>	
+							<div class="tab2_child">
+								Дети
+								<input type="text" class="tab2_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_child_up" onClick="js_number_up('tab2_child_fild')"></span>
+								<span class="tab2_child_dwn" onClick="js_number_dwn('tab2_child_fild')"></span>
+							</div>
+						</div>
+						<div class="tab2_detail">
+							<div class="tab2_class">Класс							
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>
+								<ul class="tab2_class_select_ul">
+									<li onClick="js_select_form_li(this, '0')">Любым классом</li>
+									<li onClick="js_select_form_li(this, '0')">Эконом-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Бизнес-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Первый-класс</li>
+								</ul>
+								
+							</div>
+							<div class="tab2_company">Авиакомпания
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab2_direct" type="checkbox" checked>
+							<label for="tab2_direct"><span></span>Только прямые рейсы</label>
+							<input class="tab2_find" type="submit" value="Искать">
+						</div>
+					</div>	
+<!-- **************************************************************************************** -->
+					<div class="order_tab2_back">
+						<div class="tab2_route">
+							<span class="tab2_route_caption">Маршрут:</span>
+						</div>
+						<div class="order_tab2_city">	
+							<span class="tab2_from">Город вылета</span>
+							<span class="tab2_from_info">KBP</span>
+							<span class="tab2_from_clear" onclick="js_tab1_clear('tab2_from_fild')"></span>
+							<input type="text" class="tab2_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_from_o"></span>
+							<span class="tab2_to">Город прилета</span>
+							<span class="tab2_to_info">MOW</span>
+							<span class="tab2_to_clear" onclick="js_tab1_clear('tab2_to_fild')"></span>
+							<input type="text" class="tab2_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_to_o"></span>
+						</div>
+						<div class="tab2_time_from">
+							Дата вылета
+							<input type="text" class="tab2_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab2_timeline_from">
+							<span class="tab2_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab2_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab2_select_time">:00</span> 							
+							<br/>
+							<span class="tab2_timeline_unit">00:00</span>			
+							<div class="tab2_timeline_all"></div>
+							<span class="tab2_timeline_unit">24:00</span>							
+						</div>
+						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить маршрут</div>
+						<div class="tab2_validate">
+							<span class="tab2_validate_img"></span>
+						</div>
+						<div class="tab2_people">
+							<div class="tab2_adult">
+								Взрослые
+								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_adult_up"></span>
+								<span class="tab2_adult_dwn"></span>								
+							</div>	
+							<div class="tab2_child">
+								Дети
+								<input type="text" class="tab2_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_child_up"></span>
+								<span class="tab2_child_dwn"></span>
+							</div>
+						</div>
+						<div class="tab2_detail">
+							<div class="tab2_class">Класс							
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>				
+								
+							</div>
+							<div class="tab2_company">Авиакомпания
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab2_direct" type="checkbox" checked>
+							<label for="tab2_direct"><span></span>Только прямые рейсы</label>
+							<input class="tab2_find" type="submit" value="Искать">
+						</div>
+					</div>
+					
 				</div>
+				
 			</form>
 			<div class="left_column_gradient"></div>
 		</div>
@@ -485,6 +644,22 @@
 			slide: function(event, ui){
 				jQuery("input.minCost2").val(jQuery(".tab1_timeline_all2").slider("values",0));
 				jQuery("input.maxCost2").val(jQuery(".tab1_timeline_all2").slider("values",1));
+			}
+			
+		});
+		
+		jQuery(".tab2_timeline_all").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost").val(jQuery(".tab2_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab2_timeline_all").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost").val(jQuery(".tab2_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab2_timeline_all").slider("values",1));
 			}
 			
 		});

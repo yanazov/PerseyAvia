@@ -25,6 +25,9 @@ var tab1_detail_open = 0;
 var start_bar_x = -1;
 var select_bar = -1;
 var calendar_move = 0;
+var left_menu_tab1 = 1;
+var left_menu_tab2 = 0;
+var end_city = 0;
 
 window.onload = function() {	
 	
@@ -116,25 +119,40 @@ function js_main_slider(){
 /* ===========================================  BEGIN LEFT MENU ====================================================== */	
 	if(menu_tab == 1){
 		select_tab_x -= 23;
-		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
-			
-		if(select_tab_x < 0){
+		left_menu_tab1 +=0.05;
+		left_menu_tab2 -=0.05;
+		document.getElementsByClassName("order_tab1")[0].style.opacity = left_menu_tab1;
+		document.getElementsByClassName("order_tab2")[0].style.opacity = left_menu_tab2;	
+		if(select_tab_x < 0 && left_menu_tab2 < 0){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "default";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "pointer";
 			document.getElementsByClassName("select_tab")[0].style.left = 0 + "px";
+			document.getElementsByClassName("order_tab2")[0].style.display = "none";
 			menu_tab = 0;
 		}
+		if(select_tab_x < 0){
+			select_tab_x = 0;
+		}
+		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
 	}
 	if(menu_tab == 2){
-		select_tab_x += 23;	
-		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
-		
-		if(select_tab_x > 140){
+		select_tab_x += 23;		
+		left_menu_tab1 -=0.05;
+		left_menu_tab2 +=0.05;
+		document.getElementsByClassName("order_tab1")[0].style.opacity = left_menu_tab1;
+		document.getElementsByClassName("order_tab2")[0].style.opacity = left_menu_tab2;
+		document.getElementsByClassName("order_tab2")[0].style.display = "block";
+		if(select_tab_x > 140 && left_menu_tab2 == 1){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "pointer";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "default";
 			document.getElementsByClassName("select_tab")[0].style.left = 140 + "px";
+			select_tab_x = 140;
 			menu_tab = 0;
 		}
+		if(select_tab_x > 140){
+			select_tab_x = 140;
+		}
+		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
 	}
 /* ===============================================  END LEFT MENU ====================================================== */	
 /* =============================================== BEGIN RIGNT SLIDER ================================================== */ 
@@ -194,6 +212,13 @@ function js_main_slider(){
 		if(tab1_people_open == 1)
 			tab1_people_open = 10;
 	}
+	if(tab1_detail_open > 0 && tab1_detail_open < 1.1){
+		tab1_detail_open += 0.02
+		document.getElementsByClassName("tab1_detail")[0].style.opacity = tab1_detail_open;
+		if(tab1_detail_open == 1)
+			tab1_detail_open = 10;
+	}
+	
 /* =============================================== END VIEW LEFT BLOCKS ============================================ */		
 /* =============================================== BEGIN CALENDAR ================================================== */	
 	if(calendar_open == 1){
@@ -417,7 +442,7 @@ function js_select_form(t, number){
 	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"
 	if(number == 1){	
 		var br = t.getBoundingClientRect();
-		document.getElementsByClassName("tab1_class_select_ul")[number].style.top = br.top -137 + "px";
+		document.getElementsByClassName("tab1_class_select_ul")[number].style.top = br.top -135 + "px";
 		document.getElementsByClassName("tab1_class_select_ul")[number].style.left = 22 + "px";
 		
 		document.getElementsByClassName("select_form")[0].style.display = "block"
@@ -434,4 +459,28 @@ function js_select_form_li(t, number){
 		document.getElementsByClassName("select_form")[0].style.display = "none"
 	}
 }
- 
+  
+function js_route_city_del(t){
+	t.parentNode.style.display = "none";
+	document.getElementsByClassName("tab2_route")[1].style.height = document.getElementsByClassName("tab2_route")[0].offsetHeight - 11 + "px"; 
+}
+
+function js_tab2_continue(){
+	if(end_city == 0){
+		document.getElementsByClassName("tab2_route")[0].innerHTML += '<span class="tab2_route_city">'+   
+								document.getElementsByClassName("tab2_from_fild")[0].value+
+								'<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>'+
+								'<span class="arrow_next"></span>'+
+								'</span>';
+		
+		end_city = document.getElementsByClassName("tab2_to_fild")[0].value;
+	}
+	document.getElementsByClassName("tab2_from_fild")[0].value = document.getElementsByClassName("tab2_to_fild")[0].value;
+	document.getElementsByClassName("tab2_route")[0].innerHTML += '<span class="tab2_route_city">'+   
+								document.getElementsByClassName("tab2_to_fild")[0].value+
+								'<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>'+
+								'<span class="arrow_next"></span>'+
+								'</span>';
+	document.getElementsByClassName("tab2_to_fild")[0].value = "";
+	document.getElementsByClassName("tab2_route")[1].style.height = document.getElementsByClassName("tab2_route")[0].offsetHeight - 11 + "px"; 
+}

@@ -119,7 +119,13 @@ function select_data(current_td){
 	}
 	document.getElementsByClassName(data_fild)[0].value = select_number+"."+Month_number+"."+select_year;
 	calendar_close = 1;
-	if(document.getElementsByClassName("tab1_time_from_fild")[0].value != "" && document.getElementsByClassName("tab1_time_back_fild")[0].value != ""){
+	if(document.getElementsByClassName("tab1_time_from_fild")[0].value != "" && document.getElementsByClassName("tab1_time_back_fild")[0].value != "" && tab1_people_open == 0){
+		tab1_people_open = 0.2;
+		document.getElementsByClassName("tab1_people")[0].style.display = "block";
+		document.getElementsByClassName("tab1_people")[1].style.opacity = 0;
+		jQuery('.order_tab1_main').jScrollPane();
+	}
+	if(document.getElementsByClassName("tab1_time_from_fild")[0].value != "" && tab1_check_status == 1){
 		tab1_people_open = 0.2;
 		document.getElementsByClassName("tab1_people")[0].style.display = "block";
 		document.getElementsByClassName("tab1_people")[1].style.opacity = 0;
