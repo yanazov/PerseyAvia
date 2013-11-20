@@ -197,7 +197,8 @@ body{
 		padding: 9px 18px 9px 18px;
 		background-color: $color_red;
 		font-family: 'helvetica_neue';
-		font-size: 11pt;
+		font-weight: bold;
+		font-size: 10.5pt;
 		color: #fff;
 		text-decoration: none;
 	}
@@ -364,10 +365,41 @@ body{
 		overflow-y: auto;*/
 		overflow-x: hidden;
 		padding-bottom: 10px;
+		padding-bottom: 70px;
+		.tab1_cont_find{
+			display: block;
+			position: absolute;
+			bottom: 70px;
+			left: 0px;
+			height: 70px;
+			width: 273px;
+			background-color: $color_blue;
+			opacity: 1;
+			z-index: 100;
+			.tab1_find{
+				display: block;
+				position: relative;
+				left: 20px;
+				width: 235px;
+				height: 45px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				border: none;
+				background-color: $color_green;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 13pt;
+				font-weight: bold;
+				cursor: pointer;
+				z-index: 100;
+				opacity: .2;
+			}  
+		}
 		.order_tab1_main{
 			display: block;
 			position: relative;	
 			width: 273px;
+			
 			z-index: 1;
 			.order_tab1_city{
 				display: block;
@@ -399,7 +431,7 @@ body{
 				text-align: right;
 			}
 			.tab1_from_clear, .tab1_to_clear{
-				dislpay: inline-block;
+				display: inline-block;
 				position: relative;
 				top: 1px;
 				width: 10px;
@@ -1117,7 +1149,7 @@ body{
 					opacity: 1;
 					border: none;
 				}
-				.tab1_find{
+		/*		.tab1_find{
 					display: block;
 					position: relative;
 					width: 235px;
@@ -1134,6 +1166,7 @@ body{
 				}
 	/* ==================================================================== */	
 			}
+			
 		}
 		
 /* ============================================	 BEGIN	.order_tab1_back =================================== */
@@ -1142,6 +1175,8 @@ body{
 			position: absolute;			
 			top: 0px;
 			left: 0px;
+			padding-bottom: 70px;
+			overflow: hidden;
 			.order_tab1_city{
 				display: block;
 				position: relative;
@@ -1176,7 +1211,7 @@ body{
 				opacity: 0;
 			}
 			.tab1_from_clear, .tab1_to_clear{
-				dislpay: inline-block;
+				display: inline-block;
 				position: relative;
 				top: 1px;
 				width: 10px;
@@ -1906,22 +1941,25 @@ body{
 					opacity: 1;
 					border: none;
 				}
-				.tab1_find{
-					display: block;
-					position: relative;
-					width: 235px;
-					height: 45px;
-					margin-top: 10px;
-					margin-bottom: 10px;
-					border: none;
-					background-color: $color_green;
-					color: #fff;
-					font-family: 'helvetica_neue';
-					font-size: 13pt;
-					font-weight: bold;
-					cursor: pointer;
-				}
+				
 	/* ==================================================================== */	
+			}
+			.tab1_find{
+				display: block;
+				position: absolute;
+				bottom: 10px;
+				left: 20px;
+				width: 235px;
+				height: 45px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				border: none;
+				background-color: $color_green;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 13pt;
+				font-weight: bold;
+				cursor: pointer;
 			}
 		}
 /* ============================================	 END	.order_tab1_back =================================== */		
@@ -1936,7 +1974,37 @@ body{
 		background-color: $color_blue;
 		width: 273px;
 		padding-bottom: 10px;
+		padding-bottom: 70px;
 		z-index: 10;
+		.tab2_cont_find{
+			display: block;
+			position: absolute;
+			bottom: 70px;
+			left: 0px;
+			height: 70px;
+			width: 273px;
+			background-color: $color_blue;
+			opacity: 1;
+			z-index: 100;
+			.tab2_find{
+				display: block;
+				position: relative;
+				left: 20px;
+				width: 235px;
+				height: 45px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				border: none;
+				background-color: $color_green;
+				color: #fff;
+				font-family: 'helvetica_neue';
+				font-size: 13pt;
+				font-weight: bold;
+				cursor: pointer;
+				z-index: 100;
+				opacity: .2;
+			}  
+		}
 		.order_tab2_main{
 			display: block;
 			position: relative;	
@@ -2022,7 +2090,7 @@ body{
 				text-align: right;
 			}
 			.tab2_from_clear, .tab2_to_clear{
-				dislpay: inline-block;
+				display: inline-block;
 				position: relative;
 				top: 1px;
 				width: 10px;
@@ -2283,52 +2351,38 @@ body{
 				display: inline-block;
 				position: relative;
 				margin-left: 20px;
+				margin-top: 15px;
 				background-color: $color_blue_light;
 				font-family: 'helvetica_neue';
 				font-size: 11pt;
 				cursor: pointer;
-				padding: 13px 13px 13px 13px;
-				color: #fff;
-				font-weight: 100;
-				
+				padding: 13px 16px 13px 16px;
+				color: #fff;			
 			}
-			.tab2_validate{
+			.tab2_validate{			
 				display: inline-block;
-				position: relative;
-				top: 17px;
-				width: 50px;
-				height: 44px;
-				left: -3px;
+				position: relative;	
+				margin-left: 5px;
+				margin-top: 15px;
 				background-color: $color_green;
 				font-family: 'helvetica_neue';
 				font-size: 11pt;
 				cursor: pointer;
 				color: #fff;
-				font-weight: 100;
-				.tab2_validate_img{
-					display: block;
-					position: relative;
-					top: 15px;
-					margin: 0 auto;
-					width: 23px;
-					height: 16px;
-					background: url(../img/main_sprite.png) no-repeat;
-					background-position: 0px -525px;
-				
-				}
+				padding: 13px 15px 13px 16px;				
 			}
 			.tab2_people{
 				display: none;
-				position: relative;
+				position: relative;				
 				left: 0px;
 				width: 253px;
 				padding-left: 20px;
 				margin-top: 10px;
-				margin-bottom: 13px;
+				margin-bottom: 14px;
 				color: #fff;
 				font-family: 'helvetica_neue';
 				font-size: 10.5pt;
-				opacity: 0.2;
+				opacity: .2;
 				.tab2_adult{
 					display: inline-block;
 					position: relative;
@@ -2425,7 +2479,7 @@ body{
 				text-align: left;
 				font-family: 'helvetica_neue';
 				font-size: 10.5pt;
-				opacity: 1;
+				opacity: .2;
 				.tab2_class{
 					display: inline-block;
 					position: relative;
@@ -2621,6 +2675,7 @@ body{
 				margin: 0 auto;
 				padding-top: 10px;
 				border-bottom: 1px solid #003e64;
+				opacity: 0;
 				.tab2_route_caption{
 					display: block;
 					position: relative;
@@ -2673,7 +2728,7 @@ body{
 				opacity: 0;
 			}
 			.tab2_from_clear, .tab2_to_clear{
-				dislpay: inline-block;
+				display: inline-block;
 				position: relative;
 				top: 1px;
 				width: 10px;
@@ -2759,7 +2814,7 @@ body{
 				
 				font-family: 'helvetica_neue';
 				font-size: 10.5pt;
-				opacity: .2;
+				opacity: .0;
 				.tab2_time_from_fild{
 					display: block;
 					position: relative;
@@ -2946,39 +3001,27 @@ body{
 				display: inline-block;
 				position: relative;
 				margin-left: 20px;
+				margin-top: 15px;
 				background-color: $color_blue_light;
 				font-family: 'helvetica_neue';
 				font-size: 11pt;
 				cursor: pointer;
-				padding: 13px 13px 13px 13px;
-				color: #fff;
-				font-weight: 100;
-			
+				padding: 13px 16px 13px 16px;
+				color: #fff;	
+				opacity: 0;
 			}
-			.tab2_validate{
+			.tab2_validate{			
 				display: inline-block;
-				position: relative;
-				top: 17px;
-				width: 50px;
-				height: 44px;
-				left: -3px;
+				position: relative;				
+				left: -2px;
+				margin-top: 15px;
 				background-color: $color_green;
 				font-family: 'helvetica_neue';
 				font-size: 11pt;
 				cursor: pointer;
 				color: #fff;
-				font-weight: 100;
-				.tab2_validate_img{
-					display: block;
-					position: relative;
-					top: 15px;
-					margin: 0 auto;
-					width: 23px;
-					height: 16px;
-					background: url(../img/main_sprite.png) no-repeat;
-					background-position: 0px -525px;
-				
-				}
+				padding: 13px 15px 13px 16px;				
+				opacity: 0;
 			}
 			.tab2_people{
 				display: block;
@@ -3472,12 +3515,12 @@ body{
 			font-family: 'helvetica_neue';
 			font-weight: 400;
 		}
-		td:nth-child(7n) {
+	/*	td:nth-child(7n) {
 			color: $color_red;
 		}
 		td:nth-child(6n) {
 			color: $color_red;
-		}
+		}   */
 		
 		table {
 			display: block;
@@ -3715,7 +3758,7 @@ body{
 			margin-left: 10px;
 			padding: 7px 10px 7px 10px;
 			font-family: 'helvetica_neue';
-			font-size: 13pt;	
+			font-size: 15pt;	
 			background-color: $color_grey;
 			border: none;
 			font-weight: 600;
@@ -3795,40 +3838,70 @@ body{
 	width: 100%;
 	height: 100%;
 	z-index: 600;
-					.tab1_class_select_ul{
-						display: block;
-						position: relative;
-						width: 385px;
-						height: 133px;
-						padding-top: 3px;
-						padding-bottom: 3px;
-					/*	left: 0px;
-					/*	top: 60px;*/
-						background-color: #d4eeff;
-						background-color: $color_grey;
-						z-index: 720;
-						text-align: left;
-						/*overflow-y: scroll;*/
-						li{
-							display: block;
-							position: relative;
-							width: 95%;
-							margin: 0 auto;
-							color: $color_txt;
-							height: 14px;
-							font-family: 'helvetica_neue';
-							font-size: 10.5pt;
-							padding: 0px 0px 4px 10px;
-							cursor: pointer;
-							font-weight: bold;
-						}
-						li:hover{
-							background-color: $color_blue;
-							color: #fff;
-						}
-					
-					}
-
+	.tab1_class_select_ul{
+		display: none;
+		position: relative;
+		width: 385px;
+		height: 133px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		/*	left: 0px;
+		/*	top: 60px;*/
+		background-color: #d4eeff;
+		background-color: $color_grey;
+		z-index: 720;
+		text-align: left;
+		/*overflow-y: scroll;*/
+		li{
+			display: block;
+			position: relative;
+			width: 95%;
+			margin: 0 auto;
+			color: $color_txt;
+			height: 14px;
+			font-family: 'helvetica_neue';
+			font-size: 10.5pt;
+			padding: 0px 0px 4px 10px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		li:hover{
+			background-color: $color_blue;
+			color: #fff;
+		}
+	}
+	.tab2_class_select_ul{
+		display: none;
+		position: relative;
+		width: 385px;
+		height: 133px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		/*	left: 0px;
+		/*	top: 60px;*/
+		background-color: #d4eeff;
+		background-color: $color_grey;
+		z-index: 720;
+		text-align: left;
+		/*overflow-y: scroll;*/
+		li{
+			display: block;
+			position: relative;
+			width: 95%;
+			margin: 0 auto;
+			color: $color_txt;
+			height: 14px;
+			font-family: 'helvetica_neue';
+			font-size: 10.5pt;
+			padding: 0px 0px 4px 10px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		li:hover{
+			background-color: $color_blue;
+			color: #fff;
+		}
+	}
 }
 
 

@@ -79,6 +79,9 @@
 			</ul>
 			<form>
 				<div class="order_tab1">
+					<div class="tab1_cont_find">
+						<input class="tab1_find" type="submit" value="Искать"/>
+					</div>
 					<div class="order_tab1_main">
 						<div class="order_tab1_city">	
 							<span class="tab1_from">Город вылета</span>
@@ -92,7 +95,7 @@
 							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 							<span class="tab1_to_o"></span>
 							<input id="one_side" type="checkbox" checked onchange="js_tab1_checkbox_status()">
-							<label for="one_side"><span></span onClick="js_tab1_checkbox_status()">В одну сторону</label>
+							<label for="one_side"><span onClick="js_tab1_checkbox_status()"></span>В одну сторону</label>
 							
 						</div>
 						<div class="tab1_time_from">
@@ -163,8 +166,9 @@
 							</div>
 							<input id="tab1_direct" type="checkbox" checked>
 							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
-							<input class="tab1_find" type="submit" value="Искать">
+							
 						</div>
+						
 					</div>	
 <!-- **************************************************************************************** -->
 					<div class="order_tab1_back">
@@ -179,8 +183,8 @@
 							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
 							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 							<span class="tab1_to_o"></span>
-							<input id="one_side" type="checkbox" checked>
-							<label for="one_side"><span></span>В одну сторону</label>
+							<input id="one_side2" type="checkbox" checked>
+							<label for="one_side2"><span></span>В одну сторону</label>
 							
 						</div>
 						<div class="tab1_time_from">
@@ -244,15 +248,18 @@
 								</div>
 								
 							</div>
-							<input id="tab1_direct" type="checkbox" checked>
-							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
-							<input class="tab1_find" type="submit" value="Искать">
+							<input id="tab1_direct1" type="checkbox" checked>
+							<label for="tab1_direct1"><span></span>Только прямые рейсы</label>
+						<!--	<input class="tab1_find" type="submit" value="Искать">   -->
 						</div>
 					</div>
 					
 				</div>
 				
-				<div class="order_tab2">					
+				<div class="order_tab2">
+					<div class="tab2_cont_find">
+						<input class="tab2_find" type="submit" value="Искать"/>
+					</div>
 					<div class="order_tab2_main">
 						<div class="tab2_route">
 							<span class="tab2_route_caption">Маршрут:</span>
@@ -296,16 +303,14 @@
 							<span class="tab2_timeline_unit">00:00</span>			
 							<div class="tab2_timeline_all"></div>
 							<span class="tab2_timeline_unit">24:00</span>
-						</div><div class="tab2_continue" onClick="js_tab2_continue()">Продолжить маршрут</div>
-						<div class="tab2_validate">
-							<span class="tab2_validate_img"></span>
-						</div>
+						</div><div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
+						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
 						<div class="tab2_people">
 							<div class="tab2_adult">
 								Взрослые
-								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail('tab2_adult_fild')">
-								<span class="tab2_adult_up" onClick="js_number_up('tab2_adult_fild')"></span>
-								<span class="tab2_adult_dwn" onClick="js_number_dwn('tab2_adult_fild')"></span>								
+								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail2('tab2_adult_fild')">
+								<span class="tab2_adult_up" onClick="js_number_up2('tab2_adult_fild')"></span>
+								<span class="tab2_adult_dwn" onClick="js_number_dwn2('tab2_adult_fild')"></span>								
 							</div>	
 							<div class="tab2_child">
 								Дети
@@ -317,7 +322,7 @@
 						<div class="tab2_detail">
 							<div class="tab2_class">Класс							
 								<div class="tab2_class_select">
-									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form2(this, '0')" readonly>
 								</div>
 								<ul class="tab2_class_select_ul">
 									<li onClick="js_select_form_li(this, '0')">Любым классом</li>
@@ -329,13 +334,13 @@
 							</div>
 							<div class="tab2_company">Авиакомпания
 								<div class="tab2_class_select">
-									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form2(this, '1')" readonly>
 								</div>
 								
 							</div>
 							<input id="tab2_direct" type="checkbox" checked>
 							<label for="tab2_direct"><span></span>Только прямые рейсы</label>
-							<input class="tab2_find" type="submit" value="Искать">
+						<!--	<input class="tab2_find" type="submit" value="Искать">   -->
 						</div>
 					</div>	
 <!-- **************************************************************************************** -->
@@ -371,10 +376,14 @@
 							<div class="tab2_timeline_all"></div>
 							<span class="tab2_timeline_unit">24:00</span>							
 						</div>
-						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить маршрут</div>
-						<div class="tab2_validate">
-							<span class="tab2_validate_img"></span>
-						</div>
+						
+						
+						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
+						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
+						
+						
+						
+						
 						<div class="tab2_people">
 							<div class="tab2_adult">
 								Взрослые
@@ -402,9 +411,9 @@
 								</div>
 								
 							</div>
-							<input id="tab2_direct" type="checkbox" checked>
-							<label for="tab2_direct"><span></span>Только прямые рейсы</label>
-							<input class="tab2_find" type="submit" value="Искать">
+							<input id="tab2_direct1" type="checkbox" checked>
+							<label for="tab2_direct1"><span></span>Только прямые рейсы</label>
+						<!--	<input class="tab2_find" type="submit" value="Искать">  -->
 						</div>
 					</div>
 					
@@ -592,8 +601,8 @@
 	</div>
 	<div class="login_form_fon" onClick="js_login_close_fon(event)">
 		<div class="login_form">
-			<input type="text" class="login_name_fild" placeholder="Имя"onFocus="js_focus(this)" onBlur="js_blur(this)">
-			<input type="text" class="login_psw_fild" placeholder="Пароль"onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<input type="text" class="login_name_fild" placeholder="Имя" onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<input type="text" class="login_psw_fild" placeholder="Пароль" onFocus="js_focus(this)" onBlur="js_blur(this)">
 			<a class="login_enter" href="">Войти</a>
 			<a class="login_help" href="">Забыли <br/>свой пароль?</a>
 			<a class="login_registr" href="">Регистрация!</a>    
@@ -601,6 +610,17 @@
 	</div>
 	<div class="select_form">
 		<ul class="tab1_class_select_ul">
+			<li onClick="js_select_form_li(this, '1')">Любая авиакомпания</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+		</ul>
+		<ul class="tab2_class_select_ul">
 			<li onClick="js_select_form_li(this, '1')">Любая авиакомпания</li>
 			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
 			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
