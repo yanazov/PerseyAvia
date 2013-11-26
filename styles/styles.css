@@ -161,7 +161,8 @@ input[type="radio"]:checked + label span {
   display: block;
   position: relative;
   width: 505px;
-  left: 660px;
+  left: 0px;
+  opacity: 0;
   color: #fff;
   font-family: 'helvetica_bold';
   font-weight: 400;
@@ -173,7 +174,7 @@ input[type="radio"]:checked + label span {
   width: 150px;
   top: 52px;
   padding-left: 25px;
-  right: 40px;
+  right: -200px;
   font-family: 'helvetica_bold';
   color: #49b69c;
   border-left: 1px solid #4d7183;
@@ -2308,7 +2309,7 @@ input[type="radio"]:checked + label span {
 }
 /* line 2120, ../sass/styles.scss */
 .left_column .order_tab2 .order_tab2_main .tab2_route {
-  display: block;
+  display: none;
   position: relative;
   width: 233px;
   min-height: 50px;
@@ -3017,7 +3018,7 @@ input[type="radio"]:checked + label span {
 }
 /* line 2776, ../sass/styles.scss */
 .left_column .order_tab2 .order_tab2_back .tab2_route {
-  display: block;
+  display: none;
   position: relative;
   width: 233px;
   min-height: 60px;
@@ -5030,7 +5031,7 @@ input[type="radio"]:checked + label span {
   width: 100%;
   height: 44px;
   background-color: #fff;
-  z-index: 504;
+  z-index: 503;
   text-align: left;
   /*overflow: hidden;*/
   /*opacity: 0.5;*/

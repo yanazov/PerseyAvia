@@ -51,7 +51,8 @@ var slider_on = 0;
 var manual_slide = -1;
 var slider_pointer_top = 0;
 var slider_step = 0;
-var main_slogan_x = 560;
+var main_slogan_z = 0;
+var main_price_x = 0;
 
 window.onload = function() {	
 	
@@ -194,8 +195,10 @@ function js_main_slider(){
 	
 /*	if(document.getElementById("page_number").innerHTML  == 1 && slider_on == 1){*/
 	if(slider_on == 1){
-		main_slogan_x = 600;
-		document.getElementsByClassName("slogan")[current_fon-1].style.left = main_slogan_x + "px";
+		main_slogan_z = -0.3;
+		document.getElementsByClassName("slogan")[current_fon-1].style.opacity = main_slogan_z ;
+		main_price_x = -200;
+		document.getElementsByClassName("price")[current_fon-1].style.right = main_price_x + "px";
 		if(manual_slide > -1){
 			next_fon = manual_slide+1;
 		}
@@ -252,11 +255,13 @@ function js_main_slider(){
 			slider_on = 1;
 		
 		}
-	if(main_slogan_x > 0){
-		main_slogan_x -=10;
-		document.getElementsByClassName("slogan")[current_fon-1].style.left = main_slogan_x + "px";
-		
-	
+	if(main_slogan_z < 1){
+		main_slogan_z +=0.01;
+		document.getElementsByClassName("slogan")[current_fon-1].style.opacity = main_slogan_z;	
+	}
+	if(main_slogan_z >= 1 && main_price_x < 40){
+		main_price_x += 6;
+		document.getElementsByClassName("price")[current_fon-1].style.right = main_price_x + "px";
 	}
 /* ===========================================  BEGIN LEFT MENU ====================================================== */	
 	if(menu_tab == 1){
@@ -270,7 +275,7 @@ function js_main_slider(){
 		}
 		document.getElementsByClassName("order_tab1")[0].style.opacity = left_menu_tab1;
 		document.getElementsByClassName("order_tab2")[0].style.opacity = left_menu_tab2;	
-		if(select_tab1_y < 115 && left_menu_tab2 < 0){
+		if(left_menu_tab2 < 0){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "default";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "pointer";
 			document.getElementsByClassName("select_tab")[0].style.top = 115 + "px";
@@ -823,7 +828,7 @@ function js_select_form_li(t, number){
 		document.getElementsByClassName("tab2_class_select_ul")[number].style.display = "none"
 		
 		if(number == 1){
-			document.getElementsByClassName("select_form")[0].style.display = "none"
+			document.getElementsByClassName("select_form")[0].style.display = "none";
 		}
 	
 	}
@@ -843,6 +848,8 @@ function js_route_city_del(t){
 }
 
 function js_tab2_continue(){
+	document.getElementsByClassName("tab2_route")[0].style.display = "block";
+	document.getElementsByClassName("tab2_route")[1].style.display = "block";
 	if(end_city == 0){
 		document.getElementsByClassName("tab2_route")[0].innerHTML += '<span class="tab2_route_city">'+   
 								document.getElementsByClassName("tab2_from_fild")[0].value+
