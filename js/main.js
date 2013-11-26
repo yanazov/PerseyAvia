@@ -867,6 +867,8 @@ function js_tab2_continue(){
 								'</span>';
 	document.getElementsByClassName("tab2_to_fild")[0].value = "";
 	document.getElementsByClassName("tab2_route")[1].style.height = document.getElementsByClassName("tab2_route")[0].offsetHeight - 11 + "px"; 
+	
+	jQuery('.order_tab2_main').jScrollPane();
 }
 
 function js_tab2_people_open(){
