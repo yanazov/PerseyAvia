@@ -150,17 +150,25 @@ body{
 		font-family: 'helvetica_bold';
 		font-weight: 400;
 	}
-	
-	.price{
+	.price_cont{
 		display: block;
 		position: absolute;
-		width: 150px;
+		width: 220px;
 		top: 52px;
+		right: 40px;
+		overflow: hidden;
+		border-left: 1px solid #4d7183;
+	}
+	.price{
+		display: block;
+		position: relative;
+		top: 0px;
+		left: -230px;
+		width: 200px;
 		padding-left: 25px;
-		right: -200px;
 		font-family: 'helvetica_bold'; 
 		color: $color_green;
-		border-left: 1px solid #4d7183;
+		
 		line-height: 20px;
 		padding-top: 10px;
 		padding-bottom: 5px;
@@ -1130,13 +1138,14 @@ body{
 					.tab1_class_select_ul{
 						display: none;
 						position: absolute;
-						width: 235px;
+						width: 233px;
 						left: 0px;
 						top: 60px;
 						background-color: $color_grey;
 						z-index: 20;
 						padding-bottom: 3px;
 						padding-top: 3px;
+						border: 1px solid $color_border;
 						li{
 							display: block;
 							position: relative;
@@ -1201,6 +1210,7 @@ body{
 						bottom: 36px;
 						background-color: #fff;
 						z-index: 600;
+						border: 1px solid $color_border;
 						li{
 							display: block;
 							position: relative;
@@ -4955,9 +4965,10 @@ body{
 		/*	left: 0px;
 		/*	top: 60px;*/
 		background-color: #d4eeff;
-		background-color: $color_grey;
+		background-color: #fff;
 		z-index: 720;
 		text-align: left;
+		border: 1px solid #e0e0e0;
 		/*overflow-y: scroll;*/
 		li{
 			display: block;

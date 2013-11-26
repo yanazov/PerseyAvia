@@ -52,7 +52,7 @@ var manual_slide = -1;
 var slider_pointer_top = 0;
 var slider_step = 0;
 var main_slogan_z = 0;
-var main_price_x = 0;
+var main_price_x = -230;
 
 window.onload = function() {	
 	
@@ -197,8 +197,8 @@ function js_main_slider(){
 	if(slider_on == 1){
 		main_slogan_z = -0.3;
 		document.getElementsByClassName("slogan")[current_fon-1].style.opacity = main_slogan_z ;
-		main_price_x = -200;
-		document.getElementsByClassName("price")[current_fon-1].style.right = main_price_x + "px";
+		main_price_x = -230;
+		document.getElementsByClassName("price")[current_fon-1].style.left = main_price_x + "px";
 		if(manual_slide > -1){
 			next_fon = manual_slide+1;
 		}
@@ -259,10 +259,16 @@ function js_main_slider(){
 		main_slogan_z +=0.01;
 		document.getElementsByClassName("slogan")[current_fon-1].style.opacity = main_slogan_z;	
 	}
-	if(main_slogan_z >= 1 && main_price_x < 40){
-		main_price_x += 6;
-		document.getElementsByClassName("price")[current_fon-1].style.right = main_price_x + "px";
+	if(main_slogan_z >= 1 && main_price_x < 0 && delay_slide > 300){
+		main_price_x += 5;
+		document.getElementsByClassName("price")[current_fon-1].style.left = main_price_x + "px";
 	}
+	if(delay_slide < 300){
+		main_price_x -= 5;
+		document.getElementsByClassName("price")[current_fon-1].style.left = main_price_x + "px";
+	}
+	
+	
 /* ===========================================  BEGIN LEFT MENU ====================================================== */	
 	if(menu_tab == 1){
 		select_tab1_y -= 4;		
