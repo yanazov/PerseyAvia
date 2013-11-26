@@ -1,0 +1,1101 @@
+<!doctype html>
+<html>
+<head>	
+	<meta charset="utf-8">
+	<title>PerseyAvia</title>
+	
+	<link type="text/css" rel="stylesheet" href="styles/jquery.jscrollpane.css"/>
+<!--	<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>    -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>   
+	<script type="text/javascript" src="js/jquery.ui-slider.js"></script>
+	
+	<script type="text/javascript" src="js/inner_page.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	
+
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" > 	
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="styles/styles_ie.css" > 
+	<![endif]-->	
+    <!--[if lt IE 9]> 
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+    <![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	
+	
+	
+</head>
+<body>
+	<span id="page_number">5</span>
+	<div id="fon_grey" class="main_fon">
+		
+	</div>
+	
+	<div class="container">
+		<header class="header">
+			<div class="header_shadow"></div>
+			<div class="logo"></div>
+			<span class="tel">
+				360-30-00
+				<span class="tel_txt">Круглосуточно!</span>				
+			</span>
+			<span class="header_separ"></span>
+			<a href="" class="no_student">Уже не студент</a>
+			<span class="student_txt">Вернуться к обычным авиа-тарифам</span>
+			<div class="header_right">
+				<nav>
+					<ul class="header_menu">
+						<li><a href="">О проекте</a></li>
+						<li><a href="">Акции и новости</a></li>
+						<li><a href="">Программа лояльности</a></li>
+					</ul>
+				</nav>
+				<div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>
+				
+			</div>   
+		</header>
+<!-- ===================================   BEGIN LEFT COLUMN ================================== -->	
+		<div class="left_column">
+			<div class="top_space"></div>
+			<span class="left_column_name">Бронирование
+				<span class="left_column_name_img"></span>
+			</span>	
+			<span class="select_tab"></span>
+			<ul class="menu_order">
+				<li class="menu_tab" onclick="js_menu_tab(1)">В одну/две стороны
+				</li><li class="menu_tab" onclick="js_menu_tab(2)">Сложный маршрут</li>				
+			</ul>
+			<form>
+				<div class="order_tab1">
+					<div class="tab1_cont_find">
+						<input class="tab1_find" type="submit" value="Искать"/>
+					</div>
+					<div class="order_tab1_main">
+						<div class="order_tab1_city">	
+							<span class="tab1_from">Город вылета</span>
+							<span class="tab1_from_info">KBP</span>
+							<span class="tab1_from_clear" onclick="js_tab1_clear('tab1_from_fild')"></span>
+							<input type="text" class="tab1_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_from_o"></span>
+							<span class="tab1_to">Город прилета</span>
+							<span class="tab1_to_info">MOW</span>
+							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
+							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_to_o"></span>
+							<input id="one_side" type="checkbox" checked onchange="js_tab1_checkbox_status()">
+							<label for="one_side"><span ></span>В одну сторону</label>
+							
+						</div>
+						<div class="tab1_time_from">
+							Дата вылета
+							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab1_time_from_fild')" readonly>
+							<span class="calendar" onClick="js_calendar('tab1_time_from_fild')"></span>
+						</div>
+						<div class="tab1_timeline_from">
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
+							<span class="tab1_timeline_unit">24:00</span>
+						</div>
+						<div class="tab1_time_back">
+							Обратно
+							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab1_time_back_fild')" readonly>
+							<span class="calendar" onClick="js_calendar('tab1_time_back_fild')"></span>
+						</div>
+						<div class="tab1_timeline_back">
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost2" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost2" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all2"></div>
+							<span class="tab1_timeline_unit">24:00</span>
+							
+						</div>
+						<div class="tab1_people">
+							<div class="tab1_adult">
+								Взрослые
+								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail('tab1_adult_fild')">
+								<span class="tab1_adult_up" onClick="js_number_up('tab1_adult_fild')"></span>
+								<span class="tab1_adult_dwn" onClick="js_number_dwn('tab1_adult_fild')"></span>								
+							</div>	
+							<div class="tab1_child">
+								Дети
+								<input type="text" class="tab1_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_child_up" onClick="js_number_up('tab1_child_fild')"></span>
+								<span class="tab1_child_dwn" onClick="js_number_dwn('tab1_child_fild')"></span>
+							</div>
+						</div>
+						<div class="tab1_detail">
+							<div class="tab1_class">Класс							
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>
+								<ul class="tab1_class_select_ul">
+									<li onClick="js_select_form_li(this, '0')">Любым классом</li>
+									<li onClick="js_select_form_li(this, '0')">Эконом-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Бизнес-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Первый-класс</li>
+								</ul>
+								
+							</div>
+							<div class="tab1_company">Авиакомпания
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab1_direct" type="checkbox" checked>
+							<label for="tab1_direct"><span></span>Только прямые рейсы</label>
+							
+						</div>
+						
+					</div>	
+<!-- **************************************************************************************** -->
+					<div class="order_tab1_back">
+						<div class="order_tab1_city">	
+							<span class="tab1_from">Город вылета</span>
+							<span class="tab1_from_info">KBP</span>
+							<span class="tab1_from_clear" onclick="js_tab1_clear('tab1_from_fild')"></span>
+							<input type="text" class="tab1_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_from_o"></span>
+							<span class="tab1_to">Город прилета</span>
+							<span class="tab1_to_info">MOW</span>
+							<span class="tab1_to_clear" onclick="js_tab1_clear('tab1_to_fild')"></span>
+							<input type="text" class="tab1_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
+							<span class="tab1_to_o"></span>
+							<input id="one_side2" type="checkbox" checked>
+							<label for="one_side2"><span></span>В одну сторону</label>
+							
+						</div>
+						<div class="tab1_time_from">
+							Дата вылета
+							<input type="text" class="tab1_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_timeline_from">
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
+							<span class="tab1_timeline_unit">24:00</span>
+							
+						</div>
+						<div class="tab1_time_back">
+							Обратно
+							<input type="text" class="tab1_time_back_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab1_timeline_back">
+							<span class="tab1_timeline_txt">Время:</span>							
+							<input type="text" class="minCost2" value="0"/>
+							<span class="tab1_select_time">:00 - </span>
+							<input type="text" class="maxCost2" value="24"/>
+							<span class="tab1_select_time">:00</span> 							
+							<br/>
+							<span class="tab1_timeline_unit">00:00</span>			
+							<div class="tab1_timeline_all"></div>
+							<span class="tab1_timeline_unit">24:00</span>
+							
+						</div>
+						<div class="tab1_people">
+							<div class="tab1_adult">
+								Взрослые
+								<input type="text" class="tab1_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_adult_up"></span>
+								<span class="tab1_adult_dwn"></span>								
+							</div>	
+							<div class="tab1_child">
+								Дети
+								<input type="text" class="tab1_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_child_up"></span>
+								<span class="tab1_child_dwn"></span>
+							</div>
+						</div>
+						<div class="tab1_detail">
+							<div class="tab1_class">Класс							
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>				
+								
+							</div>
+							<div class="tab1_company">Авиакомпания
+								<div class="tab1_class_select">
+									<input type="text" class="tab1_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab1_direct1" type="checkbox" checked>
+							<label for="tab1_direct1"><span></span>Только прямые рейсы</label>
+						<!--	<input class="tab1_find" type="submit" value="Искать">   -->
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="order_tab2">
+					<div class="tab2_cont_find">
+						<input class="tab2_find" type="submit" value="Искать"/>
+					</div>
+					<div class="order_tab2_main">
+						<div class="tab2_route">
+							<span class="tab2_route_caption">Маршрут:</span>					   
+						</div>
+						<div class="order_tab2_city">	
+							<span class="tab2_from">Город вылета</span>
+							<span class="tab2_from_info">KBP</span>
+							<span class="tab2_from_clear" onclick="js_tab1_clear('tab2_from_fild')"></span>
+							<input type="text" class="tab2_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_from_o"></span>
+							<span class="tab2_to">Город прилета</span>
+							<span class="tab2_to_info">MOW</span>
+							<span class="tab2_to_clear" onclick="js_tab1_clear('tab2_to_fild')"></span>
+							<input type="text" class="tab2_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_to_o"></span>
+				
+						</div>
+						<div class="tab2_time_from">
+							Дата вылета
+							<input type="text" class="tab2_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onClick="js_calendar('tab2_time_from_fild')" readonly>
+							<span class="calendar" onClick="js_calendar('tab2_time_from_fild')"></span>
+						</div>
+						<div class="tab2_timeline_from">
+							<span class="tab2_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab2_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab2_select_time">:00</span> 							
+							<br/>
+							<span class="tab2_timeline_unit">00:00</span>			
+							<div class="tab2_timeline_all"></div>
+							<span class="tab2_timeline_unit">24:00</span>
+						</div><div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
+						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
+						<div class="tab2_people">
+							<div class="tab2_adult">
+								Взрослые
+								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_detail2('tab2_adult_fild')">
+								<span class="tab2_adult_up" onClick="js_number_up2('tab2_adult_fild')"></span>
+								<span class="tab2_adult_dwn" onClick="js_number_dwn2('tab2_adult_fild')"></span>								
+							</div>	
+							<div class="tab2_child">
+								Дети
+								<input type="text" class="tab2_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_child_up" onClick="js_number_up('tab2_child_fild')"></span>
+								<span class="tab2_child_dwn" onClick="js_number_dwn('tab2_child_fild')"></span>
+							</div>
+						</div>
+						<div class="tab2_detail">
+							<div class="tab2_class">Класс							
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form2(this, '0')" readonly>
+								</div>
+								<ul class="tab2_class_select_ul">
+									<li onClick="js_select_form_li(this, '0')">Любым классом</li>
+									<li onClick="js_select_form_li(this, '0')">Эконом-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Бизнес-класс</li>
+									<li onClick="js_select_form_li(this, '0')">Первый-класс</li>
+								</ul>
+								
+							</div>
+							<div class="tab2_company">Авиакомпания
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form2(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab2_direct" type="checkbox" checked>
+							<label for="tab2_direct"><span></span>Только прямые рейсы</label>
+						<!--	<input class="tab2_find" type="submit" value="Искать">   -->
+						</div>
+					</div>	
+<!-- **************************************************************************************** -->
+					<div class="order_tab2_back">
+						<div class="tab2_route">
+							<span class="tab2_route_caption">Маршрут:</span>
+						</div>
+						<div class="order_tab2_city">	
+							<span class="tab2_from">Город вылета</span>
+							<span class="tab2_from_info">KBP</span>
+							<span class="tab2_from_clear" onclick="js_tab1_clear('tab2_from_fild')"></span>
+							<input type="text" class="tab2_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_from_o"></span>
+							<span class="tab2_to">Город прилета</span>
+							<span class="tab2_to_info">MOW</span>
+							<span class="tab2_to_clear" onclick="js_tab1_clear('tab2_to_fild')"></span>
+							<input type="text" class="tab2_to_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" onkeyup="js_next_block('tab2_from_fild', 'tab2_to_fild' )">
+							<span class="tab2_to_o"></span>
+						</div>
+						<div class="tab2_time_from">
+							Дата вылета
+							<input type="text" class="tab2_time_from_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" readonly>
+							<span class="calendar" onClick="js_calendar()"></span>
+						</div>
+						<div class="tab2_timeline_from">
+							<span class="tab2_timeline_txt">Время:</span>							
+							<input type="text" class="minCost" value="0"/>
+							<span class="tab2_select_time">:00 - </span>
+							<input type="text" class="maxCost" value="24"/>
+							<span class="tab2_select_time">:00</span> 							
+							<br/>
+							<span class="tab2_timeline_unit">00:00</span>			
+							<div class="tab2_timeline_all"></div>
+							<span class="tab2_timeline_unit">24:00</span>							
+						</div>
+						
+						
+						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
+						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
+						
+						<div class="tab2_people">
+							<div class="tab2_adult">
+								Взрослые
+								<input type="text" class="tab2_adult_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_adult_up"></span>
+								<span class="tab2_adult_dwn"></span>								
+							</div>	
+							<div class="tab2_child">
+								Дети
+								<input type="text" class="tab2_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab2_child_up"></span>
+								<span class="tab2_child_dwn"></span>
+							</div>
+						</div>
+						<div class="tab2_detail">
+							<div class="tab2_class">Класс							
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '0')" readonly>
+								</div>				
+								
+							</div>
+							<div class="tab2_company">Авиакомпания
+								<div class="tab2_class_select">
+									<input type="text" class="tab2_class_select_fild" onClick="js_select_form(this, '1')" readonly>
+								</div>
+								
+							</div>
+							<input id="tab2_direct1" type="checkbox" checked>
+							<label for="tab2_direct1"><span></span>Только прямые рейсы</label>
+						</div>
+					</div>
+					
+				</div>
+				
+			</form>
+			<div class="left_column_gradient"></div>
+		</div>
+<!-- ===================================   END LEFT COLUMN ================================== -->		
+		<div class="center_block">
+			<div class="calendar_block">
+				<span class="calendar_header">
+					Календарь		
+					<span class="calendar_icon"></span>
+					<span class="calendar_close" onClick="js_calendar_close()"></span>
+					
+				</span>
+				<div class="calendar_cont">
+					<div id="month0"></div>
+					<div id="month1"></div>
+					<div id="month2"></div>
+					<div id="month3"></div>
+					<div id="month4"></div>
+					<div id="month5"></div>
+					<div id="month6"></div>
+					<div id="month7"></div>
+					<div id="month8"></div>
+					<div id="month9"></div>
+					<div id="month10"></div>
+					<div id="month11"></div>
+					<div id="month12"></div>
+				</div>	
+				<div class="calendar_bottom">
+					<div class="calendar_up" onClick="js_calendar_up()"><span class="calendar_up_img"></span>
+					</div><div class="calendar_dwn" onClick="js_calendar_dwn()"><span class="calendar_dwn_img"></span></div>
+				</div>
+				<div class="calendar_shadow"></div>
+			</div>
+			<div class="block_search">
+				<div class="block_search_scroll">
+					<div class="search_rezult">
+						<div class="search_rezult_left">
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia1"></span>
+								<span class="rezult_line_from">
+									Киев
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Москва
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+							<span class="line_separ"></span>
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Москва
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Киев
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+						</div>
+						<div class="search_rezult_right">
+							<span class="rezult_right_price">	
+								1 400<span class="rezult_right_price_ua"> грн.</span>
+							</span>	
+							<span class="rezult_right_add" onClick="js_add_result_another(1)">Еще варианты
+								<span class="rezult_right_add_number">+2</span>
+							</span>
+						</div>
+					</div>
+<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
+					<div class="another_cont">
+						<div id="add_avia1" class="search_result_another">
+							<span class="result_another_index1">KBP</span>
+							<span class="result_another_index2">SVO</span>
+							<span class="result_another_data">12.11.2013</span>
+							<span class="result_another_day">Вторник</span>
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r1" name="radio1" type="radio" value="">
+									<label for="r1"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select1" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r2" name="radio1" type="radio" value="">
+									<label for="r2"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select2" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_info">
+								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
+								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
+								<a class="result_another_order" href="">Бронировать</a>
+							</div>
+							
+						</div>
+					</div>
+<!-- *****************************************   END ANOTHER   **************************** -->					
+					
+					<div class="search_rezult">
+						<div class="search_rezult_left">
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia3"></span>
+								<span class="rezult_line_from">
+									Киев
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Москва
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+							<span class="line_separ"></span>
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Москва
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Киев
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+						</div>
+						<div class="search_rezult_right">
+							<span class="rezult_right_price">	
+								1 659<span class="rezult_right_price_ua"> грн.</span>
+							</span>	
+							<span class="rezult_right_add" onClick="js_add_result_another(2)">Еще варианты
+								<span class="rezult_right_add_number">+2</span>
+							</span>
+						</div>
+					</div>
+<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
+					<div class="another_cont">
+						<div id="add_avia1" class="search_result_another">
+							<span class="result_another_index1">KBP</span>
+							<span class="result_another_index2">SVO</span>
+							<span class="result_another_data">12.11.2013</span>
+							<span class="result_another_day">Вторник</span>
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r1" name="radio1" type="radio" value="">
+									<label for="r1"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select1" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r2" name="radio1" type="radio" value="">
+									<label for="r2"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select2" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_info">
+								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
+								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
+								<a class="result_another_order" href="">Бронировать</a>
+							</div>
+							
+						</div>
+					</div>
+<!-- *****************************************   END ANOTHER   **************************** -->					
+					
+					<div class="search_rezult">
+						<div class="search_rezult_left">
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia3"></span>
+								<span class="rezult_line_from">
+									Киев
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Москва
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+							<span class="line_separ"></span>
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Москва
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Киев
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+						</div>
+						<div class="search_rezult_right">
+							<span class="rezult_right_price">	
+								659<span class="rezult_right_price_ua"> грн.</span>
+							</span>	
+							<span class="rezult_right_add" onClick="js_add_result_another(3)">Еще варианты
+								<span class="rezult_right_add_number">+2</span>
+							</span>
+						</div>
+					</div>
+<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
+					<div class="another_cont">
+						<div id="add_avia1" class="search_result_another">
+							<span class="result_another_index1">KBP</span>
+							<span class="result_another_index2">SVO</span>
+							<span class="result_another_data">12.11.2013</span>
+							<span class="result_another_day">Вторник</span>
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r1" name="radio1" type="radio" value="">
+									<label for="r1"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select1" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r2" name="radio1" type="radio" value="">
+									<label for="r2"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select2" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_info">
+								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
+								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
+								<a class="result_another_order" href="">Бронировать</a>
+							</div>
+							
+						</div>
+					</div>
+<!-- *****************************************   END ANOTHER   **************************** -->							
+					
+					<div class="search_rezult">
+						<div class="search_rezult_left">
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia4"></span>
+								<span class="rezult_line_from">
+									Киев
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Москва
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+							<span class="line_separ"></span>
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Москва
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Киев
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+						</div>
+						<div class="search_rezult_right">
+							<span class="rezult_right_price">	
+								1 200<span class="rezult_right_price_ua"> грн.</span>
+							</span>	
+							<span class="rezult_right_add" onClick="js_add_result_another(4)">Еще варианты
+								<span class="rezult_right_add_number">+2</span>
+							</span>
+						</div>
+					</div>
+					<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
+					<div class="another_cont">
+						<div id="add_avia1" class="search_result_another">
+							<span class="result_another_index1">KBP</span>
+							<span class="result_another_index2">SVO</span>
+							<span class="result_another_data">12.11.2013</span>
+							<span class="result_another_day">Вторник</span>
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r1" name="radio1" type="radio" value="">
+									<label for="r1"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select1" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_line">
+								<div class="result_radio_block">
+									<input id="r2" name="radio1" type="radio" value="">
+									<label for="r2"><span></span></label>
+								</div>
+								<div class="result_another_line_from">
+									<span class="result_another_line_from_city">Киев</span>
+									(Украина) 
+									<span class="result_another_line_from_index">KBP, UA</span>
+									<span class="result_another_line_from_time">06:20</span>
+									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
+								</div>
+								<div class="result_another_line_to">
+									<span class="result_another_line_to_city">Москва</span>
+									(Россия) 
+									<span class="result_another_line_to_index">SVO, RU</span>
+									<span class="result_another_line_to_time">10:30</span>
+									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
+								</div>
+								<span class="result_another_line_detail">
+									<span class="small_logo avia1"></span>
+									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
+									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+								</span>
+								<span id="another_select2" class="another_select"></span>
+							</div>
+							
+							<div class="result_another_info">
+								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
+								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
+								<a class="result_another_order" href="">Бронировать</a>
+							</div>
+							
+						</div>
+					</div>
+<!-- *****************************************   END ANOTHER   **************************** -->					
+					
+					<div class="search_rezult">
+						<div class="search_rezult_left">
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Киев
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Москва
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+							<span class="line_separ"></span>
+							<div class="search_rezult_left_line">
+								<span class="rezult_line_logo avia2"></span>
+								<span class="rezult_line_from">
+									Москва
+									<span class="rezult_line_from_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_airplane"></span>
+								<span class="rezult_line_to">
+									Киев
+									<span class="rezult_line_to_index">(KBP)</span>
+								</span>
+								<span class="rezult_line_time">
+									<span class="rezult_line_time_from">06:20</span>
+									<span class="rezult_line_time_duration">01:25</span>
+									<span class="rezult_line_time_to">09:45</span>
+									<span class="rezult_line_time_transfers">0</span>
+								</span>
+							</div>
+						</div>
+						<div class="search_rezult_right">
+							<span class="rezult_right_price">	
+								14 359<span class="rezult_right_price_ua"> грн.</span>
+							</span>	
+							<span class="rezult_right_add" onClick="js_add_result_another(5)">Еще варианты
+								<span class="rezult_right_add_number">+2</span>
+							</span>
+						</div>
+					</div>
+				
+				</div>	
+			</div>
+			<div class="block_conteiner">
+				
+			</div>
+		</div>
+					
+		<footer class="footer">
+			<div class="footer_shadow"></div>
+			<ul class="footer_contact">
+				<li>(c) PerseyTravel, 2013</li>
+				<li id="footer_tel">Тел.: 303 95 70, 360 33 00</li>
+				<li>E-mail: <a href="">avia@persey.travel</a></li>
+			</ul>
+			<div class="footer_right">
+				<a class="footer_iata" href="">
+					<span class="img_iata"></span>
+				</a>
+				<a class="footer_isic" href="">
+					<span class="img_isic"></span>
+				</a>
+				<span class="qwestion" onClick="js_qwestion_open()">
+					Есть вопросы?
+					<span class="qwestion_info"></span>
+				</span>
+			</div>   
+		</footer>
+	
+	</div>
+	<div class="login_form_fon" onClick="js_login_close_fon(event)">
+		<div class="login_form">
+			<input type="text" class="login_name_fild" placeholder="Имя" onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<input type="text" class="login_psw_fild" placeholder="Пароль" onFocus="js_focus(this)" onBlur="js_blur(this)">
+			<a class="login_enter" href="">Войти</a>
+			<a class="login_help" href="">Забыли <br/>свой пароль?</a>
+			<a class="login_registr" href="">Регистрация!</a>    
+		</div>
+		<div class="consultant">
+			<span class="consultant_close" onClick="js_qwestion_close()"><span class="consultant_close_img"></span></span>
+			<span class="consultant_menu_cont">
+				<span class="consultant_menu_select"></span>
+			</span>
+			<ul>
+				<li>Он-лайн консультант</li>
+				<li>Написать сообщение</li>
+			</ul>
+			<span class="consultant_avatar"></span>
+			<span class="consultant_txt">
+				<span class="txt_bold">Здравствуйте!</span>
+				Чем могу Вам помочь?
+			</span>
+			<textarea></textarea>
+		</div>
+		
+	</div>	
+	<div class="select_form">
+		<ul class="tab1_class_select_ul">
+			<li onClick="js_select_form_li(this, '1')">Любая авиакомпания</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+		</ul>
+		<ul class="tab2_class_select_ul">
+			<li onClick="js_select_form_li(this, '1')">Любая авиакомпания</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+			<li onClick="js_select_form_li(this, '1')">Авиалинии Аргентины [AR]</li>
+			<li onClick="js_select_form_li(this, '1')">Международные авиалинии Украины Мау [PS]</li>
+			<li onClick="js_select_form_li(this, '1')">Кондор [DE]</li>
+			<li onClick="js_select_form_li(this, '1')">ЕвроЛот [К2]</li>
+		</ul>
+	</div>
+	
+	
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" src="js/jquery_masonry_min.js"></script> 
+	<script type="text/javascript" src="js/modernizr-transitions.js"></script>  
+	<script type="text/javascript">
+		jQuery(".tab1_timeline_all").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost").val(jQuery(".tab1_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab1_timeline_all").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost").val(jQuery(".tab1_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab1_timeline_all").slider("values",1));
+			}
+			
+		});
+		jQuery(".tab1_timeline_all2").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost2").val(jQuery(".tab1_timeline_all2").slider("values",0));
+				jQuery("input.maxCost2").val(jQuery(".tab1_timeline_all2").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost2").val(jQuery(".tab1_timeline_all2").slider("values",0));
+				jQuery("input.maxCost2").val(jQuery(".tab1_timeline_all2").slider("values",1));
+			}
+			
+		});
+		
+		jQuery(".tab2_timeline_all").slider({
+			min: 0,
+			max: 24,
+			values: [0,24],			
+			range: true,
+			stop: function(event, ui) {
+				jQuery("input.minCost").val(jQuery(".tab2_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab2_timeline_all").slider("values",1));
+			},
+			slide: function(event, ui){
+				jQuery("input.minCost").val(jQuery(".tab2_timeline_all").slider("values",0));
+				jQuery("input.maxCost").val(jQuery(".tab2_timeline_all").slider("values",1));
+			}
+			
+		});
+		
+		
+	
+	</script>
+	
+	
+</body>
+</html>

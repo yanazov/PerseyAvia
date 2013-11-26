@@ -62,7 +62,7 @@
 	background: #dde;
 	position: relative;
 	width: 4px;
-	background-color: #014775;
+	background-color: #ccd4da;
 	height: 100%;
 	border-radius: 4px 4px 4px 4px;
 	-webkit-border-radius: 4px 4px 4px 4px;
@@ -78,6 +78,7 @@
 	left: 0;
 	cursor: pointer;
 	background-color: #fff;
+	background-color: #0072ba;
 	width: 4px;
 	
 	border-radius: 4px 4px 4px 4px;

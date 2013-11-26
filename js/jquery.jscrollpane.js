@@ -1360,7 +1360,7 @@
 		autoReinitialise			: false,
 		autoReinitialiseDelay		: 500,
 		verticalDragMinHeight		: 0,
-		verticalDragMaxHeight		: 99999,
+		verticalDragMaxHeight		: 70,
 		horizontalDragMinWidth		: 0,
 		horizontalDragMaxWidth		: 99999,
 		contentWidth				: undefined,

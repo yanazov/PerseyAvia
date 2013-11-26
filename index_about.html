@@ -5,14 +5,15 @@
 	<title>PerseyAvia</title>
 	
 	<link type="text/css" rel="stylesheet" href="styles/jquery.jscrollpane.css"/>
-	<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>  
-
+<!--	<script type="text/javascript" src="js/jquery-1.6.1.min.js" ></script>    -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="js/jquery.jscrollpane.js"></script>   
 	<script type="text/javascript" src="js/jquery.ui-slider.js"></script>
 	
-	
+	<script type="text/javascript" src="js/inner_page.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	
 	
 
 	<link rel="stylesheet" type="text/css" href="styles/styles.css" > 	
@@ -28,47 +29,11 @@
 	
 </head>
 <body>
-	<span id="page_number">1</span>
-	<div id="fon1" class="main_fon">
-		<div class="center_fon">
-			<span class="slogan_cont">
-				<h1><span class="slogan">Карибские острова теперь доступны всем!</span></h1>
-			</span>
-			<span class="price">от 599$ 
-				<span class="start_city">вылет из Киева</span>
-			</span>   
-		</div>
+	<span id="page_number">4</span>
+	<div id="fon_grey" class="main_fon">
+		
 	</div>
-	<div id="fon2" class="main_fon">
-		<div class="center_fon">
-			<span class="slogan_cont">
-				<h1><span class="slogan">Летнии каникулы для студентов в США</span></h1>
-			</span>
-			<span class="price">от 599$ 
-				<span class="start_city">вылет из Киева</span>
-			</span>   
-		</div>
-	</div>  
-	<div id="fon3" class="main_fon">
-		<div class="center_fon">
-			<span class="slogan_cont">
-				<h1><span class="slogan">студентов в США</span></h1>
-			</span>
-			<span class="price">от 599$ 
-				<span class="start_city">вылет из Киева</span>
-			</span>   
-		</div>
-	</div>  
-	<div id="fon4" class="main_fon">
-		<div class="center_fon">
-			<span class="slogan_cont">
-				<h1><span class="slogan">Летнии каникулы </span></h1>
-			</span>
-			<span class="price">от 599$ 
-				<span class="start_city">вылет из Киева</span>
-			</span>   
-		</div>
-	</div>  
+	
 	<div class="container">
 		<header class="header">
 			<div class="header_shadow"></div>
@@ -78,8 +43,8 @@
 				<span class="tel_txt">Круглосуточно!</span>				
 			</span>
 			<span class="header_separ"></span>
-			<a href="" class="student">Я студент!</a>
-			<span class="student_txt">Специальные тарифы для студентов!</span>
+			<a href="" class="no_student">Уже не студент</a>
+			<span class="student_txt">Вернуться к обычным авиа-тарифам</span>
 			<div class="header_right">
 				<nav>
 					<ul class="header_menu">
@@ -99,8 +64,6 @@
 				<span class="left_column_name_img"></span>
 			</span>	
 			<span class="select_tab"></span>
-			<span class="select_tab2"></span>
-			<span class="back_fon_left"></span>
 			<ul class="menu_order">
 				<li class="menu_tab" onclick="js_menu_tab(1)">В одну/две стороны
 				</li><li class="menu_tab" onclick="js_menu_tab(2)">Сложный маршрут</li>				
@@ -290,18 +253,7 @@
 					</div>
 					<div class="order_tab2_main">
 						<div class="tab2_route">
-							<span class="tab2_route_caption">Маршрут:</span>
-					<!--		<span class="tab2_route_city">Киев
-								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
-								<span class="arrow_next"></span>
-							</span>
-							
-							<span class="tab2_route_city">Киев3
-								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
-							</span>
-							<span class="tab2_route_city">Киев2
-								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
-							</span>          -->        
+							<span class="tab2_route_caption">Маршрут:</span>					   
 						</div>
 						<div class="order_tab2_city">	
 							<span class="tab2_from">Город вылета</span>
@@ -409,9 +361,6 @@
 						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
 						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
 						
-						
-						
-						
 						<div class="tab2_people">
 							<div class="tab2_adult">
 								Взрослые
@@ -441,7 +390,6 @@
 							</div>
 							<input id="tab2_direct1" type="checkbox" checked>
 							<label for="tab2_direct1"><span></span>Только прямые рейсы</label>
-						<!--	<input class="tab2_find" type="submit" value="Искать">  -->
 						</div>
 					</div>
 					
@@ -480,151 +428,120 @@
 				</div>
 				<div class="calendar_shadow"></div>
 			</div>
-			<div class="slider_nav">
-				<div class="slider_pointer">
-					<span class="slider_pointer_txt">Карибские острова</span>
-					
-					<span id="slider_pointer_value1" class="slider_pointer_value">Карибские острова</span>
-					<span id="slider_pointer_value2" class="slider_pointer_value">Мальдивы</span>
-					<span id="slider_pointer_value3" class="slider_pointer_value">Турция</span>
-					<span id="slider_pointer_value4" class="slider_pointer_value">Мадагаскар</span>
-					
-					
-					
-					
-					<span class="slider_pointer_arrow"></span>
+			<div class="block_voyage">			
+				<div class="voyage_about_open">
+					<div class="voyage_article_body">
+						<h2><span class="article_caption">О проекте</span></h2>
+						<span>
+						туристическая компания, объединившая в себе профессионалов различных направлений туристичекой деятельности. Все сотрудники компании имеют многолетний (более 8 лет) опыт, который необходим для обслуживания запросов и желаний своих клиентов на высочайшем уровне. Множество международных и украинских дипломов и сертификатов подтверждают статус и профессионализм наших сотрудников. Мы все преданы одному делу, и мы любим то, чем занимаемся. Попробовав однажды, обслуживание в компании Персей Тревел, Вы навсегда останетесь членами нашей огромной туристической семьи.
+
+
+						<br/>
+						<span class="programm_day">Почему именно мы?</span>
+						<br/>
+						Все предлагаемые нами туристические продукты рассчитаны на потребителей с различным уровнем дохода - от самых экономичных предложений до VIP-обслуживания. Индивидуальный подход к каждому клиенту - отличительная черта нашей компании. Вы всегда будете ощущать особое внимание со стороны сотрудников Персей Тревел, потому что каждый клиент для нас - это VIP клиент.
+
+						<br/>
+						<span class="programm_day">Наши услуги:</span>
+						<br/>
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						В течение ноября и декабря 2013 года жители и гости города смогут присоединиться ко 
+						множеству новых туристических направлений и узнать больше о памятниках культуры и
+						интересных достопримечательностях Мадрида, познакомиться с его историей, культурой
+						и традициями.
+						
+						Присоединиться к пешеходным экскурсиям можно за 5,90 евро, к велосипедным трекингам 
+						и прогулкам на роликовых коньках — за 6,90 евро.
+
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						В течение ноября и декабря 2013 года жители и гости города смогут присоединиться ко 
+						множеству новых туристических направлений и узнать больше о памятниках культуры и
+						интересных достопримечательностях Мадрида, познакомиться с его историей, культурой
+						и традициями.
+						
+						Присоединиться к пешеходным экскурсиям можно за 5,90 евро, к велосипедным трекингам 
+						и прогулкам на роликовых коньках — за 6,90 евро.
+
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						</span>  
+					</div>	
+		<!--			<div class="article_panel">
+						<a class="article_panel_btn" href="index_news.html">
+							<span class="article_panel_btn_img"></span>
+						</a>
+						<a class="article_panel_btn_prev" href="">
+							<span class="article_panel_btn_prev_img"></span>
+						</a>
+						<a class="article_panel_btn_next" href="">
+							<span class="article_panel_btn_next_img"></span>
+						</a>
+						
+					</div>    -->
 				</div>
-				<ul class="slider_nav_ul">
-					<li class="slider_nav_li" onClick="js_slider_nav(0)"></li>
-					<li class="slider_nav_li" onClick="js_slider_nav(1)"></li>
-					<li class="slider_nav_li" onClick="js_slider_nav(2)"></li>
-					<li class="slider_nav_li" onClick="js_slider_nav(3)"></li>
+				<div class="block_about">
+					<span class="about_personal_block">
+						<span class="about_personal_block_decor">
+							”
+						</span>
+						Строительство нового горнолыжного курорта Тетнулди начнется в Сванетии 
+						(северо-западная Грузия), на склонах одноименной горы уже в... 
+						
+						<span class="personal_block_name">
+							Юрий Нагорный
+							<span class="personal_block_prof">дизайнер</span>
+						</span>
+						
+					</span>
+					<span class="about_personal_block">
+						<span class="about_personal_block_decor">
+							”
+						</span>
+						На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим сезоном проводятся 
+						
+						<span class="personal_block_name">
+							Олег Кучеренко
+							<span class="personal_block_prof">директор</span>
+						</span>
+						
+					</span>
+					<span class="about_personal_block">
+						<span class="about_personal_block_decor">
+							”
+						</span>
+						С 22 декабря регион катания Арозы объединяется с регионом катания Ленцерхайде общая протяженность 
+						
+						<span class="personal_block_name">
+							Дарья Баренко
+							<span class="personal_block_prof">менеджер</span>
+						</span>
+						
+					</span>
+					
+				</div>
+			
+			</div>
+			<div class="block_conteiner">
 				
-				</ul>
 			</div>
 		</div>
-<!-- ===================================   BEGIN RIGHT COLUMN ================================== -->						
-		<div class="right_column">
-			<div class="top_space"></div>
-			<span class="img_world"></span>
-			<ul class="right_ul">
-				<li class="right_slider">
-					New York
-					<span class="right_slider_price">от 699$</span>
-					<span class="right_slider_temper">+21°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					New Jersey
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-3°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Philadelphia
-					<span class="right_slider_price">от 799$</span>
-					<span class="right_slider_temper">0°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Washington
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-3°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					New Mexico
-					<span class="right_slider_price">от 449$</span>
-					<span class="right_slider_temper">33°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Kiev
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-23°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Lviv
-					<span class="right_slider_price">от 299$</span>
-					<span class="right_slider_temper">-13°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Tokio
-					<span class="right_slider_price">от 1299$</span>
-					<span class="right_slider_temper">73°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					New York
-					<span class="right_slider_price">от 699$</span>
-					<span class="right_slider_temper">+21°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					New Jersey
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-3°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Philadelphia
-					<span class="right_slider_price">от 799$</span>
-					<span class="right_slider_temper">0°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Washington
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-3°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					New Mexico
-					<span class="right_slider_price">от 449$</span>
-					<span class="right_slider_temper">33°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Kiev
-					<span class="right_slider_price">от 599$</span>
-					<span class="right_slider_temper">-23°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Lviv
-					<span class="right_slider_price">от 299$</span>
-					<span class="right_slider_temper">-13°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>
-				<li class="right_slider">
-					Tokio
-					<span class="right_slider_price">от 777$</span>
-					<span class="right_slider_temper">13°
-						<span class="right_slider_sun"></span>
-					</span>
-				</li>			
-			</ul>
-			<div class="right_column_shadow"></div>
-			<div class="right_column_gradient"></div>
-		</div>
-<!-- ===================================   END RIGHT COLUMN ================================== -->						
+					
 		<footer class="footer">
 			<div class="footer_shadow"></div>
 			<ul class="footer_contact">
@@ -643,7 +560,6 @@
 					Есть вопросы?
 					<span class="qwestion_info"></span>
 				</span>
-				
 			</div>   
 		</footer>
 	
@@ -656,7 +572,6 @@
 			<a class="login_help" href="">Забыли <br/>свой пароль?</a>
 			<a class="login_registr" href="">Регистрация!</a>    
 		</div>
-	
 		<div class="consultant">
 			<span class="consultant_close" onClick="js_qwestion_close()"><span class="consultant_close_img"></span></span>
 			<span class="consultant_menu_cont">
@@ -673,6 +588,7 @@
 			</span>
 			<textarea></textarea>
 		</div>
+		
 	</div>	
 	<div class="select_form">
 		<ul class="tab1_class_select_ul">
@@ -701,7 +617,8 @@
 	
 	
 	<script type="text/javascript" src="js/calendar.js"></script>
-	
+	<script type="text/javascript" src="js/jquery_masonry_min.js"></script> 
+	<script type="text/javascript" src="js/modernizr-transitions.js"></script>  
 	<script type="text/javascript">
 		jQuery(".tab1_timeline_all").slider({
 			min: 0,
@@ -750,7 +667,8 @@
 			
 		});
 		
-				
+		
+	
 	</script>
 	
 	

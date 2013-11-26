@@ -4,6 +4,8 @@ var next_fon =2;
 var current_fon =1;
 var set_size_timer;
 var select_tab_x = 0;
+var select_tab1_y = 115;
+var select_tab2_y = 156;
 var tmp_time = 0;
 var delay_slide = 1000;
 var delay_slide_right = 0;
@@ -13,8 +15,11 @@ var top_elem_right_slider = 0;
 var y_elem_right_slider = 0;
 var tab1_time = 0;
 var y_login_form = -145;
+var y_qwestion_form = -145;
 var login_open = 0;
 var login_close = 0;
+var qwestion_open = 0;
+var qwestion_close = 0;
 var data_fild;
 var calendar_open = 0;
 var calendar_close = 0;
@@ -33,25 +38,42 @@ var left_menu_tab1 = 1;
 var left_menu_tab2 = 0;
 var end_city = 0;
 var current_tab = 1;
+var main_page;
+var article_width = 0;
+var article_panel_open = 0;
+var article_panel_close = 0;
+var panel_type = 0;
+var big_foto_opacity = 0;
+var number_block = 0;
+var another_block_height = 0;
+var height_tmp = 0;
+var slider_on = 0;
+var manual_slide = -1;
+var slider_pointer_top = 0;
+var slider_step = 0;
+var main_slogan_x = 560;
 
 window.onload = function() {	
 	
 	document.getElementsByClassName("left_column")[0].style.height = document.body.clientHeight + "px";
-	document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
 	document.getElementsByClassName("center_block")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_block")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+	
 	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 65 + "px";
 	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 65 + "px";
-	
+	if(document.getElementById("page_number").innerHTML  == 1){
+		document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+		number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
+	}
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
 	
-	number_elem_right_slider = document.getElementsByClassName("right_ul")[0].getElementsByClassName("right_slider").length;
+	
 	var set_size_timer = setTimeout(function() {js_set_size()}, 20);
 	var slider_timer= setInterval(function() {js_main_slider()}, 5);
 	
@@ -66,28 +88,24 @@ function js_set_size(){
 	document.getElementsByClassName("center_block")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_block")[0].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("left_column")[0].style.height = document.body.clientHeight + "px";
-	document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+	
 	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 65 + "px";
 	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 65 + "px";
-	
+	if(document.getElementById("page_number").innerHTML  == 1){
+		document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+	}
 	clearTimeout(set_size_timer);
 	
 	document.getElementsByClassName("center_block")[0].style.height = document.body.clientHeight - 104 + "px";
 	document.getElementsByClassName("center_block")[0].style.width = document.body.clientWidth - 371 + "px";
 	document.getElementsByClassName("left_column")[0].style.height = document.body.clientHeight + "px";
-	document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
-	document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
-	document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+	
 	document.getElementsByClassName("order_tab1")[0].style.height = document.body.clientHeight - 155 + "px";
 	document.getElementsByClassName("order_tab1_main")[0].style.height = document.body.clientHeight - 155 - 70 + "px";
 	document.getElementsByClassName("order_tab2_main")[0].style.height = document.body.clientHeight - 155 - 70 + "px";
@@ -96,46 +114,167 @@ function js_set_size(){
 	document.getElementsByClassName("order_tab2")[0].style.height = document.body.clientHeight - 155 + "px";
 	document.getElementsByClassName("calendar_block")[0].style.height = document.body.clientHeight - 60 + "px";
 	document.getElementsByClassName("calendar_cont")[0].style.height = document.body.clientHeight - 130 + "px";
+	if(document.getElementById("page_number").innerHTML  == 1){
+		document.getElementsByClassName("right_column")[0].style.height = document.body.clientHeight - 44 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[1].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[1].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[0].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[2].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[2].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("center_fon")[3].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("center_fon")[3].style.width = document.body.clientWidth - 371 + "px";
+		document.getElementsByClassName("slider_nav")[0].style.top = (document.body.clientHeight - 104)/2-65 + "px";
+		
+	}
+	if(document.getElementById("page_number").innerHTML  == 2){
+		document.getElementsByClassName("block_voyage")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("block_voyage")[0].style.width = document.body.clientWidth - 273 + "px";
+		document.getElementsByClassName("voyage_right_block")[0].style.width = document.body.clientWidth - 273 - article_width + "px";
+		document.getElementsByClassName("scroll_conteiner")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("voyage_article")[0].style.height = document.body.clientHeight - 178 + "px";
+		jQuery('.voyage_article_body').jScrollPane();
+		
+		$(window).ready(function(){			
+			$('#container_voyage').masonry({ // выбираем элемент-контейнер в котором расположены блоки для динамической верстки
+			  itemSelector: '.item', // указываем класс элемента являющегося блоком в нашей сетке
+			  singleMode: true, // true - если у вас все блоки одинаковой ширины
+			  resizeable: true, // перестраивает блоки при изменении размеров окна
+			  isAnimated: !Modernizr.csstransitions // анимируем перестроение блоков при помощи css transitions и Modernizr
+			}); 
+		});
+		/*  повторный запуск скрипта для убирания глюка в опере  */
+		$(window).ready(function(){			
+			$('#container_voyage').masonry({ // выбираем элемент-контейнер в котором расположены блоки для динамической верстки
+			  itemSelector: '.item', // указываем класс элемента являющегося блоком в нашей сетке
+			  singleMode: true, // true - если у вас все блоки одинаковой ширины
+			  resizeable: true, // перестраивает блоки при изменении размеров окна
+			  isAnimated: !Modernizr.csstransitions // анимируем перестроение блоков при помощи css transitions и Modernizr
+			}); 
+		});
+		
+	}
+	if(document.getElementById("page_number").innerHTML  == 3){
+		document.getElementsByClassName("block_voyage")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("block_voyage")[0].style.width = document.body.clientWidth - 273 + "px";
+		document.getElementsByClassName("block_voyage_detail")[0].style.width = document.body.clientWidth - 673 + "px";
+		document.getElementsByClassName("voyage_article_open")[0].style.height = document.body.clientHeight - 178 + "px";
+		jQuery('.voyage_article_body').jScrollPane();	
+	}
+	if(document.getElementById("page_number").innerHTML  == 4){
+		document.getElementsByClassName("block_voyage")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("block_voyage")[0].style.width = document.body.clientWidth - 273 + "px";
+		document.getElementsByClassName("block_about")[0].style.width = document.body.clientWidth - 673 + "px";
+		document.getElementsByClassName("voyage_about_open")[0].style.height = document.body.clientHeight - 134 + "px";
+		jQuery('.voyage_article_body').jScrollPane();	
+	}
+	if(document.getElementById("page_number").innerHTML  == 5){
+		document.getElementsByClassName("block_search")[0].style.width = document.body.clientWidth - 273 + "px";
+		document.getElementsByClassName("block_search_scroll")[0].style.height = document.body.clientHeight - 104 + "px";
+		document.getElementsByClassName("block_search_scroll")[0].style.width = document.body.clientWidth - 273 + "px";
+	/*	document.getElementsByClassName("search_rezult")[0].style.width = document.body.clientWidth - 300 + "px";  */
+		$(".search_rezult").css("width", document.body.clientWidth - 300 + "px");
+		$(".search_result_another").css("width", document.body.clientWidth - 362 + "px");
+		$(".search_rezult_left").css("width", document.body.clientWidth - 460 + "px");
+	/*	document.getElementsByClassName("search_rezult_left")[0].style.width = document.body.clientWidth - 460 + "px";
+		document.getElementsByClassName("block_about")[0].style.width = document.body.clientWidth - 673 + "px";
+		document.getElementsByClassName("voyage_about_open")[0].style.height = document.body.clientHeight - 134 + "px";*/
+		jQuery('.block_search_scroll').jScrollPane();	
+	}
 	jQuery('.order_tab1_main').jScrollPane();
 	jQuery('.order_tab2_main').jScrollPane();
 	/*jQuery('.order_tab1').jScrollPane();*/
 }
 
 function js_main_slider(){
-	delay_slide -= 3;
-	if(delay_slide <= 0){
-		tmp_time += 1;
-		if(i_slaider < 100){
-			if(tmp_time%1 == 0){
-				i_slaider += 2;
-				document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
-				document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;
-				
-				/*var slider_timer = setTimeout(function() {js_main_slider()}, 60); */
-			}
-			if(i_slaider >= 100){
-				current_fon = next_fon;
-				next_fon += 1;
-				if(next_fon == 3)
-					next_fon = 1;
-				/*clearInterval(slider_timer);*/
-				i_slaider = 0;
-				delay_slide = 2000;
-				/*var slider_timer=setTimeout(function() {js_main_slider()}, 3000);*/
-			}
-		}	
+	
+	
+	
+/*	if(document.getElementById("page_number").innerHTML  == 1 && slider_on == 1){*/
+	if(slider_on == 1){
+		main_slogan_x = 600;
+		document.getElementsByClassName("slogan")[current_fon-1].style.left = main_slogan_x + "px";
+		if(manual_slide > -1){
+			next_fon = manual_slide+1;
+		}
+		slider_step = 6;
+		if(next_fon < current_fon){
+			slider_step = -6;
+		}
+		
+		for(i= 0; i < 4; i++){
+			document.getElementsByClassName("slider_nav_li")[i].style.backgroundPosition = "0px -598px";
+		}
+		document.getElementsByClassName("slider_nav_li")[next_fon-1].style.backgroundPosition = "0px -623px";
+		
+		delay_slide -= 3;
+		if(delay_slide <= 0){
+			tmp_time += 1;
+			if(i_slaider < 100){
+				if(tmp_time%1 == 0){
+					i_slaider += 5;
+					document.getElementById("fon" + current_fon).style.opacity = (100-i_slaider)/100;
+					document.getElementById("fon" + next_fon).style.opacity = i_slaider/100;
+					slider_pointer_top += slider_step;
+					if(slider_step > 0 && slider_pointer_top > (next_fon-1)*38){
+						slider_pointer_top = (next_fon-1)*38;
+						document.getElementsByClassName("slider_pointer_txt")[0].innerHTML = document.getElementsByClassName("slider_pointer_value")[next_fon - 1].innerHTML;
+						
+					}
+					if(slider_step < 0 && slider_pointer_top < (next_fon-1)*38){
+						slider_pointer_top = (next_fon-1)*38;
+						document.getElementsByClassName("slider_pointer_txt")[0].innerHTML = document.getElementsByClassName("slider_pointer_value")[next_fon - 1].innerHTML;
+					}
+					document.getElementsByClassName("slider_pointer")[0].style.top = slider_pointer_top + "px";
+					
+					/*var slider_timer = setTimeout(function() {js_main_slider()}, 60); */
+				}
+				if(i_slaider >= 100){
+					current_fon = next_fon;
+					next_fon += 1;
+					manual_slide = -1;
+					if(next_fon == 5)
+						next_fon = 1;
+					/*clearInterval(slider_timer);*/
+					i_slaider = 0;
+					delay_slide = 3000;
+					slider_on = 0;
+					/*var slider_timer=setTimeout(function() {js_main_slider()}, 3000);*/
+				}
+			}	
+		}
+	}	
+	else{
+		delay_slide -= 3;
+		if(delay_slide < 0){
+			slider_on = 1;
+		
+		}
+	if(main_slogan_x > 0){
+		main_slogan_x -=10;
+		document.getElementsByClassName("slogan")[current_fon-1].style.left = main_slogan_x + "px";
+		
+	
 	}
 /* ===========================================  BEGIN LEFT MENU ====================================================== */	
 	if(menu_tab == 1){
-		select_tab_x -= 23;
+		select_tab1_y -= 4;		
+		select_tab2_y += 4;
 		left_menu_tab1 +=0.09;
 		left_menu_tab2 -=0.09;
+		if(select_tab1_y < 115){
+			select_tab1_y = 115;
+			select_tab2_y = 156;
+		}
 		document.getElementsByClassName("order_tab1")[0].style.opacity = left_menu_tab1;
 		document.getElementsByClassName("order_tab2")[0].style.opacity = left_menu_tab2;	
-		if(select_tab_x < 0 && left_menu_tab2 < 0){
+		if(select_tab1_y < 115 && left_menu_tab2 < 0){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "default";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "pointer";
-			document.getElementsByClassName("select_tab")[0].style.left = 0 + "px";
+			document.getElementsByClassName("select_tab")[0].style.top = 115 + "px";
+			document.getElementsByClassName("select_tab2")[0].style.top = 156 + "px";
 			document.getElementsByClassName("order_tab2")[0].style.display = "none";
 			menu_tab = 0;
 		}
@@ -146,52 +285,62 @@ function js_main_slider(){
 			left_menu_tab1 = 1;
 			left_menu_tab2 = 0;
 		}
-		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
+		document.getElementsByClassName("select_tab")[0].style.top = select_tab1_y + "px";
+		document.getElementsByClassName("select_tab2")[0].style.top = select_tab2_y + "px";
 	}
 	if(menu_tab == 2){
 		jQuery('.order_tab2_main').jScrollPane();
-		select_tab_x += 23;		
+		select_tab1_y += 4;		
+		select_tab2_y -= 4;		
 		left_menu_tab1 -=0.09;
 		left_menu_tab2 +=0.09;
+		if(select_tab2_y < 115){
+			select_tab2_y = 115;
+		}
 		document.getElementsByClassName("order_tab1")[0].style.opacity = left_menu_tab1;
 		document.getElementsByClassName("order_tab2")[0].style.opacity = left_menu_tab2;
 		document.getElementsByClassName("order_tab2")[0].style.display = "block";
-		if(select_tab_x > 140 && left_menu_tab2 == 1){
+		if(select_tab1_y > 156 && left_menu_tab2 >= 1){
 			document.getElementsByClassName("menu_tab")[0].style.cursor = "pointer";
 			document.getElementsByClassName("menu_tab")[1].style.cursor = "default";
-			document.getElementsByClassName("select_tab")[0].style.left = 140 + "px";
-			select_tab_x = 140;
+			document.getElementsByClassName("select_tab")[0].style.top = 156 + "px";
+			document.getElementsByClassName("select_tab2")[0].style.top = 115 + "px";
+			select_tab1_y = 156;
 			menu_tab = 0;
+			return 0;
 		}
-		if(select_tab_x > 140){
+		if(select_tab1_y == 156){
 			jQuery('.order_tab2_main').jScrollPane();
-			select_tab_x = 140;
+			select_tab1_y = 156;
 		}
 		if(left_menu_tab1 < 0){
 			left_menu_tab1 = 0;
 			left_menu_tab2 = 1;
 		}
-		document.getElementsByClassName("select_tab")[0].style.left = select_tab_x + "px";
+		document.getElementsByClassName("select_tab")[0].style.top = select_tab1_y + "px";
+		document.getElementsByClassName("select_tab2")[0].style.top = select_tab2_y + "px";
 	}
 /* ===============================================  END LEFT MENU ====================================================== */	
 /* =============================================== BEGIN RIGNT SLIDER ================================================== */ 
-	delay_slide_right -= 1;
-	if(delay_slide_right < 0){
-		var top_elem = Math.floor(-y_elem_right_slider/75);		
-		y_elem_right_slider -=0.7;
-		for(i = 0; i < number_elem_right_slider; i++){
-			if(i < top_elem){
-				document.getElementsByClassName("right_slider")[i].style.top = (number_elem_right_slider)*75 + y_elem_right_slider + i * 75 + "px";	
+	if(document.getElementById("page_number").innerHTML  == 1){
+		delay_slide_right -= 1;
+		if(delay_slide_right < 0){
+			var top_elem = Math.floor(-y_elem_right_slider/75);		
+			y_elem_right_slider -=0.7;
+			for(i = 0; i < number_elem_right_slider; i++){
+				if(i < top_elem){
+					document.getElementsByClassName("right_slider")[i].style.top = (number_elem_right_slider)*75 + y_elem_right_slider + i * 75 + "px";	
+				}
+				else{
+					document.getElementsByClassName("right_slider")[i].style.top = y_elem_right_slider + i * 75 + "px";	
+				}
 			}
-			else{
-				document.getElementsByClassName("right_slider")[i].style.top = y_elem_right_slider + i * 75 + "px";	
+			if(y_elem_right_slider <= -(number_elem_right_slider)*75 )
+				y_elem_right_slider = 0;
+			
+			if(top_elem < Math.floor(-y_elem_right_slider/75) || (Math.floor(-y_elem_right_slider/75 == 0 ))){
+				delay_slide_right = 600;
 			}
-		}
-		if(y_elem_right_slider <= -(number_elem_right_slider)*75 )
-			y_elem_right_slider = 0;
-		
-		if(top_elem < Math.floor(-y_elem_right_slider/75) || (Math.floor(-y_elem_right_slider/75 == 0 ))){
-			delay_slide_right = 600;
 		}
 	}	
 /* =============================================== END RIGNT SLIDER ================================================== */ 
@@ -212,13 +361,37 @@ function js_main_slider(){
 		document.getElementsByClassName("login_form_fon")[0].style.zIndex = 500;
 		y_login_form -= 5;
 		document.getElementsByClassName("login_form")[0].style.top = y_login_form + "px";
-		if(y_login_form < -145){
+		if(y_login_form < -205){
 			login_close = 0;
 			document.getElementsByClassName("login_form_fon")[0].style.display = "none";
 		}
 	}
 
 /* =============================================== END LOGIN FORM ============================================ */
+/* =============================================== BEGIN QWESTION FORM ============================================ */
+	if(qwestion_open == 1 && y_qwestion_form < 44){
+		y_qwestion_form += 4;
+		if(y_qwestion_form >= 44){
+			y_qwestion_form = 44
+			qwestion_open = 0;
+			document.getElementsByClassName("login_form_fon")[0].style.zIndex = 600;
+		}
+		document.getElementsByClassName("consultant")[0].style.bottom = y_qwestion_form + "px";
+		
+		
+	
+	}
+	if(qwestion_close == 1){
+		document.getElementsByClassName("login_form_fon")[0].style.zIndex = 500;
+		y_qwestion_form -= 4;
+		document.getElementsByClassName("consultant")[0].style.bottom = y_qwestion_form + "px";
+		if(y_qwestion_form < -195){
+			qwestion_close = 0;
+			document.getElementsByClassName("login_form_fon")[0].style.display = "none";
+		}
+	}
+
+/* =============================================== END QWESTION FORM ============================================ */
 /* =============================================== BEGIN VIEW LEFT BLOCKS ============================================ */	
 	if(tab1_time > 0 && tab1_time <1.1){
 		tab1_time += 0.02;		
@@ -328,6 +501,76 @@ function js_main_slider(){
 	
 	
 /* =============================================== END CALENDAR ================================================== */	
+/* =============================================== BEGIN NEWS ================================================== */	
+	if(document.getElementById("page_number").innerHTML  == 2 && article_panel_open == 1){
+		article_width += 10;
+		if(article_width >= 400){
+			article_width = 400;
+			article_panel_open = 0;
+		}
+		document.getElementsByClassName("voyage_article")[0].style.left = -400 + article_width + "px";
+		document.getElementById("container_voyage").style.marginLeft = article_width + 10 + "px";	
+		document.getElementById("container_voyage").style.width = document.body.clientWidth - 273 - article_width + "px";
+		if(panel_type == 'foto'){
+			big_foto_opacity += 0.05;
+			document.getElementsByClassName("voyage_big_foto")[0].style.display = 'block';
+			document.getElementsByClassName("voyage_big_foto")[0].style.opacity = big_foto_opacity;
+			voyage_big_foto
+		}
+		if(article_panel_open == 0){
+			$(window).ready(function(){			
+				$('#container_voyage').masonry({ // выбираем элемент-контейнер в котором расположены блоки для динамической верстки
+				itemSelector: '.item', // указываем класс элемента являющегося блоком в нашей сетке
+				singleMode: true, // true - если у вас все блоки одинаковой ширины
+				resizeable: true, // перестраивает блоки при изменении размеров окна
+				isAnimated: !Modernizr.csstransitions // анимируем перестроение блоков при помощи css transitions и Modernizr
+				}); 
+			});
+		}	
+		
+	}
+	if(document.getElementById("page_number").innerHTML  == 2 && article_panel_close == 1){
+		article_width -= 10;
+		if(article_width <= 0){
+			article_width = 0;
+			article_panel_close = 0;
+		}
+		document.getElementsByClassName("voyage_article")[0].style.left = -400 + article_width + "px";
+		document.getElementById("container_voyage").style.marginLeft = article_width + 10 + "px";	
+		document.getElementById("container_voyage").style.width = document.body.clientWidth - 273 - article_width + "px";
+		if(panel_type == 'foto'){
+			big_foto_opacity -= 0.05;
+			/**/
+			document.getElementsByClassName("voyage_big_foto")[0].style.opacity = big_foto_opacity;
+		}
+		if(article_panel_close == 0){
+			document.getElementsByClassName("voyage_big_foto")[0].style.display = 'none';
+			$(window).ready(function(){			
+				$('#container_voyage').masonry({ // выбираем элемент-контейнер в котором расположены блоки для динамической верстки
+				itemSelector: '.item', // указываем класс элемента являющегося блоком в нашей сетке
+				singleMode: true, // true - если у вас все блоки одинаковой ширины
+				resizeable: true, // перестраивает блоки при изменении размеров окна
+				isAnimated: !Modernizr.csstransitions // анимируем перестроение блоков при помощи css transitions и Modernizr
+				}); 
+			});
+		}	
+		
+	}
+/* =============================================== END NEWS ================================================== */	
+	if(document.getElementById("page_number").innerHTML  == 5){
+		if(number_block > 0 && height_tmp < another_block_height){
+			height_tmp += 11;
+			if(height_tmp >= another_block_height){
+				document.getElementsByClassName("another_cont")[number_block-1].style.height = another_block_height+ "px";
+				number_block = 0;
+				height_tmp  = 0;
+				jQuery('.block_search_scroll').jScrollPane();	
+			}
+			document.getElementsByClassName("another_cont")[number_block-1].style.height = height_tmp + "px";
+			
+		}
+	}
+	}
 }
 
 function js_menu_tab(tab){
@@ -389,6 +632,7 @@ function js_tab1_checkbox_status(){
 		}
 		return 0;
 	}
+	return 0;
 }
 
 function js_focus(elem){
@@ -500,6 +744,8 @@ function js_next_detail2(fild_name){
 function js_login_open_fon() {
 	  
 	document.getElementsByClassName("login_form_fon")[0].style.display = "block";
+	document.getElementsByClassName("login_form")[0].style.display = "block";
+	
 	if(y_login_form < -143){
 		login_open = 1;
 		y_login_form = -144;
@@ -511,11 +757,30 @@ function js_login_close_fon(event) {
   event = event || window.event
   var t = event.target || event.srcElement
   
-  if(t.className == "login_form_fon")
-	login_close = 1;
-    /*document.getElementsByClassName("login_form_fon")[0].style.display = "none";*/
+  if(t.className == "login_form_fon"){
+		if(y_login_form > 40){
+			login_close = 1;  
+		}
+		if(y_qwestion_form > 40){
+			qwestion_close = 1;
+		}
+	}
+}
+ 
+ function js_qwestion_open() {
+	document.getElementsByClassName("consultant")[0].style.bottom = - 140 + "px";  
+	document.getElementsByClassName("login_form_fon")[0].style.display = "block";
+	document.getElementsByClassName("consultant")[0].style.display = "block";
 	
- }
+	if(y_qwestion_form < -143){
+		qwestion_open = 1;
+		y_qwestion_form = -144;
+	}
+}
+
+function js_qwestion_close(event) { 
+	qwestion_close = 1; 
+} 
  
 function js_select_form(t, number){
 	document.getElementsByClassName("tab1_class_select_ul")[number].style.display = "block"
@@ -601,4 +866,58 @@ function js_tab2_people_open(){
 	document.getElementsByClassName("tab2_people")[0].style.display = "block";	
 	document.getElementsByClassName("tab2_people")[1].style.opacity = 0;
 	tab2_people_open = 0.2;
+}
+
+function js_article_panel_close(){
+	article_panel_close = 1;
+	
+/*	document.getElementsByClassName("voyage_article")[0].style.left = -400 + "px";	
+	document.getElementById("container_voyage").style.marginLeft = 0 + "px";	
+	document.getElementById("container_voyage").style.width = document.body.clientWidth - 273 + "px";
+	
+	
+	$(window).ready(function(){			
+		$('#container_voyage').masonry({ // выбираем элемент-контейнер в котором расположены блоки для динамической верстки
+		itemSelector: '.item', // указываем класс элемента являющегося блоком в нашей сетке
+		singleMode: true, // true - если у вас все блоки одинаковой ширины
+		resizeable: true, // перестраивает блоки при изменении размеров окна
+		isAnimated: !Modernizr.csstransitions // анимируем перестроение блоков при помощи css transitions и Modernizr
+		}); 
+	});   */
+}
+
+function js_article_panel_open(q){
+	article_panel_open = 1;
+	panel_type = q;
+}
+
+function js_add_result_another(n){
+	
+	number_block = n;	
+	another_block_height = document.getElementsByClassName("search_result_another")[number_block-1].offsetHeight;
+	 /*   document.getElementsByClassName("another_cont")[number_block].style.height  */
+}
+
+$(function(){
+    $('#r1').change(function(){       
+		document.getElementById("another_select1").style.display = "block";
+		document.getElementById("another_select2").style.display = "none";
+    });
+});
+
+$(function(){
+    $('#r2').change(function(){       
+		document.getElementById("another_select2").style.display = "block";
+		document.getElementById("another_select1").style.display = "none";
+    });
+});
+
+function js_slider_nav(number){
+	for(i= 0; i < 4; i++){
+		document.getElementsByClassName("slider_nav_li")[i].style.backgroundPosition = "0px -598px";
+	}
+	document.getElementsByClassName("slider_nav_li")[number].style.backgroundPosition = "0px -623px";
+	slider_on = 1;
+	delay_slide = 0;
+	manual_slide = number;
 }
