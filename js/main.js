@@ -500,7 +500,7 @@ function js_main_slider(){
 			document.getElementsByClassName("tab1_detail")[0].style.opacity = tab1_detail_open;		
 			if(tab1_detail_open == 1)
 				tab1_detail_open = 10;
-			if(scroll_bron < 435 && data_fild ==  "tab1_time_back_fild"){
+			if(scroll_bron < 735 -  parseInt(document.getElementsByClassName("order_tab1_main")[0].style.height) && data_fild ==  "tab1_time_back_fild"){
 				scroll_bron += 7;
 				
 				var pane = jQuery('.order_tab1_main');
@@ -554,19 +554,19 @@ function js_main_slider(){
 				
 			}
 			document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
-			if(scroll_bron < 190 && data_fild ==  "tab1_time_from_fild"){
-				scroll_bron += 7;
+			if(scroll_bron < 490 -  parseInt(document.getElementsByClassName("order_tab1_main")[0].style.height) && data_fild ==  "tab1_time_from_fild"){
 				
 				var pane = jQuery('.order_tab1_main');
+				var api = pane.data('jsp');
+				scroll_bron += 7; 
 					pane.jScrollPane(
 						{
 							showArrows: true
 						}
 					);
-					var api = pane.data('jsp');
 					api.scrollTo(0, scroll_bron);
 			}
-			if(scroll_bron < 270 && data_fild ==  "tab1_time_back_fild"){
+			if(scroll_bron < 570 -  parseInt(document.getElementsByClassName("order_tab1_main")[0].style.height) && data_fild ==  "tab1_time_back_fild"){
 				scroll_bron += 7;
 				
 				var pane = jQuery('.order_tab1_main');
