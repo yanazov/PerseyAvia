@@ -5776,9 +5776,9 @@ body{
 		background-color: $color_green;
 		text-align: left;
 		opacity: 0;
-		-moz-box-shadow: 0 0 8px #999; 
+	/*	-moz-box-shadow: 0 0 8px #999; 
 		-webkit-box-shadow: 0 0 8px #999; 
-		box-shadow: 0 0 8px  #999; 
+		box-shadow: 0 0 8px  #999;   */
 		.login_form_close{
 			display: block;
 			position: absolute;
@@ -6554,12 +6554,16 @@ body{
 	h1{
 		font-size: 24pt;
 	}
-	.main_fon{
+	.main_fon{	
+		.slogan_cont{
+				left: 20px;
+		}
 		.slogan{
 			width: 390px;
-			left: 30px;
-			
-			
+			left: 0px;
+		}
+		.price_cont{
+			right: 10px;
 		}
 	}
 

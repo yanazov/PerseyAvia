@@ -6319,9 +6319,9 @@ label span {
   background-color: #49b69c;
   text-align: left;
   opacity: 0;
-  -moz-box-shadow: 0 0 8px #999;
-  -webkit-box-shadow: 0 0 8px #999;
-  box-shadow: 0 0 8px  #999;
+  /*	-moz-box-shadow: 0 0 8px #999; 
+  	-webkit-box-shadow: 0 0 8px #999; 
+  	box-shadow: 0 0 8px  #999;   */
 }
 /* line 5782, ../sass/styles.scss */
 .login_form_fon .login_form .login_form_close {
@@ -7168,18 +7168,26 @@ label span {
   }
 
   /* line 6558, ../sass/styles.scss */
+  .main_fon .slogan_cont {
+    left: 20px;
+  }
+  /* line 6561, ../sass/styles.scss */
   .main_fon .slogan {
     width: 390px;
-    left: 30px;
+    left: 0px;
+  }
+  /* line 6565, ../sass/styles.scss */
+  .main_fon .price_cont {
+    right: 10px;
   }
 
-  /* line 6571, ../sass/styles.scss */
+  /* line 6575, ../sass/styles.scss */
   .center_block .block_search .search_result_another .result_another_line .result_another_line_detail .line_detail1, .center_block .block_search .search_result_another .result_another_line .result_another_line_detail .line_detail2 {
     display: inline-block;
     position: relative;
   }
 
-  /* line 6582, ../sass/styles.scss */
+  /* line 6586, ../sass/styles.scss */
   #footer_tel {
     display: none;
   }

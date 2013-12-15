@@ -64,6 +64,7 @@ var profile_form_detail_close = 0;
 var profile_form_history_open = 0;
 var profile_form_history_close = 0;
 var order_step_next_open = 0;
+var scroll_bron = 0;
 
 window.onload = function() {	
 	
@@ -499,6 +500,18 @@ function js_main_slider(){
 			document.getElementsByClassName("tab1_detail")[0].style.opacity = tab1_detail_open;		
 			if(tab1_detail_open == 1)
 				tab1_detail_open = 10;
+			if(scroll_bron < 435 && data_fild ==  "tab1_time_back_fild"){
+				scroll_bron += 7;
+				
+				var pane = jQuery('.order_tab1_main');
+					pane.jScrollPane(
+						{
+							showArrows: true
+						}
+					);
+					var api = pane.data('jsp');
+					api.scrollTo(0, scroll_bron);
+			}
 		}
 		if(tab2_detail_open > 0 && tab2_detail_open < 1.1){
 			tab2_detail_open += 0.02
@@ -537,9 +550,34 @@ function js_main_slider(){
 			if(calendar_left < -293){
 				calendar_left = -293;
 				calendar_open = -293;
+				
+				
 			}
 			document.getElementsByClassName("calendar_block")[0].style.left = calendar_left + "px";
-			
+			if(scroll_bron < 190 && data_fild ==  "tab1_time_from_fild"){
+				scroll_bron += 7;
+				
+				var pane = jQuery('.order_tab1_main');
+					pane.jScrollPane(
+						{
+							showArrows: true
+						}
+					);
+					var api = pane.data('jsp');
+					api.scrollTo(0, scroll_bron);
+			}
+			if(scroll_bron < 270 && data_fild ==  "tab1_time_back_fild"){
+				scroll_bron += 7;
+				
+				var pane = jQuery('.order_tab1_main');
+					pane.jScrollPane(
+						{
+							showArrows: true
+						}
+					);
+					var api = pane.data('jsp');
+					api.scrollTo(0, scroll_bron);
+			}
 		}
 		if(calendar_y_tmp > calendar_y_end){
 			calendar_y_tmp -= 7;
