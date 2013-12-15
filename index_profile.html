@@ -29,7 +29,7 @@
 	
 </head>
 <body>
-	<span id="page_number">5</span>
+	<span id="page_number">9</span>
 	<div id="fon_grey" class="main_fon">
 		
 	</div>
@@ -43,8 +43,8 @@
 				<span class="tel_txt">Круглосуточно!</span>				
 			</span>
 			<span class="header_separ"></span>
-			<a href="" class="no_student">Уже не студент</a>
-			<span class="student_txt">Вернуться к обычным авиа-тарифам</span>
+			<a href="" class="student">Я студент!</a>
+			<span class="student_txt">Специальные тарифы для студентов!</span>
 			<div class="header_right">
 				
 					<ul class="header_menu">
@@ -53,7 +53,14 @@
 						<li><a href="">Программа лояльности</a></li>
 					</ul>
 				
-				<div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>
+				<div class="profile_top">
+					Олег 
+					<br/>
+					Кучеренко
+					<a href="#" onClick="js_profile_form_detail_open()">Профиль</a>
+				
+				</div>
+				<div class="btn_exit"><span>Выход</span></div>
 				
 			</div>   
 		</header>
@@ -64,6 +71,8 @@
 				<span class="left_column_name_img"></span>
 			</span>	
 			<span class="select_tab"></span>
+			<span class="select_tab2"></span>
+			<span class="back_fon_left"></span>
 			<ul class="menu_order">
 				<li class="menu_tab" onclick="js_menu_tab(1)">В одну/две стороны
 				</li><li class="menu_tab" onclick="js_menu_tab(2)">Сложный маршрут</li>				
@@ -253,7 +262,18 @@
 					</div>
 					<div class="order_tab2_main">
 						<div class="tab2_route">
-							<span class="tab2_route_caption">Маршрут:</span>					   
+							<span class="tab2_route_caption">Маршрут:</span>
+					<!--		<span class="tab2_route_city">Киев
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+								<span class="arrow_next"></span>
+							</span>
+							
+							<span class="tab2_route_city">Киев3
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+							</span>
+							<span class="tab2_route_city">Киев2
+								<span class="tab2_route_city_del" onClick="js_route_city_del(this)"></span>
+							</span>          -->        
 						</div>
 						<div class="order_tab2_city">	
 							<span class="tab2_from">Город вылета</span>
@@ -361,6 +381,9 @@
 						<div class="tab2_continue" onClick="js_tab2_continue()">Продолжить</div>
 						<div class="tab2_validate" onClick="js_tab2_people_open()">Завершить</div>
 						
+						
+						
+						
 						<div class="tab2_people">
 							<div class="tab2_adult">
 								Взрослые
@@ -390,6 +413,7 @@
 							</div>
 							<input id="tab2_direct1" type="checkbox" checked>
 							<label for="tab2_direct1"><span></span>Только прямые рейсы</label>
+						<!--	<input class="tab2_find" type="submit" value="Искать">  -->
 						</div>
 					</div>
 					
@@ -428,552 +452,408 @@
 				</div>
 				<div class="calendar_shadow"></div>
 			</div>
-			<div class="block_search">
-				<div class="block_search_scroll">
-					<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia1"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								1 400<span class="rezult_right_price_ua"> грн.</span>
-							</span>
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 1)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
-							</span>
-						</div>
+			<div class="block_voyage">			
+				<div class="voyage_article">
+					<div class="voyage_article_body">
+						<h2><span class="article_caption">Эльбрус готовится к открытию сезона катания</span></h2>
+						<span>
+						В течение ноября и декабря 2013 года жители и гости города смогут присоединиться ко 
+						множеству новых туристических направлений и узнать больше о памятниках культуры и
+						интересных достопримечательностях Мадрида, познакомиться с его историей, культурой
+						и традициями.
+						<br/>
+						<br/>
+						Присоединиться к пешеходным экскурсиям можно за 5,90 евро, к велосипедным трекингам 
+						и прогулкам на роликовых коньках — за 6,90 евро.
+						<br/>
+						<br/>
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						В течение ноября и декабря 2013 года жители и гости города смогут присоединиться ко 
+						множеству новых туристических направлений и узнать больше о памятниках культуры и
+						интересных достопримечательностях Мадрида, познакомиться с его историей, культурой
+						и традициями.
+						
+						Присоединиться к пешеходным экскурсиям можно за 5,90 евро, к велосипедным трекингам 
+						и прогулкам на роликовых коньках — за 6,90 евро.
+
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						В течение ноября и декабря 2013 года жители и гости города смогут присоединиться ко 
+						множеству новых туристических направлений и узнать больше о памятниках культуры и
+						интересных достопримечательностях Мадрида, познакомиться с его историей, культурой
+						и традициями.
+						
+						Присоединиться к пешеходным экскурсиям можно за 5,90 евро, к велосипедным трекингам 
+						и прогулкам на роликовых коньках — за 6,90 евро.
+
+						Полное расписание туров и билеты на них уже поступили в продажу в туристический 
+						центр на площади Plaza Mayor. Новые экскурсии в столице Испании проходят каждый день.
+						Например, по субботам в 10-00 стартует тур «Церкви и монастыри старого Мадрида» 
+						(Iglesias y conventos del viejo Madrid), где можно осмотреть самые известные 
+						памятники архитектуры и религиозные здания эпохи 
+						</span>  
+					</div>	
+					<div class="article_panel">
+						<span class="article_panel_btn" onClick="js_article_panel_close()">
+							<span class="article_panel_btn_img"></span>
+						</span>
 					</div>
-<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
-					<div class="another_cont">
-						<div id="add_avia1" class="search_result_another">
-							<span class="result_another_index1">KBP</span>
-							<span class="result_another_index2">SVO</span>
-							<span class="result_another_data">12.11.2013</span>
-							<span class="result_another_day">Вторник</span>
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r1" name="radio1" type="radio" value="">
-									<label for="r1"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select1" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r2" name="radio1" type="radio" value="">
-									<label for="r2"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select2" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_info">
-								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
-								<span class="result_another_info_detail">
-									Взрослый: стоимость 1 билета(ов)* 
-									<span class="txt_bold">15443ГРН</span>
-									(Тариф <span class="txt_bold">1852USD</span> + сборы)
-							
-								</span>
-								<a class="tarif_detail" href="#" onClick="js_result_another_info_detail(0)">
-									Тарифы подробнее
-									<span class="result_another_info_arrow"></span>
-								</a>
-								<a class="result_another_order" href="">Бронировать</a>
-							</div>
-							
+				</div>
+				<div class="profile_block">
+					<div class="profile_form_detail">
+						<span class="profile_form_caption">Профиль</span>
+			<!--			<a href="#" class="profile_form_close" onClick="js_profile_form_detail_close()"></a>    -->
+						<a href="#" class="profile_form_close"></a>
+						<div class="profile_form_elem">
+							Логин 
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
 						</div>
+						<div class="profile_form_elem">
+							Пароль
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" >
+						
+						</div>
+						<div class="profile_form_elem">
+							Имя
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
+						
+						</div>
+						<div class="profile_form_elem">
+							Фамилия
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Karabas">
+						
+						</div>
+						<div class="profile_form_elem">
+							Город 
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Prostokvashino">
+						
+						</div>
+						<div class="profile_form_elem">
+							Дата рождения 
+							<br/>
+							<input type="text" class="feedback_form_fild DD" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="14">
+							<input type="text" class="feedback_form_fild MM" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="02">
+							<input type="text" class="feedback_form_fild YYYY" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="1995">
+							<span class="name_DD">дд</span>
+							<span class="name_MM">мм</span>
+							<span class="name_YYYY">гггг</span>
+						</div>
+						<div class="profile_form_elem">
+							Моб. телефон 
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="066 491 22 74">
+						
+						</div>
+						<div class="profile_form_elem">
+							E-mail
+							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas@urk.net">
+						
+						</div>
+						<input id="news_company" type="checkbox" checked>
+						<label for="news_company"><span ></span>Быть в курсе новостей компании</label>
+						<a href="#" class="profile_save_btn">Сохранить</a>
+						<div class="profile_form_panel">
+							<a href="#" class="profile_form_history_btn" onClick="js_profile_form_history_open()">История</a>
+						</div>
+						<div class="voyage_about_open_shadow"></div>
 					</div>
-<!-- *****************************************   END ANOTHER   **************************** -->					
-					
-					<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia3"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
+					<div class="profile_form_history">
+						<span class="profile_form_history_caption">История заказов</span>
+						<a href="#" class="profile_form_history_close" onClick="js_profile_form_history_close()"></a>
+						<span class="profile_form_history_txt">Индивидуальный подход к каждому клиенту - отличительная черта нашей компании.
+						Вы всегда будете ощущать особое внимание со стороны сотрудников Персей Тревел,
+						потому что каждый для нас - это VIP.
+						</span>
+						<div class="profile_form_history_scroll">
+							<div class="profile_form_history_elem">
+								<img src="img/history1.jpg" alt="" />
+								<span class="profile_form_history_elem_txt">
+									Паттая + Бангкок + Бали
+									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
 								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
+								<span class="profile_form_history_elem_bonuce">
+									Бонусы
+									<span>230</span>
 								</span>
 							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
+							<div class="profile_form_history_elem">
+								<img src="img/history2.jpg" alt="" />
+								<span class="profile_form_history_elem_txt">
+									Эмираты: Дубаи + Абу-да-БИ
+									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
 								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
+								<span class="profile_form_history_elem_bonuce">
+									Бонусы
+									<span>230</span>
 								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
+							</div>
+							<div class="profile_form_history_elem">
+								<img src="img/history3.jpg" alt="" />
+								<span class="profile_form_history_elem_txt">
+									Греция + автобусный тур по Европе
+									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+								</span>
+								<span class="profile_form_history_elem_bonuce">
+									Бонусы
+									<span>230</span>
+								</span>
+							</div>
+							<div class="profile_form_history_elem">
+								<img src="img/history4.jpg" alt="" />
+								<span class="profile_form_history_elem_txt">
+									Паттая + Бангкок + Бали
+									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+								</span>
+								<span class="profile_form_history_elem_bonuce">
+									Бонусы
+									<span>230</span>
+								</span>
+							</div>
+							<div class="profile_form_history_elem">
+								<img src="img/history1.jpg" alt="" />
+								<span class="profile_form_history_elem_txt">
+									Паттая + Бангкок + Бали
+									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+								</span>
+								<span class="profile_form_history_elem_bonuce">
+									Бонусы
+									<span>230</span>
 								</span>
 							</div>
 						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								1 659<span class="rezult_right_price_ua"> грн.</span>
-							</span>	
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 2)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
-							</span>
-						</div>
+						<a href="#" class="profile_form_history_programm_btn"  onClick="js_profile_form_history_close()">Бонусная программа</a>
+						<div class="voyage_about_open_shadow"></div>
 					</div>
-<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
-					<div class="another_cont">
-						<div id="add_avia1" class="search_result_another">
-							<span class="result_another_index1">KBP</span>
-							<span class="result_another_index2">SVO</span>
-							<span class="result_another_data">12.11.2013</span>
-							<span class="result_another_day">Вторник</span>
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r3" name="radio2" type="radio" value="">
-									<label for="r3"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select1" class="another_select"></span>
+				</div>
+				<div class="scroll_conteiner">
+					<div id="container_voyage" class="voyage_right_block">
+						
+						<a class="item item_a"  href="index_news_in.html">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Бали в Августе - лучший вариант!!!</span>
+								<span class="voyage_price">от 1 899$</span>
 							</div>
-							
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r4" name="radio2" type="radio" value="">
-									<label for="r4"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select2" class="another_select"></span>
+						</a>
+						<a class="item  item_a">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Неизвестные острова Индонезии</span>
+								<span class="voyage_price">от 1 899$</span>
 							</div>
-							
-							<div class="result_another_info">
-								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
-								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
-								<a class="result_another_order" href="">Бронировать</a>
+						</a>
+						<a class="item  item_a">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Горнолыжный курорт в Грузии</span>
+								<span class="voyage_price">от 399$</span>
 							</div>
-							
-						</div>
-					</div>
-<!-- *****************************************   END ANOTHER   **************************** -->					
-					
-					<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia3"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
+						</a>
+						<div class="item" onClick="js_article_panel_open('txt')">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Эльбрус готовится к открытию сезона катания</span>
+								<span class="voyage_txt">
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт и 
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт... 
 								</span>
 							</div>
 						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								659<span class="rezult_right_price_ua"> грн.</span>
-							</span>	
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 3)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
-							</span>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">7 дней в Рио + незабываемый Карнавал</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
 						</div>
-					</div>
-<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
-					<div class="another_cont">
-						<div id="add_avia1" class="search_result_another">
-							<span class="result_another_index1">KBP</span>
-							<span class="result_another_index2">SVO</span>
-							<span class="result_another_data">12.11.2013</span>
-							<span class="result_another_day">Вторник</span>
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r1" name="radio1" type="radio" value="">
-									<label for="r1"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Открытие нового региона катания Ароза -
+									Ленцерхайде, Швейцария
 								</span>
-								<span id="another_select1" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r2" name="radio1" type="radio" value="">
-									<label for="r2"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select2" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_info">
-								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
-								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
-								<a class="result_another_order" href="">Бронировать</a>
-							</div>
-							
-						</div>
-					</div>
-<!-- *****************************************   END ANOTHER   **************************** -->							
-					
-					<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia4"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
+								<span class="voyage_txt">
+									С 22 декабря регион катания Арозы объединяется с регионом катания Ленцерхайде...
 								</span>
 							</div>
 						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								1 200<span class="rezult_right_price_ua"> грн.</span>
-							</span>	
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 4)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
-							</span>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">В Грузии проявится новый горнолыжный курорт</span>
+								<span class="voyage_txt">
+									Строительство нового горнолыжнго курорта Тетнулди начнется в Сванетии 
+									(северо-западная Грузия), на склонах одноименной горы уже в...
+								</span>
+							</div>
 						</div>
-					</div>
-					<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
-					<div class="another_cont">
-						<div id="add_avia1" class="search_result_another">
-							<span class="result_another_index1">KBP</span>
-							<span class="result_another_index2">SVO</span>
-							<span class="result_another_data">12.11.2013</span>
-							<span class="result_another_day">Вторник</span>
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r1" name="radio1" type="radio" value="">
-									<label for="r1"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Тур на Мальдивы на Новый Год</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Эльбрус готовится к открытию сезона катания</span>
+								<span class="voyage_txt">
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт... 
 								</span>
-								<span id="another_select1" class="another_select"></span>
 							</div>
-							
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r2" name="radio1" type="radio" value="">
-									<label for="r2"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Airbus и Boeing будут работать только на Emirates</span>
+								<span class="voyage_txt">
+									Арабская авиакомпания Emirates сделала крупнейший в истории гражданской 
+									авиации заказ на самолеты. Перевозчик готовится купить 200...
+
 								</span>
-								<span id="another_select2" class="another_select"></span>
 							</div>
-							
-							<div class="result_another_info">
-								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
-								<a class="tarif_detail" href="">Тарифы подробнее<span></span></a>
-								<a class="result_another_order" href="">Бронировать</a>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Дубаи - лучшее место для отдыха</span>
+								<span class="voyage_price">от 1 899$</span>
 							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Полный релакс на ГОА + экскурсии</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Pinterest поможет туристам с "географией"</span>
+								<span class="voyage_txt">
+									Сервис Pinterest создал географические "пины" для путешественников. 
+									Теперь пользователям предлагают добавить географическую информацию к новым...
+
+								</span>
+							</div>
+						</div>
+						<div class="item" onClick="js_article_panel_open('txt')">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Эльбрус готовится к открытию сезона катания</span>
+								<span class="voyage_txt">
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт и 
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт... 
+								</span>
+							</div>
+						</div>
+						<a class="item item_a"  href="index_news_in.html">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Бали в Августе - лучший вариант!!!</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</a>
+						<a class="item  item_a">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Неизвестные острова Индонезии</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</a>
+						<a class="item  item_a">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Горнолыжный курорт в Грузии</span>
+								<span class="voyage_price">от 399$</span>
+							</div>
+						</a>
+						<div class="item" onClick="js_article_panel_open('txt')">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Эльбрус готовится к открытию сезона катания</span>
+								<span class="voyage_txt">
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт и 
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт... 
+								</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">7 дней в Рио + незабываемый Карнавал</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Открытие нового региона катания Ароза -
+									Ленцерхайде, Швейцария
+								</span>
+								<span class="voyage_txt">
+									С 22 декабря регион катания Арозы объединяется с регионом катания Ленцерхайде...
+								</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">В Грузии проявится новый горнолыжный курорт</span>
+								<span class="voyage_txt">
+									Строительство нового горнолыжнго курорта Тетнулди начнется в Сванетии 
+									(северо-западная Грузия), на склонах одноименной горы уже в...
+								</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Тур на Мальдивы на Новый Год</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Эльбрус готовится к открытию сезона катания</span>
+								<span class="voyage_txt">
+									На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим 
+									сезоном проводятся профилактические работы, ремонт... 
+								</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_only_txt">
+								<span class="voyage_caption">Airbus и Boeing будут работать только на Emirates</span>
+								<span class="voyage_txt">
+									Арабская авиакомпания Emirates сделала крупнейший в истории гражданской 
+									авиации заказ на самолеты. Перевозчик готовится купить 200...
+
+								</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Дубаи - лучшее место для отдыха</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="voyage_shadow">
+								<span class="voyage_caption">Полный релакс на ГОА + экскурсии</span>
+								<span class="voyage_price">от 1 899$</span>
+							</div>
+						</div>
+						
+						
+						<div class="voyage_big_foto">
 							
 						</div>
 					</div>
-<!-- *****************************************   END ANOTHER   **************************** -->					
-					
-					<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								14 359<span class="rezult_right_price_ua"> грн.</span>
-							</span>	
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 5)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
-							</span>
-						</div>
-					</div>
-				
-				</div>	
+				</div>
 			</div>
 			<div class="block_conteiner">
 				
 			</div>
+			
 		</div>
 					
 		<footer class="footer">
@@ -984,9 +864,9 @@
 				<li>E-mail: <a href="">avia@persey.travel</a></li>
 			</ul>
 			<div class="footer_right">
-				<div class="footer_iata" onClick="js_lisense_open()">
+				<a class="footer_iata" href="">
 					<span class="img_iata"></span>
-				</div>
+				</a>
 				<a class="footer_isic" href="">
 					<span class="img_isic"></span>
 				</a>
@@ -1000,6 +880,8 @@
 	</div>
 	<div class="login_form_fon" onClick="js_login_close_fon(event)">
 		<div class="login_form">
+			<span class="login_form_treyg"></span>
+			<span class="login_form_close" onClick="js_login_close_fon(event)"></span>
 			<input type="text" class="login_name_fild" placeholder="Имя" onFocus="js_focus(this)" onBlur="js_blur(this)">
 			<input type="text" class="login_psw_fild" placeholder="Пароль" onFocus="js_focus(this)" onBlur="js_blur(this)">
 			<a class="login_enter" href="">Войти</a>

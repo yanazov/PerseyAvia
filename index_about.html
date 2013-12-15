@@ -46,13 +46,13 @@
 			<a href="" class="no_student">Уже не студент</a>
 			<span class="student_txt">Вернуться к обычным авиа-тарифам</span>
 			<div class="header_right">
-				<nav>
+				
 					<ul class="header_menu">
 						<li><a href="">О проекте</a></li>
 						<li><a href="">Акции и новости</a></li>
 						<li><a href="">Программа лояльности</a></li>
 					</ul>
-				</nav>
+				
 				<div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>
 				
 			</div>   
@@ -482,58 +482,97 @@
 						памятники архитектуры и религиозные здания эпохи 
 						</span>  
 					</div>	
-		<!--			<div class="article_panel">
-						<a class="article_panel_btn" href="index_news.html">
-							<span class="article_panel_btn_img"></span>
-						</a>
-						<a class="article_panel_btn_prev" href="">
-							<span class="article_panel_btn_prev_img"></span>
-						</a>
-						<a class="article_panel_btn_next" href="">
-							<span class="article_panel_btn_next_img"></span>
-						</a>
+					<div class="article_panel">						
+						<a class="feedback_btn" href="#"  onClick="js_feedback_form_open()">Обратная связь</a>
 						
-					</div>    -->
+					</div> 
+					<div class="voyage_about_open_shadow"></div>
 				</div>
+				
 				<div class="block_about">
-					<span class="about_personal_block">
-						<span class="about_personal_block_decor">
-							”
+				
+					<div class="feedback_form">
+						<span class="feedback_form_caption">Обратная связь</span>
+						<span class="feedback_form_close" onClick="js_feedback_form_close()"></span>
+						<span class="feedback_form_txt">Здесь Вы можете отправить нам прямое сообщение с описанием
+						интересующего Вас вопроса!</span>
+						<div class="feedback_form_elem">
+							Имя 
+							<input type="text" class="feedback_form_name" onFocus="js_focus(this)" onBlur="js_blur_feedback(this, 1)" >
+							<span id="yes1" class="feedback_form_elem_yes"></span>
+							<span id="error1" class="feedback_form_elem_error">
+								Ошибка ввода
+								<span class="feedback_form_elem_error_decor"></span>
+							</span>						
+						</div>
+						<div class="feedback_form_elem">
+							E-mail
+							<input type="text" class="feedback_form_email" onFocus="js_focus(this)" onBlur="js_blur_feedback(this, 2)" >
+							<span id="yes2" class="feedback_form_elem_yes"></span>
+							<span id="error2" class="feedback_form_elem_error">
+								Ошибка ввода
+								<span class="feedback_form_elem_error_decor"></span>
+							</span>						
+						</div>
+						<div class="feedback_form_elem">
+							Тема сообщения
+							<input type="text" class="feedback_form_tema" onFocus="js_focus(this)" onBlur="js_blur_feedback(this, 3)" >
+							<span id="yes3" class="feedback_form_elem_yes"></span>
+							<span id="error3" class="feedback_form_elem_error">
+								Ошибка ввода
+								<span class="feedback_form_elem_error_decor"></span>
+							</span>						
+						</div>
+						<div class="feedback_form_elem">
+							Сообщение
+							<textarea type="text" class="feedback_form_txt" onFocus="js_focus(this)" onBlur="js_blur_feedback(this, 4)"></textarea>
+							<span id="yes4" class="feedback_form_elem_yes"></span>
+							<span class="feedback_form_elem_error">
+								Ошибка ввода
+								<span class="feedback_form_elem_error_decor"></span>
+							</span>						
+						</div>
+						<span class="feedback_form_btn" onClick="">Отправить</span>
+					</div>
+					<div class="cont_personal_block">	
+						<span class="about_personal_block">
+							<span class="about_personal_block_decor">
+								”
+							</span>
+							Строительство нового горнолыжного курорта Тетнулди начнется в Сванетии 
+							(северо-западная Грузия), на склонах одноименной горы уже в... 
+							
+							<span class="personal_block_name">
+								Юрий Нагорный
+								<span class="personal_block_prof">дизайнер</span>
+							</span>
+							
 						</span>
-						Строительство нового горнолыжного курорта Тетнулди начнется в Сванетии 
-						(северо-западная Грузия), на склонах одноименной горы уже в... 
-						
-						<span class="personal_block_name">
-							Юрий Нагорный
-							<span class="personal_block_prof">дизайнер</span>
+						<span class="about_personal_block">
+							<span class="about_personal_block_decor">
+								”
+							</span>
+							На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим сезоном проводятся 
+							
+							<span class="personal_block_name">
+								Олег Кучеренко
+								<span class="personal_block_prof">директор</span>
+							</span>
+							
 						</span>
-						
-					</span>
-					<span class="about_personal_block">
-						<span class="about_personal_block_decor">
-							”
+						<span class="about_personal_block">
+							<span class="about_personal_block_decor">
+								”
+							</span>
+							С 22 декабря регион катания Арозы объединяется с регионом катания Ленцерхайде общая протяженность 
+							
+							<span class="personal_block_name">
+								Дарья Баренко
+								<span class="personal_block_prof">менеджер</span>
+							</span>
+							
 						</span>
-						На канатных дорогах ОАО "Курорт Эльбрус" перед зимним туристическим сезоном проводятся 
-						
-						<span class="personal_block_name">
-							Олег Кучеренко
-							<span class="personal_block_prof">директор</span>
-						</span>
-						
-					</span>
-					<span class="about_personal_block">
-						<span class="about_personal_block_decor">
-							”
-						</span>
-						С 22 декабря регион катания Арозы объединяется с регионом катания Ленцерхайде общая протяженность 
-						
-						<span class="personal_block_name">
-							Дарья Баренко
-							<span class="personal_block_prof">менеджер</span>
-						</span>
-						
-					</span>
-					
+					</div>	
 				</div>
 			
 			</div>
