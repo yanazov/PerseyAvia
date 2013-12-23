@@ -90,23 +90,52 @@
 			<a class="student" href="#" onClick="js_student_open()">
 				Я студент!
 				<span class="student_number">
-					№ 3436578890
+					S 380 2314 567 578
 					<span class="student_number_close">
 						<span class="student_number_close_img"></span>
 					</span>
 				</span>
 			
 			</a>
-			<span class="student_txt">Специальные тарифы для студентов!</span>
+		<!--	<span class="student_txt">Специальные тарифы для студентов!</span>    -->
+			<div class="footer_iata" onClick="js_lisense_open()">
+				<span class="img_iata"></span>
+				<span class="footer_licens">
+					Посмотреть сертификат
+					<span class="footer_licens_decor"></span>
+				</span>
+			</div>
+			<a class="footer_isic" href="">
+				<span class="img_isic"></span>
+				<span class="footer_licens">
+					Посмотреть сертификат
+					<span class="footer_licens_decor"></span>
+				</span>
+			</a>
 			<div class="header_right">
+				<ul class="header_menu">
+					<li><a href="">О проекте</a></li>
+					<li><a href="">Акции и новости</a></li>
+				</ul>
+				<div class="footer_select_lang" onClick="js_select_lang_listing()">
+					Язык
+					<span class="footer_select_lang_value">УКР</span>
+					<span class="footer_select_lang_decor"></span>
+				</div><div class="footer_select_currency" onClick="js_select_currency_listing()">
+					Валюта
+					<span class="footer_select_currency_value">ГРН</span>
+					<span class="footer_select_currency_decor"></span>
+				</div><div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>	
+				<ul class="footer_select_currency_listing">
+					<li onClick="js_select_currency(this)">РУБ</li>
+					<li onClick="js_select_currency(this)">USD</li>
+					<li onClick="js_select_currency(this)">EUR</li>
+				</ul>
+				<ul class="footer_select_lang_listing">
+					<li onClick="js_select_lang(this)">РУС</li>
+					<li onClick="js_select_lang(this)">ENG</li>
+				</ul>
 				
-					<ul class="header_menu">
-						<li><a href="">О проекте</a></li>
-						<li><a href="">Акции и новости</a></li>
-						<li><a href="">Программа лояльности</a></li>
-					</ul>
-				
-				<div class="btn_login" onClick="js_login_open_fon()"><span>Вход</span></div>
 				
 			</div>   
 		</header>
@@ -189,6 +218,12 @@
 								<input type="text" class="tab1_child_fild" onFocus="js_focus(this)" onBlur="js_blur(this)" >
 								<span class="tab1_child_up" onClick="js_number_up('tab1_child_fild')"></span>
 								<span class="tab1_child_dwn" onClick="js_number_dwn('tab1_child_fild')"></span>
+							</div>
+							<div class="tab1_child2">
+								до 2х лет
+								<input type="text" class="tab1_child_fild2" onFocus="js_focus(this)" onBlur="js_blur(this)" >
+								<span class="tab1_child2_up" onClick="js_number_up('tab1_child_fild2')"></span>
+								<span class="tab1_child2_dwn" onClick="js_number_dwn('tab1_child_fild2')"></span>
 							</div>
 						</div>
 						<div class="tab1_detail">
@@ -651,12 +686,7 @@
 				<li>E-mail: <a href="">avia@persey.travel</a></li>
 			</ul>
 			<div class="footer_right">
-				<div class="footer_iata" onClick="js_lisense_open()">
-					<span class="img_iata"></span>
-				</div>
-				<a class="footer_isic" href="">
-					<span class="img_isic"></span>
-				</a>
+				<div class="footer_right_social"></div>
 				<span class="qwestion" onClick="js_qwestion_open()">
 					Есть вопросы?
 					<span class="qwestion_info"></span>
@@ -791,10 +821,13 @@
 				<input id="r2" name="radio1" type="radio" value="">
 				<label for="r2"><span></span></label>
 				<span class="order_step_radio_txt">Физ. лицо</span>
+				<input id="r3" name="radio1" type="radio" value="">
+				<label for="r3"><span></span></label>
+				<span class="order_step_radio_txt">Студент</span>
 				
 			</div>
 			<span class="block_fild">
-				Логин
+				Логин/Email
 				<input type="text" class="reg_login_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 			</span>
 			<span class="block_fild block_fild_right">
@@ -802,16 +835,16 @@
 				<input type="text" class="reg_login_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 				<span class="small_txt">не менее 6-ти символов</span>
 			</span>	
-			<span class="block_fild">
+		<!--	<span class="block_fild">
 				E-mail
 				<input type="text" class="reg_login_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-			</span>
-			<span class="block_fild block_fild_right">
+			</span>   -->
+			<span class="block_fild block_fild_right2">
 				Повторите пароль
 				<input type="text" class="reg_login_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 			</span>
 			<input id="checkbox_agree" type="checkbox" onchange="js_tab1_checkbox_status()">
-			<label for="checkbox_agree">
+			<label id="checkbox_agree_label" for="checkbox_agree">
 				<span></span>
 			</label>
 			<span class="checkbox_txt">Я ознакомлен и согласен с 
@@ -819,9 +852,9 @@
 				использования сайта
 			</span>
 			<br/>
-			<span class="check_numbers_img"></span>
+	<!--		<span class="check_numbers_img"></span>
 			<input type="text" class="reg_login_fild check_numbers" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
-			<span class="check_numbers_txt">Введите цифры, показанные на изображении</span>
+			<span class="check_numbers_txt">Введите цифры, показанные на изображении</span>    -->
 			<span class="reg_btn">Зарегистрироватся</span>
 			
 		</div>
@@ -834,7 +867,7 @@
 				регистрацией, обратитесь к администратору сайта.
 			</span>	
 			<div class="block_fild">
-				№ студенческой карты
+				№ студенческой карты (ISIC/IYTC/ITIC)
 				<input type="text" class="student_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" onkeyup="js_next_block('tab1_from_fild', 'tab1_to_fild' )">
 			</div>
 			<span class="student_form_yes"></span>

@@ -3,8 +3,10 @@ $color_green_hover: #55d4b6;
 $color_blue: #002a46;
 $color_blue_light: #0072ba;
 $color_blue_light_hover: #0285d8;
+
 $color_red: #c44231;
 $color_red_hover: #e04c38;
+
 $color_txt: #2e363d;
 $color_border: #1a4059;
 $color_grey: #e4e8eb;
@@ -115,13 +117,13 @@ body{
 				vertical-align:middle;
 				background:url(../img/main_sprite.png) no-repeat;
 				cursor:pointer;
-				background-position: 0px -275px;
+				background-position: 0px -250px;
 				font-size: 8pt;
 				color: #fff;
 			}
 			input[type="checkbox"]:checked + label span {
 				background:url(../img/main_sprite.png) no-repeat;
-				background-position: 0px -250px;
+				background-position: 0px -275px;
 			}
 			label{
 				display: block;
@@ -323,25 +325,27 @@ body{
 		.student_number{
 			display: none;
 			position: absolute;
-			top: 0px;
+			top: 3px;
 			left: 0px;
 			width: 139px;
 			height: 12px;
-			padding: 11px 18px 11px 18px;
-			background-color: #ccd4da;
-			color: #7a858d;
+			padding: 7px 8px 6px 7px;
+			background-color: #fff;
+			border: 1px solid #b6bdc3;
+			color: $color_red;
 			font-family: 'helvetica_neue';
 			font-weight: bold;
-			font-size: 10.5pt;
+			font-size: 8pt;
 			z-index: 2;
 			.student_number_close{
 				display: block;
 				position: absolute;
 				top: 0px;
 				right: 0px;
-				width: 34px;
-				height: 34px;
-				background-color: #b6bdc3;				
+				width: 25px;
+				height: 25px;
+				background-color: $color_grey;	
+				border-left: 1px solid #b6bdc3;			
 			}
 			.student_number_close_img{
 				display: block;
@@ -350,7 +354,7 @@ body{
 				height: 17px;
 				margin: 8px 0px 0px 8px;
 				background: url(../img/main_sprite.png) no-repeat;
-				background-position: 0px -870px;
+				background-position: 0px -150px;
 			}
 		}
 		
@@ -386,6 +390,123 @@ body{
 		font-size: 8pt;
 		font-family: 'helvetica_neue';
 	}
+	.footer_iata{
+		display: inline-block;
+		position: relative;
+		top: -17px;
+		border-right: 1px solid #d8d8d8;
+		width: 72px;
+		height: 27px;
+		.img_iata{
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 17px;
+			width: 40px;
+			height: 27px;
+			background: url(../img/iata_grey.png) no-repeat;
+		}
+		.footer_licens{
+			display: block;
+			position: absolute;
+			top: 34px;
+			left: 20px;
+			width: 85px;
+			padding: 4px 0px 4px 0px;
+			font-family: 'helvetica_neue';
+			font-size: 9pt;
+			color: #fff;
+			background-color: $color_green;
+			text-align: center;
+			-moz-box-shadow: 0px 0 3px #ccc; 
+			-webkit-box-shadow: 0px 0 3px #ccc; 
+			box-shadow: 0px 0px 3px  #ccc; 
+			
+			
+			transition:visibility 0s 1s,opacity .5s; 
+			visibility:hidden; 
+			opacity:0; 
+			.footer_licens_decor{
+				display: block;
+				position: absolute;
+				top: -5px;
+				left: 5px;
+				width: 15px;
+				height: 8px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -300px;
+			}
+		}
+	}
+	.footer_iata:hover{
+		.img_iata{
+			background: url(../img/iata.png) no-repeat;
+		}
+		.footer_licens{
+			opacity:1; 
+			visibility:visible; 
+			transition-delay:.05s; 
+		}
+	}
+	.footer_isic{
+		display: inline-block;
+		position: relative;
+		border-right: 1px solid #d8d8d8;
+		width: 69px;
+		height: 27px;
+		top: -17px;
+		.img_isic{
+			display: block;
+			position: absolute;
+			left: 20px;
+			width: 28px;
+			height: 27px;				
+			background: url(../img/isic_grey.png) no-repeat;
+		}
+		.footer_licens{
+			display: block;
+			position: absolute;
+			top: 34px;
+			left: 20px;
+			width: 85px;
+			padding: 4px 0px 4px 0px;
+			font-family: 'helvetica_neue';
+			font-size: 9pt;
+			color: #fff;
+			background-color: $color_green;
+			text-align: center;
+			-moz-box-shadow: 0px 0 3px #ccc; 
+			-webkit-box-shadow: 0px 0 3px #ccc; 
+			box-shadow: 0px 0px 3px  #ccc; 
+			
+			
+			transition:visibility 0s 1s,opacity .5s; 
+			visibility:hidden; 
+			opacity:0; 
+			.footer_licens_decor{
+				display: block;
+				position: absolute;
+				top: -5px;
+				left: 5px;
+				width: 15px;
+				height: 8px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 0px -300px;
+			}
+		}
+	}
+	.footer_isic:hover{
+		.img_isic{
+			background: url(../img/isic.png) no-repeat;
+		}
+		.footer_licens{
+			opacity:1; 
+			visibility:visible; 
+			transition-delay:.05s; 
+		}
+	}
+	
+			
 	.header_right{
 		display: block;
 		position: absolute;
@@ -394,7 +515,7 @@ body{
 		width: 680px;
 		height: 100%;
 		text-align: right;
-		
+		font-size: 0px;
 		.header_menu{
 			display: inline-block;
 			position: relative;
@@ -418,7 +539,139 @@ body{
 				}
 			}
 		}
-		
+		.footer_select_lang{
+			display: inline-block;
+			position: relative;
+			top: -25px;
+			width: 59px;
+			height: 55px;
+			padding-top: 5px;
+			background-color: $color_grey;
+			border-left:1px solid #d3d7da;
+			font-family: 'helvetica_neue';
+			font-size: 8pt;
+			color: #81878c;
+			text-align: center;
+			cursor: pointer;
+			.footer_select_lang_value{
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 4px;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;				
+			}
+			.footer_select_lang_decor{
+				display: block;
+				position: relative;
+				width: 12px;
+				height: 4px;
+				margin: 0 auto;
+				margin-top: 7px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 2px -1020px;
+			}
+		}
+		.footer_select_lang:hover{
+			background-color: #fff;
+		}
+		.footer_select_currency{
+			display: inline-block;
+			position: relative;
+			top: -25px;
+			width: 59px;
+			height: 55px;
+			padding-top: 5px;
+			background-color: $color_grey;
+			border-left:1px solid #d3d7da;
+			border-right:1px solid #d3d7da;
+			font-family: 'helvetica_neue';
+			font-size: 8pt;
+			color: #81878c;
+			text-align: center;
+			cursor: pointer;
+			.footer_select_currency_value{
+				display: block;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 4px;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;				
+			}
+			.footer_select_currency_decor{
+				display: block;
+				position: relative;
+				width: 12px;
+				height: 4px;
+				margin: 0 auto;
+				margin-top: 7px;
+				background: url(../img/main_sprite.png) no-repeat;
+				background-position: 2px -1020px;
+			}
+		}
+		.footer_select_currency_listing{
+			display: none;
+			position: absolute;
+			width: 60px;
+			top: 60px;
+			right: 98px;
+			li{
+				display: block;
+				position: relative;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;	
+				text-align: center;
+				padding: 8px 0px 8px 0px;
+				border:1px solid #d3d7da;
+				border-top: none;
+				background-color: #fff;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;
+				font-family: 'helvetica_neue';
+			}
+			li:first-child{
+				border-top:1px solid #d3d7da;
+			}
+			li:hover{
+				background-color: $color_grey;
+			}
+		}
+		.footer_select_lang_listing{
+			display: none;
+			position: absolute;
+			width: 60px;
+			top: 60px;
+			right: 158px;
+			li{
+				display: block;
+				position: relative;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;	
+				text-align: center;
+				padding: 8px 0px 8px 0px;
+				border:1px solid #d3d7da;
+				border-top: none;
+				background-color: #fff;
+				color: $color_txt;
+				font-size: 10.5pt;
+				font-weight: bold;
+				font-family: 'helvetica_neue';
+			}
+			li:first-child{
+				border-top:1px solid #d3d7da;
+			}
+			li:hover{
+				background-color: $color_grey;
+			}
+		}			
+		.footer_select_currency:hover{
+			background-color: #fff;
+		}
 		.profile_top{
 			display: inline-block;
 			position: relative;
@@ -1150,7 +1403,7 @@ body{
 					.tab1_adult_fild{
 						display: block;
 						position: relative;
-						width: 95px;
+						width: 55px;
 						margin-top: 8px;
 						padding: 6px 10px 6px 10px;
 						font-family: 'helvetica_neue';
@@ -1162,7 +1415,7 @@ body{
 						display: block;
 						position: absolute;						
 						top: 26px;
-						left: 94px;
+						left: 54px;
 						width: 21px;						
 						height: 12px;
 						background: url(../img/main_sprite.png) no-repeat;
@@ -1175,7 +1428,7 @@ body{
 						display: block;
 						position: absolute;
 						top: 48px;
-						left: 94px;
+						left: 54px;
 						width: 21px;						
 						height: 12px;
 						background: url(../img/main_sprite.png) no-repeat;
@@ -1193,7 +1446,7 @@ body{
 					.tab1_child_fild{
 						display: block;
 						position: relative;
-						width: 95px;
+						width: 55px;
 						margin-top: 8px;
 						padding: 6px 10px 6px 10px;
 						font-family: 'helvetica_neue';
@@ -1205,20 +1458,59 @@ body{
 						display: block;
 						position: absolute;						
 						top: 31px;
-						left: 94px;
+						left: 54px;
 						width: 21px;						
 						height: 21px;
 						background: url(../img/main_sprite.png) no-repeat;
 						background-position: 0px -300px;
 						cursor: pointer;	
-						
-						
 					}
 					.tab1_child_dwn{
 						display: block;
 						position: absolute;
 						top: 48px;
-						left: 94px;
+						left: 54px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -325px;
+						cursor: pointer;	
+					}
+				}
+				.tab1_child2{
+					display: inline-block;
+					position: relative;
+					margin-left: 2px;
+					color: #fff;
+					font-family: 'helvetica_neue';
+					font-size: 10.5pt;
+					.tab1_child_fild2{
+						display: block;
+						position: relative;
+						width: 54px;
+						margin-top: 8px;
+						padding: 6px 10px 6px 10px;
+						font-family: 'helvetica_neue';
+						font-size: 14pt;	
+						background-color: $color_grey;
+						border: none;
+					}
+					.tab1_child2_up{
+						display: block;
+						position: absolute;						
+						top: 31px;
+						left: 53px;
+						width: 21px;						
+						height: 21px;
+						background: url(../img/main_sprite.png) no-repeat;
+						background-position: 0px -300px;
+						cursor: pointer;	
+					}
+					.tab1_child2_dwn{
+						display: block;
+						position: absolute;
+						top: 48px;
+						left: 53px;
 						width: 21px;						
 						height: 21px;
 						background: url(../img/main_sprite.png) no-repeat;
@@ -5677,48 +5969,14 @@ body{
 		width: 335px;
 		height: 100%;
 		text-align: right;
-		.footer_iata{
-			display: inline-block;
-			position: relative;
-			border-left: 1px solid #d8d8d8;
-		/*	top: -26px;*/
-			width: 72px;
-			height: 100%;
-			height: 44px;
-		/*	background-color: #e4e8eb;*/
-			.img_iata{
-				display: block;
-				position: absolute;
-				top: 8px;
-				left: 17px;
-				width: 40px;
-				height: 27px;
-				
-				background: url(../img/iata.png) no-repeat;
-			}
-		}
-		.footer_iata:hover{
-			background-color: #e4e8eb;
-		}
-		.footer_isic{
-			display: inline-block;
-			position: relative;
-			border-left: 1px solid #d8d8d8;
-		/*	top: -26px;*/
-			width: 69px;
-			height: 44px;
-			.img_isic{
-				display: block;
-				position: absolute;
-				top: 8px;
-				left: 20px;
-				width: 28px;
-				height: 27px;				
-				background: url(../img/isic.png) no-repeat;
-			}
-		}
-		.footer_isic:hover{
-			background-color: #e4e8eb;
+		.footer_right_social{
+			display: block;
+			position: absolute;
+			top: 12px;
+			right: 200px;
+			width: 191px;
+			height: 20px;
+			background: url(../img/social.jpg) no-repeat;
 		}
 		.qwestion{
 		/*	display: inline-block;
@@ -6388,6 +6646,9 @@ body{
 					top: -6px;
 				}
 			}
+			#checkbox_agree_label{
+				margin-left: 95px;
+			}
 			.block_fild{
 				float: left;
 				height: 65px;
@@ -6399,6 +6660,9 @@ body{
 			}
 			.block_fild_right{
 				margin-left: 10px;
+			}
+			.block_fild_right2{
+				margin-left: 274px;
 			}
 			.small_txt{
 				font-size: 8pt;
@@ -6442,7 +6706,7 @@ body{
 				display: block;
 				position: absolute;
 				bottom: 45px;
-				right: 34px;
+				right: 170px;
 				padding: 14px 23px 14px 23px;
 				color: #fff;
 				background-color: $color_red;
@@ -6456,7 +6720,7 @@ body{
 			}
 		}
 		.student_form{
-			display: block;
+			display: none;
 			position: absolute;
 			top: 100px;
 			width: 540px;
@@ -6496,6 +6760,8 @@ body{
 				color: $color_txt;
 				text-align:justify;
 			}
+			
+			
 			input{
 				display: block;
 				position: relative; 

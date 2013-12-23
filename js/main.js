@@ -721,6 +721,7 @@ function js_main_slider(){
 			document.getElementsByClassName("reg_form")[0].style.display = "none";
 			document.getElementsByClassName("lisense_form")[0].style.display = "none";
 			document.getElementsByClassName("rule_form")[0].style.display = "none";
+			document.getElementsByClassName("student_form")[0].style.display = "none";
 		}
 /* ======================================== POP_UP END ============================================================= */		
 		if(feedback_form_close == 1 && document.getElementsByClassName("feedback_form")[0].offsetLeft > -330){
@@ -1344,8 +1345,37 @@ function js_student_open(){
 
 function js_student_form_btn(){
 	/*document.getElementsByClassName("student")[0].innerHTML = "1111";*/
-	document.getElementsByClassName("student")[0].style.width = 139 + "px";
+	document.getElementsByClassName("student")[0].style.width = 119 + "px";
+	document.getElementsByClassName("student")[0].style.height = "1px";
+	document.getElementsByClassName("student")[0].style.backgroundColor = "#fff";
+	
 	document.getElementsByClassName("student_number")[0].style.display = "block";
-	
-	
+}
+
+function js_select_currency_listing(){
+	document.getElementsByClassName("footer_select_currency_listing")[0].style.display = "block";
+	document.getElementsByClassName("footer_select_currency")[0].style.backgroundColor = "#fff";	
+}
+
+function js_select_currency(t){
+	var tmp = 0;
+	document.getElementsByClassName("footer_select_currency_listing")[0].style.display = "none";
+	document.getElementsByClassName("footer_select_currency")[0].style.backgroundColor = "#e4e8eb";	
+	tmp = document.getElementsByClassName("footer_select_currency_value")[0].innerHTML;
+	document.getElementsByClassName("footer_select_currency_value")[0].innerHTML = t.innerHTML;
+	t.innerHTML = tmp;
+}
+
+function js_select_lang_listing(){
+	document.getElementsByClassName("footer_select_lang_listing")[0].style.display = "block";
+	document.getElementsByClassName("footer_select_lang")[0].style.backgroundColor = "#fff";	
+}
+
+function js_select_lang(t){
+	var tmp = 0;
+	document.getElementsByClassName("footer_select_lang_listing")[0].style.display = "none";
+	document.getElementsByClassName("footer_select_lang")[0].style.backgroundColor = "#e4e8eb";	
+	tmp = document.getElementsByClassName("footer_select_lang_value")[0].innerHTML;
+	document.getElementsByClassName("footer_select_lang_value")[0].innerHTML = t.innerHTML;
+	t.innerHTML = tmp;
 }
