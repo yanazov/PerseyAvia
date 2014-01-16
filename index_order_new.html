@@ -29,7 +29,7 @@
 	
 </head>
 <body>
-	<span id="page_number">5</span>
+	<span id="page_number">6</span>
 	<div id="fon_grey" class="main_fon">
 		
 	</div>
@@ -428,207 +428,394 @@
 				</div>
 				<div class="calendar_shadow"></div>
 			</div>
-			<div class="block_search">
-				<div class="block_search_scroll">
-					<div class="search_best_price">
-						<div class="search_best_price_left">
-							<div class="best_price_string1">
-								<div class="best_price_inner_l">
-									<span class="best_price_inner_l_decor"></span>
-									<span class="search_city">
-										Москва
-										<span class="search_city_index">(KBP)</span>
-										<span class="search_airport">Шереметьево 2 
-											<span>Е</span>
-										</span>
-									</span>									
-									<span class="best_price_inner_l_decor2"></span>
-									<span class="search_city">
-										Киев
-										<span class="search_city_index">(KBP)</span>
-										<span class="search_airport">Борисполь 
-											<span>D</span>
-										</span>
-									</span>									
-								</div>
-								<div class="best_price_inner_r">									
-									<span class="search_logo"></span>
-									06:20
-									Б
-									Бизнес
-									<span class="search_time_delay">
-										<span class="search_time_delay_value">01:25</span>
-										<span class="search_time_to_txt">Boeng 747</span>
-										<span class="search_time_to_icon2"></span>
-										<span class="search_time_to_icon3"></span>
-										
-									</span>	
-									
-									<span class="search_time_to">
-										<span class="search_time_to_icon"></span>
-										<span class="search_time_to_value">09:45</span>
-										<span class="search_time_to_txt">Рейс: </span>
-										<span class="search_time_to_name">PS-573</span>										
-									</span>
-									
-								</div>
-							</div>
-							<div class="best_price_string2">
-							
-							</div>
-						</div>
-						<div class="search_best_price_right">
-							Взрослый: стоимость 1 билета(ов)* 
-							<span class="best_price_number">15443 ГРН</span> (Тариф 
-							<span class="best_price_number"> 1852 USD</span> + сборы) 
-							<a href="">Тарифы</a>
-							<span class="best_price_end">15 443 <span>грн.</span></span>
-							<a href="#" class="best_price_end_btn">
-								Бронировать
-							</a>
-						</div>
-					</div>
-					<div class="search_price">
-					
-					
-					</div>
-					<div class="search_price">
-					
-					
-					</div>
+			<div class="block_order_new">	
+			<div id="block_for_scroll" class="block_order_new__scroll">	
 				
-				
-	<!--				<div class="search_rezult">
-						<div class="search_rezult_left">
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia1"></span>
-								<span class="rezult_line_from">
-									Киев
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Москва
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
-							<span class="line_separ"></span>
-							<div class="search_rezult_left_line">
-								<span class="rezult_line_logo avia2"></span>
-								<span class="rezult_line_from">
-									Москва
-									<span class="rezult_line_from_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_airplane"></span>
-								<span class="rezult_line_to">
-									Киев
-									<span class="rezult_line_to_index">(KBP)</span>
-								</span>
-								<span class="rezult_line_time">
-									<span class="rezult_line_time_from">06:20</span>
-									<span class="rezult_line_time_duration">01:25</span>
-									<span class="rezult_line_time_to">09:45</span>
-									<span class="rezult_line_time_transfers">0</span>
-								</span>
-							</div>
+				<div class="order_step_1">
+					<span class="order_step_1__b-top-left">
+						<span class="order_step_1__b-top-left__caption1">
+							Шаг 1
+							<span>Оформление</span>
+						</span>
+						Пожалуйста, заполните данные о летящих пасажирах. Все поля обязательны для заполнения.
+						Фамилию и Имя вносите только латинскими буквами. Помните, что вы не сможете
+						изменить введенные данные после создания бронирования!
+					</span>
+					<div class="order_step_1__b-input b-pasagir">
+						Выбрать пассажира
+						<input id="input-pasagir" type="text" value="Кучеренко Олег" readonly>
+						<span class="order_step_1__b-input__arrow"></span>
+					</div>
+					<span class="order_step_1__separ"></span>
+					<span class="order_step_1__caption2">Взрослый №1 (+24)</span>
+					<div class="order_step_1__b-radio">
+						Пол: 
+						<input id="s1" name="radio1" type="radio" value="">
+						<label for="s1"><span></span></label>
+						<span class="order_step_radio_txt">муж.</span>
+						<input id="s2" name="radio1" type="radio" value="">
+						<label for="s2"><span></span></label>
+						<span class="order_step_radio_txt">жен.</span>
+					</div>
+					<div class="order_step_1__b-input left0">
+						Фамилия
+						<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)"> 
+					</div>
+					<div class="order_step_1__b-input">
+						Имя
+						<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<div class="order_step_1__b-input">
+						Гражданство
+						<input id="input-gragdanstvo" type="text" value="Украина" readonly>
+						<span class="order_step_1__b-input__arrow"></span>
+					</div>
+					<div class="order_step_1__b-input">
+						Дата рождения
+						<br/>
+						<input id="input-data-DD" type="text">
+						<input id="input-data-MM" type="text">
+						<input id="input-data-YYYY" type="text">
+					</div>
+					<div class="order_step_1__b-input b-number-pasport">
+						№ Загранпаспорта
+						<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<div class="order_step_1__b-input b-date-pasport">
+						Срок окончания
+						<br/>
+						<input id="input-data-DD2" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="input-data-MM2" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="input-data-YYYY2" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<span class="DD2_txt">ДД</span>
+						<span class="MM2_txt">ММ</span>
+						<span class="YYYY2_txt">ГГГГ</span>
+					</div>
+					<div class="order_step_1__b-input b-telefon">
+						Моб. телефон
+						<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<div class="order_step_1__b-input b-city-from">
+						Город основного вылета
+						<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<span class="order_step_1__separ"></span>
+					<span class="order_step_1__b-top-left width_40">
+						Выберите удобный вам способ оплаты и доставки. В зависимости от выбраного
+						способа оплаты могут потребоватся дальнейшие шаги для завершения бронирования.
+					</span>
+					<div class="order_step_1__b-input b-pay-variant">
+						Способ оплаты
+						<input id="input-pay-variant" type="text" value="Наличными курьеру" readonly>
+						<span class="order_step_1__b-input__arrow"></span>
+					</div>
+					<span class="order_step_1__btn-next" onClick="js_step2_transform('step2_nal')">Продолжить</span>
+				</div>
+<!-- ***************************************************************************************** -->			
+				<div id="step2_nal" class="order_step_2">
+					<span class="order_step_1__b-top-left">
+						<span class="order_step_1__b-top-left__caption1">
+							Шаг 2
+							<span>Оплата</span>
+						</span>
+						<span class="txt_bold">
+							Доставка по Киеву 
+						</span>	
+						осуществляется с понедельника по воскресенье с 10:00 до 18:00
+					</span>
+					<div class="order_step_1__b-input b-pay-select">
+						<input id="input-pasagir" type="text" value="Наличными курьеру" readonly  onClick="js_pay_select('pay-select1')">
+						<span class="order_step_1__b-input__arrow"></span>
+						<ul id="pay-select1" class="b-pay-select__ul" >
+							<li onClick="js_pay_select_li('pay-select1', 'step2_nal', 'step2_card')">Кредитной карточкой</li>
+							<li onClick="js_pay_select_li('pay-select1', 'step2_nal', 'step2_bank')">Банковский перевод</li>
+						</ul>
+					</div>
+					<span class="order_step_price"> 
+						3 967
+						<span>грн.</span>
+					</span>
+					<span class="order_step_1__separ"></span>
+					<div class="order_step_1__b-input b-adres">
+						Адрес
+						<input class="b-input-adres" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<div id="b-add" class="order_step_1__b-input ">
+						Дополнительно
+						<input class="b-input-adres" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<span class="add_txt">Код парадного, домофон и т.д.</span>
+					</div>
+					<div id="b-time" class="order_step_1__b-input">
+						Время доставки
+						<input class="b-input-adres" type="text" placeholder="00" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						:
+						<input class="b-input-adres" type="text" placeholder="00" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+					</div>
+					<span class="b-txt-nal">
+						Курьер принимает оплату и выдает Вам соответствующие документы в 
+						виде чека и акта приёма-передачи.
+					</span>	
+					<span class="order_step_1__btn-bay" onClick="js_step3_transform('b-step3')">Купить</span>
+				</div>
+<!-- ***************************************************************************************** -->
+				<div id="step2_card" class="order_step_2">
+					<span class="order_step_1__b-top-left">
+						<span class="order_step_1__b-top-left__caption1">
+							Шаг 2
+							<span>Оплата</span>
+						</span>
+						<span class="txt_bold">
+							Мы принимаем к оплате карты платёжных систем Visa и MasterCard
+						</span>	
+					</span>
+					<div class="order_step_1__b-input b-pay-select">
+						<input id="input-pasagir" type="text" value="Кредитной карточкой" readonly  onClick="js_pay_select('pay-select2')">
+						<span class="order_step_1__b-input__arrow"></span>
+						<ul id="pay-select2" class="b-pay-select__ul">
+							<li onClick="js_pay_select_li('pay-select2', 'step2_card', 'step2_bank')">Банковский перевод</li>
+							<li onClick="js_pay_select_li('pay-select2', 'step2_card', 'step2_nal')">Наличными курьеру</li>
+						</ul>
+					</div>
+					<span class="order_step_price"> 
+						3 967
+						<span>грн.</span>
+					</span>
+					<span class="order_step_1__separ"></span>
+					
+					<div class="order_step_1__b-input b-vvvv">
+						Номер карты vvvv
+						<br/>
+						<input id="b-vvvv1" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="b-vvvv2" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="b-vvvv3" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="b-vvvv4" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<span class="add_txt">16 цифр</span>
+					</div>
+					<div id="b-expires" class="order_step_1__b-input">
+						Срок действия
+						<br/>
+						<input id="b-expires1" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<input id="b-expires2" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">
+						<span class="add_txt">ММ</span>
+						<span class="add_txtYYYY">ГГ</span>
+					</div>
+					<div id="b-cvv" class="order_step_1__b-input">
+						CVV/CVC
+						<br/>
+						<input id="input-cvv" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">						
+						<span class="add_txt">3 цифры</span>
+					</div>
+					<br/>
+					<div id="b-person" class="order_step_1__b-input">
+						Владелец
+						<input id="input-person" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">												
+					</div>
+					<div id="b-bank" class="order_step_1__b-input">
+						Название банка, выпустившего карту:
+						<input id="input-bank" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">												
+					</div>
+					<span class="b-txt-card">
+						Передача информации с вашей банковской карты осуществляется в зашифрованном 
+						виде и защищена сертификатом SSL. Сайт полностью соответствует стандартам 
+						безопасности платёжных систем VISA и MasterCard (PCI DSS Compliancy)
+					</span>	
+					<span class="order_step_1__btn-bay" onClick="js_step3_transform('b-step3')">Купить</span>
+				</div>
+<!-- ***************************************************************************************** -->
+				<div id="step2_bank" class="order_step_2">
+					<span class="order_step_1__b-top-left">
+						<span class="order_step_1__b-top-left__caption1">
+							Шаг 2
+							<span>Оплата</span>
+						</span>							
+					</span>
+					<div class="order_step_1__b-input b-pay-select">
+						<input id="input-pasagir" type="text" value="Банковский перевод" readonly  onClick="js_pay_select('pay-select3')">
+						<span class="order_step_1__b-input__arrow"></span>
+						<ul id="pay-select3" class="b-pay-select__ul">
+							<li onClick="js_pay_select_li('pay-select3', 'step2_bank', 'step2_card')">Кредитной карточкой</li>
+							<li onClick="js_pay_select_li('pay-select3', 'step2_bank', 'step2_nal')">Наличными курьеру</li>
+						</ul>
+					</div>
+					<span class="order_step_price"> 
+						3 967
+						<span>грн.</span>
+					</span>
+					<ul class="order_step_2_menu">
+						<li id="li_fiz"  onClick="js_fiz_urid( 'li_fiz', 'li_urid')">Физическое лицо
+						</li><li id="li_urid" onClick="js_fiz_urid('li_urid', 'li_fiz')">Юридическое лицо</li>
+					</ul>
+					<div id="b-fiz">
+						<div id="b-famyliya" class="order_step_1__b-input">
+							Фамилия
+							<input id="input-famyliya" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">	
+							<span class="add_txt">латинскими буквами</span>						
 						</div>
-						<div class="search_rezult_right">
-							<span class="rezult_right_price">	
-								1 400<span class="rezult_right_price_ua"> грн.</span>
+						<br/>
+						<div id="b-name" class="order_step_1__b-input">
+							Имя
+							<input id="input-name" type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">	
+							<span class="add_txt">латинскими буквами</span>						
+						</div>
+						
+						<span id="b-txt-card_top" class="b-txt-card">
+							Если авиабилет оплачивает Ваша компания, выберите вкладку
+							<a class="order_step_2_a" href="">Юридической лицо</a>
+						</span>	
+					</div>	
+					<div id="b-urid">
+						<div class="order_step_2__b-input b-company">
+							Организация
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							МФО
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							Банк плательщика
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							№ Расчетного счета
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							ЗКПО (ЕГРПОУ)
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input b-company">
+							№ Свидетельства
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							ИНН
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							Юридический адрес
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							Индекс
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<div class="order_step_2__b-input">
+							Факс
+							<input type="text" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)">								
+						</div>
+						<span class="order_step_2_add_txt">
+							Заполнение всех полей необходимо для своевременного предоставления актов выполненных работ.
+						</span>
+					
+					</div>
+					
+					<span class="order_step_1__btn-bay" onClick="js_step3_transform('b-step3')">Купить</span>
+				</div>
+<!-- ***************************************************************************************** -->
+				<div id="b-step3" class="order_step_3">
+					<span class="order_step_1__b-top-left">
+						<span class="order_step_1__b-top-left__caption1">
+							Шаг 3
+							<span>Подтверждение</span>
+						</span>							
+					</span>
+					<span class="step3__congrat">
+						Поздравляем!
+						<br/>
+						Оплата прошла успешно!
+					</span>	
+					
+					<span class="order_step_price step3_price"> 
+						3 967
+						<span>грн.</span>
+					</span>
+					<span class="step3__about-txt">Данные вашего заказа:</span>
+					<div class="step3__element">
+						<span class="step3__element__from">
+							Москва
+							<span class="step3__element__from__index">(KBP)</span>
+							<br/>
+							<span class="step3__element__from__airport">Шереметьево 2</span>
+							<span class="step3__element__from__airport__index">E</span>
+						</span>
+						<span class="step3__element__icon1"></span>
+						<span class="step3__element__to">
+							Киев
+							<span class="step3__element__to__index">(KBP)</span>
+							<br/>
+							<span class="step3__element__to__airport">Борисполь </span>
+						<span class="step3__element__to__airport__index">D</span>
+						</span>
+						
+						<br/>
+						<span class="step3__element__b-left">
+							<span class="step3__element__time-from">
+								<span class="step3__element__time-from__icon"></span>
+								06:20
+								<span class="step3__element__time-from__index">Б</span>
+								<span class="step3__element__time-from__txt">Бизнес</span>							
 							</span>
-							<span class="rezult_right_add" onClick="js_add_result_another(this, 1)">Еще варианты
-								<span class="rezult_right_add_number">+2</span>
+							<span class="step3__element__time-duration">
+								<span class="step3__element__time-duration__icon"></span>01:25
+								<span class="step3__element__time-duration__icon2"></span>
+								<span class="step3__element__time-duration__txt">Boeng 747</span>							
 							</span>
-						</div>
+							<span class="step3__element__time-to">
+								<span class="step3__element__time-to__icon"></span>
+								09:45
+								<span class="step3__element__time-to__txt">
+									Рейс: 
+									<span class="">PS-573</span>
+								</span>							
+							</span>
+							<img class="step3__element__logo" src="img/logo_avia1.jpg">
+						</span>
 					</div>
-<!-- *****************************************   BEGIN ANOTHER   **************************** -->	
-	<!--				<div class="another_cont">
-						<div id="add_avia1" class="search_result_another">
-							<span class="result_another_index1">KBP</span>
-							<span class="result_another_index2">SVO</span>
-							<span class="result_another_data">12.11.2013</span>
-							<span class="result_another_day">Вторник</span>
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r1" name="radio1" type="radio" value="">
-									<label for="r1"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select1" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_line">
-								<div class="result_radio_block">
-									<input id="r2" name="radio1" type="radio" value="">
-									<label for="r2"><span></span></label>
-								</div>
-								<div class="result_another_line_from">
-									<span class="result_another_line_from_city">Киев</span>
-									(Украина) 
-									<span class="result_another_line_from_index">KBP, UA</span>
-									<span class="result_another_line_from_time">06:20</span>
-									<span class="result_another_line_from_terminal">Борисполь, Терминал D</span>
-								</div>
-								<div class="result_another_line_to">
-									<span class="result_another_line_to_city">Москва</span>
-									(Россия) 
-									<span class="result_another_line_to_index">SVO, RU</span>
-									<span class="result_another_line_to_time">10:30</span>
-									<span class="result_another_line_to_terminal">Шереметьево, Терминал Е</span>
-								</div>
-								<span class="result_another_line_detail">
-									<span class="small_logo avia1"></span>
-									<span class="line_detail1"> Международные авиалинии Украины МАУ PS561</span>								
-									<span class="line_detail2">	эконом (M)  &nbsp  |   &nbsp   Боинг 737-300 Комб   &nbsp   |   &nbsp   01:35   &nbsp   |   &nbsp   01:35</span>
-								</span>
-								<span id="another_select2" class="another_select"></span>
-							</div>
-							
-							<div class="result_another_info">
-								Стоимость 1 билета(ов) 1630 ГРН  <span class="color_another">(Тариф 110 USD + сборы)</span>
-								<span class="result_another_info_detail">
-									Взрослый: стоимость 1 билета(ов)* 
-									<span class="txt_bold">15443ГРН</span>
-									(Тариф <span class="txt_bold">1852USD</span> + сборы)
-							
-								</span>
-								<a class="tarif_detail" href="#" onClick="js_result_another_info_detail(0)">
-									Тарифы подробнее
-									<span class="result_another_info_arrow"></span>
-								</a>
-								<a class="result_another_order" href="">Бронировать</a>
-							</div>
-							
-						</div>
+					<div class="step3__element">
+						<span class="step3__element__from">
+							Киев
+							<span class="step3__element__from__index">(KBP)</span>
+							<br/>
+							<span class="step3__element__from__airport">Борисполь</span>
+							<span class="step3__element__from__airport__index">D</span>
+						</span>
+						<span class="step3__element__icon1"></span>
+						<span class="step3__element__to">
+							Москва
+							<span class="step3__element__to__index">(KBP)</span>
+							<br/>
+							<span class="step3__element__to__airport">Шереметьево 2 </span>
+						<span class="step3__element__to__airport__index">E</span>
+						</span>
+						
+						<br/>
+						<span class="step3__element__b-left">
+							<span class="step3__element__time-from">
+								<span class="step3__element__time-from__icon"></span>
+								06:20
+								<span class="step3__element__time-from__index">Б</span>
+								<span class="step3__element__time-from__txt">Бизнес</span>							
+							</span>
+							<span class="step3__element__time-duration">
+								<span class="step3__element__time-duration__icon"></span>01:25
+								<span class="step3__element__time-duration__icon2"></span>
+								<span class="step3__element__time-duration__txt">Boeng 747</span>							
+							</span>
+							<span class="step3__element__time-to">
+								<span class="step3__element__time-to__icon"></span>
+								09:45
+								<span class="step3__element__time-to__txt">
+									Рейс: 
+									<span class="">PS-573</span>
+								</span>							
+							</span>
+							<img class="step3__element__logo" src="img/logo_avia2.jpg">
+						</span>
 					</div>
-<!-- *****************************************   END ANOTHER   **************************** -->					
-				
-				
-				</div>	
+				</div>
+<!-- ***************************************************************************************** -->
+			</div>
 			</div>
 			<div class="block_conteiner">
 				
@@ -643,9 +830,9 @@
 				<li>E-mail: <a href="">avia@persey.travel</a></li>
 			</ul>
 			<div class="footer_right">
-				<div class="footer_iata" onClick="js_lisense_open()">
+				<a class="footer_iata" href="">
 					<span class="img_iata"></span>
-				</div>
+				</a>
 				<a class="footer_isic" href="">
 					<span class="img_isic"></span>
 				</a>
@@ -760,7 +947,9 @@
 			
 		});
 		
-		
+		$('.b-pay-select__ul').mouseleave(function(){
+			$('.b-pay-select__ul').css({'display':'none'});
+		});
 	
 	</script>
 	

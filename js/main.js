@@ -204,7 +204,9 @@ function js_set_size(){
 		document.getElementsByClassName("block_search_scroll")[0].style.height = document.body.clientHeight - 104 + "px";
 		document.getElementsByClassName("block_search_scroll")[0].style.width = document.body.clientWidth - 273 + "px";
 	/*	document.getElementsByClassName("search_rezult")[0].style.width = document.body.clientWidth - 300 + "px";  */
-		$(".search_rezult").css("width", document.body.clientWidth - 300 + "px");
+		$(".search_best_price").css("width", document.body.clientWidth - 300 + "px");
+		$(".search_price").css("width", document.body.clientWidth - 300 + "px");
+		$(".search_best_price_left").css("width", document.body.clientWidth - 460 + "px");
 		$(".search_result_another").css("width", document.body.clientWidth - 362 + "px");
 		$(".search_rezult_left").css("width", document.body.clientWidth - 460 + "px");
 	/*	document.getElementsByClassName("search_rezult_left")[0].style.width = document.body.clientWidth - 460 + "px";
@@ -213,10 +215,12 @@ function js_set_size(){
 		jQuery('.block_search_scroll').jScrollPane();	
 	}	
 	if(document.getElementById("page_number").innerHTML  == 6){
-		document.getElementsByClassName("block_order")[0].style.width = document.body.clientWidth - 273 + "px";
-		document.getElementsByClassName("block_order")[0].style.height = document.body.clientHeight - 104 + "px";
-		document.getElementsByClassName("order_step_scroll")[0].style.height = document.body.clientHeight - 195 + "px";
-		jQuery('.order_step_scroll').jScrollPane();
+		document.getElementsByClassName("block_order_new")[0].style.width = document.body.clientWidth - 273 + "px";
+		document.getElementsByClassName("block_order_new")[0].style.height = document.body.clientHeight - 104 + "px";
+	/*	document.getElementsByClassName("order_step_scroll")[0].style.height = document.body.clientHeight - 195 + "px";*/
+		
+		jQuery('.block_order_new__scroll').jScrollPane();   
+		
 	}
 	if(document.getElementById("page_number").innerHTML  == 9){
 		document.getElementsByClassName("block_voyage")[0].style.height = document.body.clientHeight - 104 + "px";
@@ -224,8 +228,11 @@ function js_set_size(){
 		document.getElementsByClassName("voyage_right_block")[0].style.width = document.body.clientWidth - 273 - 380 + "px";
 		document.getElementsByClassName("scroll_conteiner")[0].style.height = document.body.clientHeight - 104 + "px";
 		document.getElementsByClassName("scroll_conteiner")[0].style.marginLeft = 380 + "px";
+		document.getElementsByClassName("profile_form_scroll")[0].style.height = document.body.clientHeight - 250 + "px";
 /*		*/
+
 		
+		jQuery('.profile_form_scroll').jScrollPane();
 		
 		
 		$(window).ready(function(){			
@@ -1290,8 +1297,10 @@ function js_feedback_form_open(){
 }
 
 function js_profile_form_detail_open(){
-	profile_form_detail_close = 0;
-	profile_form_detail_open = 1;
+/*	profile_form_detail_close = 0;
+	profile_form_detail_open = 1;*/
+	document.getElementsByClassName("profile_menu")[0].style.display = "block";
+	
 }
 
 function js_profile_form_detail_close(){
@@ -1304,7 +1313,7 @@ function js_profile_form_history_open(){
 		profile_form_history_open = 1;
 		profile_form_history_close = 0;
 		document.getElementsByClassName("profile_form_history")[0].style.left = 0;
-		document.getElementsByClassName("profile_form_history_scroll")[0].style.height = document.body.clientHeight - 375 + "px";
+		document.getElementsByClassName("profile_form_history_scroll")[0].style.height = document.body.clientHeight - 350 + "px";
 		jQuery('.profile_form_history_scroll').jScrollPane();
 	}
 }
@@ -1378,4 +1387,84 @@ function js_select_lang(t){
 	tmp = document.getElementsByClassName("footer_select_lang_value")[0].innerHTML;
 	document.getElementsByClassName("footer_select_lang_value")[0].innerHTML = t.innerHTML;
 	t.innerHTML = tmp;
+}
+function js_profile_menu_close(){
+	document.getElementsByClassName("profile_menu")[0].style.display = "none";
+	
+}
+function js_select_grazhdanstvo_open(elem){
+	document.getElementsByClassName("select_grazhdanstvo")[0].style.display = "block";
+	document.getElementById("grazhdanstvo").style.backgroundColor = "#fff";
+	document.getElementById("grazhdanstvo").style.border = "1px solid #c0c5c9";
+	jQuery('.select_grazhdanstvo').jScrollPane();
+/*		*/
+}
+
+function js_select_grazhdanstvo_close(elem){
+		document.getElementsByClassName("select_grazhdanstvo")[0].style.display = "none";
+		document.getElementById("grazhdanstvo").value = elem.innerHTML;
+		
+		
+}
+function js_pay_select(name){
+	document.getElementById(name).style.display = "block";
+	document.getElementById(name).style.opacity = 1;
+}
+
+function js_pay_select_li(name, name_current, name_next){
+	document.getElementsByClassName("order_step_2")[0].classList.add('order_step_2_transform_end');
+	document.getElementById(name_next).style.opacity = 1;	
+	document.getElementById(name_next).style.top = 0 + "px";	
+	document.getElementById(name).style.display = "none";
+	document.getElementById(name_current).style.display = "none";
+	document.getElementById(name_next).style.display = "block";	
+	jQuery('.block_order_new__scroll').jScrollPane();  	
+}
+function js_fiz_urid(name_next, name_prev){
+	document.getElementById(name_next).style.border = "1px solid #dbdbdb";
+	document.getElementById(name_next).style.borderBottom = "1px solid #fff";
+	document.getElementById(name_next).style.cursor = "default";
+	
+	document.getElementById("b-"+name_next.substring(3)).style.display = "block";
+	if(name_next == 'li_fiz'){
+		document.getElementById("b-"+name_prev.substring(3)).style.display = "none";
+	}
+	document.getElementById(name_prev).style.border = "1px solid #fff";
+	document.getElementById(name_prev).style.borderBottom = "1px solid #dbdbdb";
+	document.getElementById(name_prev).style.cursor = "pointer";
+}
+function js_step2_transform(name){
+	document.getElementsByClassName("order_step_2")[0].style.position = "relative";
+	document.getElementsByClassName("order_step_2")[0].style.display = "block";
+	
+	document.getElementsByClassName("order_step_2")[0].classList.add('order_step_2_transform_start');
+	document.getElementsByClassName("order_step_2")[0].classList.add('order_step_2_transform');
+	jQuery('.block_order_new__scroll').jScrollPane();  	
+	document.getElementsByClassName("order_step_2")[0].style.opacity = 1;
+	var pane = jQuery('.block_order_new__scroll');
+	pane.jScrollPane(
+		{
+			showArrows: true,
+			animateScroll: true
+		}
+	);
+	var api = pane.data('jsp');
+	var tmp = document.getElementsByClassName("block_order_new__scroll")[0].scrollHeight;
+	api.scrollTo(0, tmp);
+}
+function js_step3_transform(name){
+	document.getElementById(name).style.position = "relative";
+	document.getElementById(name).classList.add('order_step_3_transform');
+	jQuery('.block_order_new__scroll').jScrollPane();  
+	var pane = jQuery('.block_order_new__scroll');
+	pane.jScrollPane(
+		{
+			showArrows: true,
+			animateScroll: true
+		}
+	);
+	var api = pane.data('jsp');
+	var tmp = document.getElementById(name).scrollHeight;
+	api.scrollTo(0, 9999);
+
 }

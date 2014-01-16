@@ -57,10 +57,23 @@
 					Олег 
 					<br/>
 					Кучеренко
-					<a href="#" onClick="js_profile_form_detail_open()">Профиль</a>
+					<a href="#" onClick="js_profile_form_detail_open()">
+						подробнее
+						<span class="profile_top_decor"></span>
+					</a>
 				
 				</div>
-				<div class="btn_exit"><span>Выход</span></div>
+				<div class="profile_menu" onMouseleave="js_profile_menu_close()">
+					<span class="profile_menu_li">Заказы</span>
+					<span class="profile_menu_li">Профиль</span>
+					<span class="profile_menu_li profile_exit">
+						Выход
+						<span class="profile_menu_li_img"></span>
+					</span>
+					
+					
+				
+				</div>
 				
 			</div>   
 		</header>
@@ -515,54 +528,80 @@
 					<div class="profile_form_detail">
 						<span class="profile_form_caption">Профиль</span>
 			<!--			<a href="#" class="profile_form_close" onClick="js_profile_form_detail_close()"></a>    -->
-						<a href="#" class="profile_form_close"></a>
-						<div class="profile_form_elem">
-							Логин 
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
-						</div>
-						<div class="profile_form_elem">
-							Пароль
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" >
-						
-						</div>
-						<div class="profile_form_elem">
-							Имя
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
-						
-						</div>
-						<div class="profile_form_elem">
-							Фамилия
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Karabas">
-						
-						</div>
-						<div class="profile_form_elem">
-							Город 
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Prostokvashino">
-						
-						</div>
-						<div class="profile_form_elem">
-							Дата рождения 
-							<br/>
-							<input type="text" class="feedback_form_fild DD" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="14">
-							<input type="text" class="feedback_form_fild MM" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="02">
-							<input type="text" class="feedback_form_fild YYYY" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="1995">
-							<span class="name_DD">дд</span>
-							<span class="name_MM">мм</span>
-							<span class="name_YYYY">гггг</span>
-						</div>
-						<div class="profile_form_elem">
-							Моб. телефон 
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="066 491 22 74">
-						
-						</div>
-						<div class="profile_form_elem">
-							E-mail
-							<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas@urk.net">
-						
-						</div>
-						<input id="news_company" type="checkbox" checked>
-						<label for="news_company"><span ></span>Быть в курсе новостей компании</label>
-						<a href="#" class="profile_save_btn">Сохранить</a>
+						<a href="#" class="profile_form_img"></a>
+						<div class="profile_form_scroll">
+							<div class="profile_form_elem">
+								Логин 
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
+							</div>
+							<div class="profile_form_elem">
+								Пароль
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" >
+							
+							</div>
+							<div class="profile_form_elem">
+								Имя
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Barabas">
+							
+							</div>
+							<div class="profile_form_elem">
+								Фамилия
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Karabas">
+							
+							</div>
+							<div class="profile_form_elem">
+								Гражданство 
+								<input id="grazhdanstvo" type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Украина">
+								<span class="arrow_dwn" onClick="js_select_grazhdanstvo_open(this)"></span>
+								<ul class="select_grazhdanstvo">
+									<li onClick="js_select_grazhdanstvo_close(this)">Россия</li>
+									<li onClick="js_select_grazhdanstvo_close(this)">Казахстан</li>
+									<li onClick="js_select_grazhdanstvo_close(this)">Белорусия</li>
+									<li onClick="js_select_grazhdanstvo_close(this)">Молдова</li>
+									<li onClick="js_select_grazhdanstvo_close(this)">Украина</li>
+									<li onClick="js_select_grazhdanstvo_close(this)">Грузия</li>								
+								</ul>
+							</div>
+							<div class="profile_form_elem">
+								Дата рождения 
+								<br/>
+								<input type="text" class="feedback_form_fild DD" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="14">
+								<input type="text" class="feedback_form_fild MM" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="02">
+								<input type="text" class="feedback_form_fild YYYY" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="1995">
+								<span class="name_DD">дд</span>
+								<span class="name_MM">мм</span>
+								<span class="name_YYYY">гггг</span>
+							</div>
+							<div class="profile_form_elem">
+								Моб. телефон 
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="066 491 22 74">
+							
+							</div>
+							<div class="profile_form_elem">
+								Город осонов. вылета
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="Киев">						
+							</div>
+							<span class="separ_line"></span>
+							<div class="profile_form_elem">
+								№ Загран паспорта 
+								<input type="text" class="feedback_form_fild" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="">
+							
+							</div>
+							<div class="profile_form_elem">
+								Срок окончания 
+								<br/>
+								<input type="text" class="feedback_form_fild DD" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="14">
+								<input type="text" class="feedback_form_fild MM" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="02">
+								<input type="text" class="feedback_form_fild YYYY" onFocus="js_focus_reg(this)" onBlur="js_blur_reg(this)" value="1995">
+								<span class="name_DD">дд</span>
+								<span class="name_MM">мм</span>
+								<span class="name_YYYY">гггг</span>
+							</div>
+							
+							<input id="news_company" type="checkbox" checked>
+							<label for="news_company"><span ></span>Быть в курсе новостей компании</label>
+							<a href="#" class="profile_save_btn">Сохранить</a>
+						</div>	
 						<div class="profile_form_panel">
 							<a href="#" class="profile_form_history_btn" onClick="js_profile_form_history_open()">История</a>
 						</div>
@@ -577,10 +616,12 @@
 						</span>
 						<div class="profile_form_history_scroll">
 							<div class="profile_form_history_elem">
-								<img src="img/history1.jpg" alt="" />
+								<span class="profile_form_history_elem_img"></span>
 								<span class="profile_form_history_elem_txt">
-									Паттая + Бангкок + Бали
-									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+									Москва - Киев - Москва
+									<span class="profile_form_history_elem_duration">17.12.2013 - 22.12.2013</span>
+									<span class="profile_form_history_elem_duration">Эконом-класс, 2 чел</span>
+									<span class="profile_form_history_elem_cost">1799 грн.</span>
 								</span>
 								<span class="profile_form_history_elem_bonuce">
 									Бонусы
@@ -588,10 +629,12 @@
 								</span>
 							</div>
 							<div class="profile_form_history_elem">
-								<img src="img/history2.jpg" alt="" />
+								<span class="profile_form_history_elem_img2"></span>
 								<span class="profile_form_history_elem_txt">
-									Эмираты: Дубаи + Абу-да-БИ
-									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+									Москва - Киев - Москва
+									<span class="profile_form_history_elem_duration">17.12.2013 - 22.12.2013</span>
+									<span class="profile_form_history_elem_duration">Эконом-класс, 2 чел</span>
+									<span class="profile_form_history_elem_cost">1799 грн.</span>
 								</span>
 								<span class="profile_form_history_elem_bonuce">
 									Бонусы
@@ -599,10 +642,12 @@
 								</span>
 							</div>
 							<div class="profile_form_history_elem">
-								<img src="img/history3.jpg" alt="" />
+								<span class="profile_form_history_elem_img"></span>
 								<span class="profile_form_history_elem_txt">
-									Греция + автобусный тур по Европе
-									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+									Москва - Киев - Москва
+									<span class="profile_form_history_elem_duration">17.12.2013 - 22.12.2013</span>
+									<span class="profile_form_history_elem_duration">Эконом-класс, 2 чел</span>
+									<span class="profile_form_history_elem_cost">1799 грн.</span>
 								</span>
 								<span class="profile_form_history_elem_bonuce">
 									Бонусы
@@ -610,10 +655,12 @@
 								</span>
 							</div>
 							<div class="profile_form_history_elem">
-								<img src="img/history4.jpg" alt="" />
+								<span class="profile_form_history_elem_img"></span>
 								<span class="profile_form_history_elem_txt">
-									Паттая + Бангкок + Бали
-									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+									Москва - Киев - Москва
+									<span class="profile_form_history_elem_duration">17.12.2013 - 22.12.2013</span>
+									<span class="profile_form_history_elem_duration">Эконом-класс, 2 чел</span>
+									<span class="profile_form_history_elem_cost">1799 грн.</span>
 								</span>
 								<span class="profile_form_history_elem_bonuce">
 									Бонусы
@@ -621,18 +668,29 @@
 								</span>
 							</div>
 							<div class="profile_form_history_elem">
-								<img src="img/history1.jpg" alt="" />
+								<span class="profile_form_history_elem_img"></span>
 								<span class="profile_form_history_elem_txt">
-									Паттая + Бангкок + Бали
-									<span class="profile_form_history_elem_duration">15 дней / 14 ночей</span>
+									Москва - Киев - Москва
+									<span class="profile_form_history_elem_duration">17.12.2013 - 22.12.2013</span>
+									<span class="profile_form_history_elem_duration">Эконом-класс, 2 чел</span>
+									<span class="profile_form_history_elem_cost">1799 грн.</span>
 								</span>
 								<span class="profile_form_history_elem_bonuce">
 									Бонусы
 									<span>230</span>
 								</span>
 							</div>
+							<span class="bonuce_all">
+								ИТОГО:
+								<span class="bonuce_all_namber">1570</span>
+							</span>
+							
+							
+							
 						</div>
-						<a href="#" class="profile_form_history_programm_btn"  onClick="js_profile_form_history_close()">Бонусная программа</a>
+						<div class="program_loayl">
+						Вы можете использовать накопленные бонусы <br/>в нашей <a class="" href="">Программе лояльности</a>
+						</div>
 						<div class="voyage_about_open_shadow"></div>
 					</div>
 				</div>
